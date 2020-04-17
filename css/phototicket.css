@@ -1,0 +1,122 @@
+/*
+    날짜: 2020-04-14
+    작성자: 이주연
+    CGV 포토티켓
+*/
+/* 포토티켓 공통 */
+.photo_ticket.wrap {background-color: transparent; color: #222222;} /* 지우기 */
+.photo_ticket.wrap article{background-color: transparent} /* 지우기 */
+.photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
+.photo_ticket .primary { color: #ff2f35;}
+
+/*  sprite 이미지 */
+@media only screen and (-webkit-min-device-pixel-ratio:1){
+    .sprite.sprite-pt{content:''; background-image:url('../images/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px 200px;}
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+    .sprite.sprite-pt{content:''; background-image:url('../images/common/phototicket@2x.png'); background-repeat: no-repeat; display: block; background-size: 200px 200px;}
+}
+@media only screen and (-webkit-min-device-pixel-ratio:3){
+    .sprite.sprite-pt{content:''; background-image:url('../images/common/phototicket@3x.png'); background-repeat: no-repeat; display: block; background-size: 200px 200px;}
+}
+.sprite.sprite-pt.sprite-cardNum {width: 27px;height: 20px;background-position: 0 -64px;}
+.sprite.sprite-pt.sprite-icBack {width: 30px;height: 30px;background-position: 0 0;}
+.sprite.sprite-pt.sprite-icBoastNor {width: 20px;height: 20px;background-position: -74px -63px;}
+.sprite.sprite-pt.sprite-icBoastSel {width: 20px;height: 20px;background-position: -98px -63px;}
+.sprite.sprite-pt.sprite-icBtnLikeSel {width: 20px;height: 20px;background-position: -123px -63px;}
+.sprite.sprite-pt.sprite-icCalChDim {width: 17px;height: 18px;background-position: -56px -160px;}
+.sprite.sprite-pt.sprite-icCalCh {width: 17px;height: 18px;background-position: -79px -160px;}
+.sprite.sprite-pt.sprite-icCardRotation {width: 32px;height: 32px;background-position: -36px -59px;}
+.sprite.sprite-pt.sprite-icClose {width: 30px;height: 30px;background-position: -161px 0;}
+.sprite.sprite-pt.sprite-icDownMore {width: 13px;height: 9px;background-position: -29px -43px;}
+.sprite.sprite-pt.sprite-icFilterDateSel {width: 19px;height: 19px;background-position: -8px -159px;}
+.sprite.sprite-pt.sprite-icFilterDate {width: 19px;height: 19px;background-position: -32px -159px;}
+.sprite.sprite-pt.sprite-icInfo {width: 31px;height: 30px;background-position: -40px 0;}
+.sprite.sprite-pt.sprite-icLikeGray {width: 12px;height: 11px;background-position: -49px -40px;}
+.sprite.sprite-pt.sprite-icLikeNor {width: 42px;height: 52px;background-position: -49px -95px;}
+.sprite.sprite-pt.sprite-icLikeSel {width: 42px;height: 52px;background-position: 1px -95px;}
+.sprite.sprite-pt.sprite-icShare {width: 30px;height: 30px;background-position: -120px 0;}
+.sprite.sprite-pt.sprite-icSideMenu {width: 31px;height: 30px;background-position: -80px 0;}
+.sprite.sprite-pt.sprite-icTMore {width: 9px;height: 13px;background-position: -14px -42px;}
+.sprite.sprite-pt.sprite-icTMoreLarge {width: 9px;height: 13px;background-position: 1px -42px;}
+.sprite.sprite-pt.sprite-kakao {width: 26px;height: 26px;background-position: -69px -29px;}
+
+/* 포토티켓 header */
+.photo_ticket #pt_header {z-index: 111 !important;}
+.photo_ticket .header_wrap {position: relative; padding: 0 15px; background-color: #ffffff; border: 0; z-index: 1111;}
+.photo_ticket .header_wrap header {height: 47px; background-color:transparent;}
+.photo_ticket .header_wrap .title_area {position: absolute; left: 14px;}
+.photo_ticket .header_wrap .title_area .title { font-size: 16px; margin: 0; line-height: 47px; padding-left: 35px;}
+.photo_ticket .header_wrap .title_area .btn_back { position: absolute; left: 0; top: 7px; }
+
+.photo_ticket .header_wrap .menu_area {position: absolute; right: 15px; top: 9px}
+.photo_ticket .header_wrap .menu_area .btn_info { display: inline-block }
+.photo_ticket .header_wrap .menu_area .btn_menu { display: inline-block; margin-left: 3px; }
+
+/*.photo_ticket .main { background-color: #ffffff; }*/
+.photo_ticket .main .slider_wrap .title { padding-left: 30px; font-size: 22px; line-height: 30px; font-weight: 600; padding-top: 25px; margin-bottom: 19px;}
+.photo_ticket .main .slider_wrap .swiper-container { width: 260px; margin: 0 auto;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide {  position: relative; text-align:center; display:flex; align-items:center; justify-content:center; margin-bottom: 30px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide a {width: 100%; height: 360px; border-radius: 20px; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000); background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000);}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide img { width: 100%; height: 100%; border-radius: 20px;}
+/*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide a { width: 100%; height: 100%}*/
+/*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide.swiper-slide-next { height: 331px;}*/
+/*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide img { width: 100%; height: 100%; border-radius: 20px;}*/
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .dim {position: absolute; bottom: 0; left: 0; width:100%; height: 284px; border-radius: 0 0 20px 20px; background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%); background: -webkit-linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%);}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_top { position:absolute; padding:0 12px; height: 25px; top: 0; right: 0; background-color: rgb(251,67,87); border-radius: 0 19px 0 10px; color: #ffffff; font-size: 11px; font-weight: 400; line-height: 25px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_top .txt { position: relative; padding-right: 10px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_top .txt::after { content: '|'; position: absolute; right: 0; top: 0; padding-right: 3px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info {position: absolute; left: 0; top:243px; color: #ffffff; text-align: left; padding-left: 20px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .title { font-size: 18px; padding-top: 0; line-height: 24px; margin-bottom: 5px; padding-left: 0}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .date { font-size: 13px; line-height: 16px; font-weight: 500; margin-bottom: 4px; letter-spacing: 0}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .info { position: relative;  margin-bottom: 12px; font-size: 13px; letter-spacing: 0;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .info .theater { position: relative; padding-right: 5px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .info .theater::after {content: ''; position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #ffffff; right: -2px; top: 6px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse {position: absolute; background: rgba(255,255,255,0.9); padding: 0 9px; height: 23px; color: rgb(251,67,57); line-height: 24px; border-radius: 11px; font-weight: 500; font-size: 12px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse .txt {position: relative; padding-right: 5px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse .txt::after {position: absolute; content: '|'; top: 0; right: 0;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle {position: absolute; display: block; width: 80px; height: 80px; border-radius: 40px; color: #ffffff; background: linear-gradient(124deg, #fb4357 14%, #ef642f 86%); background: -webkit-linear-gradient(124deg, #fb4357 14%, #ef642f 86%);  box-shadow: 0 4px 10px 0 rgba(251, 67, 87, 0.4); bottom: -11px; right: -18px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .txt {font-size: 16px; font-weight: bold; padding-top: 27px; margin-bottom: 5px;}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
+
+.photo_ticket .main .alert_wrap {padding: 0 27px;}
+.photo_ticket .main .alert_wrap .swiper-container {}
+.photo_ticket .main .alert_wrap .swiper-container .swiper-slide {border-top: 1px solid #ededed; border-bottom: 1px solid #ededed; margin-bottom: 14px;}
+.photo_ticket .main .alert_wrap .swiper-container .swiper-slide a { display: block; color: #222222; position: relative; text-align: center; font-size: 15px; padding: 13px 0;}
+.photo_ticket .main .alert_wrap .swiper-container .swiper-slide a .title { display: block; font-weight: bold; margin-bottom: 3px;}
+.photo_ticket .main .alert_wrap .swiper-container .swiper-slide a .txt { display: block; }
+.photo_ticket .main .alert_wrap .swiper-container .swiper-slide a .right_arrow {position: absolute; right: 6px; top: 23px;}
+
+/*   이벤트 광고 영역    */
+.photo_ticket .main .eventBannerWrap { position: relative; height: 90px; background-color: #FFF0BA; text-align: center; }
+.photo_ticket .main .eventBannerWrap a { display: block; }
+.photo_ticket .main .eventBannerWrap a img { height: 90px; }
+.photo_ticket .main .eventBannerWrap::after { content: ''; position: absolute; width: 100%; height: 7px; background: #f2f2f2; bottom: -7px; left: 0;}
+
+/*   내 포토티켓 - 헤더 컴포넌트    */
+.photo_ticket .title_wrap {position: relative; padding: 0 15px; height: 60px; margin-bottom: 13px;}
+.photo_ticket .title_wrap .title {position: absolute; font-size: 17px; font-weight: bold; left: 15px; top: 22px;}
+.photo_ticket .title_wrap .all a {position: absolute; display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px; top: 9px; right: 0;}
+.photo_ticket .title_wrap .all a i {display: inline-block}
+
+/*   내 포토티켓 - 카드 컴포넌트   */
+.photo_ticket .card_wrap {padding: 0 15px;}
+.photo_ticket .card_wrap .card { position: relative; display: block; width: 100%; height: 120px; border: 1px solid #efefef; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); border-radius: 10px; margin-bottom: 24px;}
+.photo_ticket .card_wrap .card .img { position: absolute; top: -14px; left: 13px; display:block; width: 80px; height: 120px;}
+.photo_ticket .card_wrap .card .img img { width: 100%; height: 100%; border-radius: 10px; border: 1px solid rgba(153,153,153,0.1)}
+.photo_ticket .card_wrap .card .img .badge_top {}
+.photo_ticket .card_wrap .movie_info { position: relative; padding: 27px 79px 0 108px;}
+.photo_ticket .card_wrap .movie_info > .title {display: block; font-weight: bold; margin-bottom: 29px;}
+.photo_ticket .card_wrap .movie_info .info {display: block; font-size: 12px; font-weight: 500; margin-bottom: 7px;}
+.photo_ticket .card_wrap .movie_info .info .title { position: relative; display: inline-block; color: #999999; padding-right: 8px;}
+.photo_ticket .card_wrap .movie_info .info .title::after { position: absolute; content: '|'; right: 2px; top: -1px; color: rgba(153,153,153,0.5);}
+.photo_ticket .card_wrap .movie_info .info .date {display: inline-block;}
+.photo_ticket .card_wrap .badge { position: absolute; width: 68px; height: 68px; background-color: #ff2f35; border-radius: 34px; text-align: center; color: #ffffff; right: 11px; bottom: 26px;}
+.photo_ticket .card_wrap .badge.badge_red { background-color: #ff2f35;}
+.photo_ticket .card_wrap .badge.badge_blue{ background-color: #209eff;}
+.photo_ticket .card_wrap .badge { background-color: #ff2f35}
+.photo_ticket .card_wrap .badge .dday { font-weight: 500; font-size: 18px; padding-top: 21px; margin-bottom: 2px; letter-spacing: 1px;}
+.photo_ticket .card_wrap .badge .txt { font-size: 10px; font-weight: 300;}
+
+/*   내 포토티켓    */
+.photo_ticket .mypt_wrap {padding-top: 7px;}
