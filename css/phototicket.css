@@ -57,10 +57,10 @@
 .photo_ticket .main .slider_wrap .title { padding-left: 30px; font-size: 22px; line-height: 30px; font-weight: 600; padding-top: 25px; margin-bottom: 19px;}
 .photo_ticket .main .slider_wrap .swiper-container { width: 260px; margin: 0 auto;}
 .photo_ticket .main .slider_wrap .swiper-container .swiper-slide {  position: relative; text-align:center; display:flex; align-items:center; justify-content:center; margin-bottom: 30px;}
-.photo_ticket .main .slider_wrap .swiper-container .swiper-slide a {width: 100%; height: 360px; border-radius: 20px; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000); background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000);}
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide > div {width: 100%; height: 360px; border-radius: 20px; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000); background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 21%, rgba(0, 0, 0, 0.57), #000000);}
 .photo_ticket .main .slider_wrap .swiper-container .swiper-slide img { width: 100%; height: 100%; border-radius: 20px;}
 /*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide a { width: 100%; height: 100%}*/
-/*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide.swiper-slide-next { height: 331px;}*/
+.photo_ticket .main .slider_wrap .swiper-container .swiper-slide.swiper-slide-next > div { height: 331px; padding-top: 13px;}
 /*.photo_ticket .main .slider_wrap .swiper-container .swiper-slide img { width: 100%; height: 100%; border-radius: 20px;}*/
 .photo_ticket .main .slider_wrap .swiper-container .swiper-slide .dim {position: absolute; bottom: 0; left: 0; width:100%; height: 284px; border-radius: 0 0 20px 20px; background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%); background: -webkit-linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%);}
 .photo_ticket .main .slider_wrap .swiper-container .swiper-slide .badge_top { position:absolute; padding:0 12px; height: 25px; top: 0; right: 0; background-color: rgb(251,67,87); border-radius: 0 19px 0 10px; color: #ffffff; font-size: 11px; font-weight: 400; line-height: 25px;}
