@@ -126,7 +126,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:void(0);">
+                        <div onclick="">
                             <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                  alt="">
                             <div class="dim"></div>
@@ -153,7 +153,7 @@
                                     <p class="count">(<span class="num">10</span>/<span class="sum">15</span>)</p>
                                 </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,7 +244,6 @@
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
                         <img src="images/main/movie@2x.png" alt="영화 이미지">
-                        <div class="badge_top"></div>
                     </div>
                     <div class="movie_info">
                         <p class="title">클로젯</p>
@@ -259,8 +258,8 @@
                     </div>
                     <!--
                         작성자 : 이주연
-                        내용 : 뱃지 컬러
-                        badge-blue/badge-red
+                        제목 : 뱃지 컬러
+                        내용 : badge-blue(d-day가 10일 초과 경우) / badge-red(d-day가 10일 이하일 경우)
                      -->
                     <div class="badge badge-red">
                         <p class="dday">D-3</p>
@@ -269,11 +268,10 @@
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="images/main/movie@2x.png" alt="영화 이미지">
-                        <div class="badge_top"></div>
+                        <img src="images/main/movie2@2x.png" alt="영화 이미지">
                     </div>
                     <div class="movie_info">
-                        <p class="title">클로젯</p>
+                        <p class="title">작은아씨들</p>
                         <div class="info">
                             <span class="title">관람일</span>
                             <span class="date">2020.03.29(일)</span>
@@ -283,23 +281,19 @@
                             <span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <!--
-                        작성자 : 이주연
-                        내용 : 뱃지 컬러
-                        badge-blue/badge-red
-                     -->
                     <div class="badge badge-red">
-                        <p class="dday">D-3</p>
+                        <p class="dday">D-8</p>
                         <p class="txt">출력가능일</p>
                     </div>
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="images/main/movie@2x.png" alt="영화 이미지">
-                        <div class="badge_top"></div>
+                        <img src="images/main/movie3@2x.png" alt="영화 이미지">
+                        <div class="badge_top">+10</div>
                     </div>
                     <div class="movie_info">
-                        <p class="title">클로젯</p>
+                        <p class="title">다크워터스</p>
+                        <p class="tip">광주 충장로점 출력가능</p>
                         <div class="info">
                             <span class="title">관람일</span>
                             <span class="date">2020.03.29(일)</span>
@@ -309,13 +303,49 @@
                             <span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <!--
-                        작성자 : 이주연
-                        내용 : 뱃지 컬러
-                        badge-blue/badge-red
-                     -->
                     <div class="badge badge-red">
-                        <p class="dday">D-3</p>
+                        <p class="dday">D-10</p>
+                        <p class="txt">출력가능일</p>
+                    </div>
+                </a>
+                <a class="card" href="javascript:void(0);">
+                    <div class="img">
+                        <img src="images/main/movie4@2x.png" alt="영화 이미지">
+                    </div>
+                    <div class="movie_info">
+                        <p class="title">어바웃타임(인생영화인생영화)</p>
+                        <div class="info">
+                            <span class="title">관람일</span>
+                            <span class="date">2020.03.29(일)</span>
+                        </div>
+                        <div class="info">
+                            <span class="title">제작일</span>
+                            <span class="date">2020.03.29(일)</span>
+                        </div>
+                    </div>
+                    <div class="badge badge_blue">
+                        <p class="dday">D-17</p>
+                        <p class="txt">출력가능일</p>
+                    </div>
+                </a>
+                <a class="card" href="javascript:void(0);">
+                    <div class="img">
+                        <img src="images/main/movie5@2x.png" alt="영화 이미지">
+                        <div class="badge_top">+2</div>
+                    </div>
+                    <div class="movie_info">
+                        <p class="title">타오르는 여인의 초상</p>
+                        <div class="info">
+                            <span class="title">관람일</span>
+                            <span class="date">2020.03.29(일)</span>
+                        </div>
+                        <div class="info">
+                            <span class="title">제작일</span>
+                            <span class="date">2020.03.29(일)</span>
+                        </div>
+                    </div>
+                    <div class="badge badge_blue">
+                        <p class="dday">D-20</p>
                         <p class="txt">출력가능일</p>
                     </div>
                 </a>
@@ -325,6 +355,110 @@
             </div>
         </article>
 
+        <!--  포토티켓 자랑하기   -->
+        <article class="ptboast_wrap">
+            <div class="title_wrap">
+                <div class="title">포토티켓 자랑하기</div>
+                <div class="all">
+                    <a href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
+                </div>
+                <div class="badge">
+                    <a href="javascript:void(0);">내 포토티켓 자랑</a>
+                </div>
+            </div>
+            <div class="imgcard_wrap">
+                <div class="row">
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast1@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">good_photo</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>999</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeSel"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast2@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">good_photo</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast3@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>10</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast4@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeSel"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast5@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-50">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="images/main/boast6@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
+                            </div>
+                            <div class="btn_like">
+                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
 </div>
 </body>
