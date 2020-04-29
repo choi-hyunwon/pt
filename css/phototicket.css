@@ -229,7 +229,7 @@
 /*  [S] 포토티켓 - 헤더 컴포넌트    */
 .photo_ticket .title_wrap {position: relative; padding: 0 15px; height: 60px; margin-bottom: 13px;}
 .photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: 0; line-height: 60px;}
-.photo_ticket .title_wrap .all {float: right; font-size: 14px;}
+.photo_ticket .title_wrap .all {position: absolute;right: 0;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 9px 15px 15px; line-height: 30px;}
 .photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 23px; right: 17px;}
 .photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 23px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
@@ -554,7 +554,9 @@
 	.photo_ticket .card_wrap .badge .dday { font-size: 16px; padding-top: 13px; margin-bottom: 3px; }
 	.photo_ticket .card_wrap .card .img { left: 10px; }
 	.photo_ticket .title_wrap .title .badge { width: 85px; font-size: 10px; line-height: 25px; }
-	.photo_ticket .title_wrap .all .btn-all { padding: 15px 9px 15px 0; }
+	.photo_ticket .title_wrap .title {letter-spacing: -1.5px; }
+	.photo_ticket .title_wrap .all .btn-all { padding: 15px 22px 15px 0;; }
+	.photo_ticket .title_wrap .all .btn-all i {right: 13px;}
 }
 @media only screen and (min-height: 735px) {
 	.myPhtoticketFlip .swiper-container {height: 470px; transform: translate(12px,-8px);;margin-bottom: 49px !important;}
