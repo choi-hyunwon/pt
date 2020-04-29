@@ -945,7 +945,7 @@
 	background: #ffffff;
 	color: var(--watermelon);
 	border: 1px solid var(--watermelon);
-	transition: background .5s;
+	transition: background 10s;
 }
 .md-btn-ripple.on::after {
 	content: '';
@@ -956,15 +956,16 @@
 	top: 7px;
 	left: 50px;
 	border-radius: 50%;
-	background: rgba(255,255,255,.8);
-	animation: md-btn-ripple .5s ease-in;
+	background: rgb(255,255,255);
+	animation: md-btn-ripple 10s;
 	opacity: 0;
 }
 .md-btn-ripple.off {
 	overflow: hidden;
 	position: relative;
 	background: var(--watermelon);
-	transition: background .5s;
+	transition: background 10s;
+	border: 1px solid var(--watermelon);
 	color: #ffffff;
 	opacity: 1;
 }
@@ -977,8 +978,9 @@
 	top: 7px;
 	left: 50px;
 	border-radius: 50%;
-	background: rgba(251,67,87,.8);
-	animation: md-btn-ripple2 .5s ease-in;
+	color: #ffffff;
+	background: rgb(251,67,87);
+	animation: md-btn-ripple2 10s;
 	opacity: 0;
 }
 @keyframes md-btn-ripple {
@@ -994,17 +996,15 @@
 	}
 	100% {
 		transform: scale(4);
-		opacity: 0;
+		opacity: 1;
 	}
 }
 @keyframes md-btn-ripple2 {
 	0% {
 		transform: scale(0);
-		opacity: 0;
 	}
 	20% {
 		transform: scale(2);
-		opacity: 1;
 	}
 	50% {
 		transform: scale(3);
