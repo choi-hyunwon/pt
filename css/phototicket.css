@@ -173,6 +173,9 @@
 #header_box.pt_header nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 포토티켓 header */
 
+/**/
+.slider-wrap {width:100%; overflow: hidden}
+
 /* [S] 포토티켓 메인 - app */
 .content_wrap.photo_ticket { padding-top: 47px; overflow: initial; }
 .content_wrap.photo_ticket .slider_wrap .title { padding-left: 30px; font-size: 22px; line-height: 30px; font-weight: 600; padding-top: 15px; margin-bottom: 19px;}
