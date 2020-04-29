@@ -62,10 +62,11 @@
     <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
+    <!--    <img src="../images/phototicket/temp/printed2.png" style="width: 375px; opacity:.5; z-index: 11; position: absolute; top: -23px;" alt="">-->
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-        <!--  todo! popup 처리    -->
         <div class="pop_header">
             <a class="btn_share" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icShare"></i>
@@ -76,8 +77,8 @@
              내용 :  클래스 badge_blue / badge_red 두 타입
              -->
             <div>
-                <p class="badge badge_grey">
-                    <span class="dday">출력일</span><span class="text">2020.04.10(일)</span>
+                <p class="badge badge_blue">
+                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>
                 </p>
             </div>
             <a class="btn_close btnPopClose" href="javascript:void(0);">
@@ -88,12 +89,12 @@
         <!-- tip 클래스 유무, 분기 처리 필요 -->
         <article class="myPhtoticketFlip">
             <div class="title_area">
-                <!-- title 단독 사용시, title-single 사용  -->
-                <span class="title title-single">다크워터스(2D)</span>
+                <span class="title">다크워터스(2D)</span>
+                <span class="title-sm">예매번호 : 001-0000-0000-002</span>
                 <!-- 광주충장로 점일 때 -->
                 <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
             </div>
-            <div class="swiper-container">
+            <div class="swiper-container ">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="flip-container">
@@ -279,43 +280,39 @@
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="btn_area btn_area_sm">
+            <div class="btn_area">
                 <div class="inner">
-                    <p class="text-lg">출력이 완료된 포토티켓입니다.</p>
-                    <p class="text-sm">이미 출력된 카드는 재출력이 불가합니다.</p>
+                    <p class="text-lg">포토티켓 제작이 완료되었습니다.</p>
+                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
+                        생년월일+휴대폰번호를 입력하여 출력해주세요</p>
                     <div>
-<!--                        <a class="btn-ani button&#45;&#45;ujarak _btnBoast">자랑하기</a>-->
-                        <a class="md-btn md-btn-raised md-btn-ripple _onoff">자랑하기</a>
-                        <a class="btn-grey" href="javascript:void(0);">삭제하기</a>
+                        <a class="btn-outline-red" href="javascript:void(0);">자랑하기</a>
+                        <a class="btn-grey" href="javascript:void(0);">결제취소</a>
                     </div>
                 </div>
             </div>
         </article>
+        <!-- [E] 플립 슬라이더 -->
     </section>
-    <script>
-
-    </script>
     <!-- [E] Content -->
 </div>
 <!--
-    [S] 2020.04.20
+    2020.04.20
     작성자 : 이주연
     내용 : 포토티켓 추가
-    -->
-<script> var screenId = "PT003";</script>
+-->
+<!--
+    2020.04.20
+    작성자 : 이주연
+    내용 : <script> var screenId = "PT003";</script> 추가
+-->
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
+<script>var screenId = "PT003";</script>
 <script type="text/javascript" src="../js/phototicket.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
 <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-<script>
-$(document).ready(function () {
-    $('._onoff').on('click', function () {
-        $(this).hasClass('on') ? $(this).removeClass('on').addClass('off').text('자랑하기') : $(this).removeClass('off').addClass('on').text('자랑취소');
-    });
-})
-</script>
 <!--  [E] 2020.04.20	-->
 </body>
 </html>
