@@ -60,27 +60,39 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-
 </head>
 <body class="bg_white">
-<div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
-    <!-- !todo 체크박스 애니메이션 적용(this page)    -->
-    <!-- !todo https://codepen.io/rafaaro/pen/oNvJQyb 참고하여 버튼 애니메이션 추가(wapashi)    -->
-    <!-- !todo https://daneden.github.io/animate.css/ 참고하여 하트 버튼 애니메이션 추가(bounceIn)    -->
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-
+        <div class="pop_header">
+            <a class="btn_share" href="javascript:void(0);">
+                <i class="sprite sprite-pt sprite-icShare"></i>
+            </a>
+            <!--
+             날짜 : 20.04.23
+             작성자 : 이주연
+             내용 :  클래스 badge_blue / badge_red 두 타입
+             -->
+            <div>
+                <p class="badge badge_grey">
+                    <span class="dday">출력일</span><span class="text">2020.04.10(일)</span>
+                </p>
+            </div>
+            <a class="btn_close btnPopClose" href="javascript:void(0);">
+                <i class="sprite sprite-pt sprite-icClose"></i>
+            </a>
+        </div>
         <!-- [S] 플립 슬라이더 -->
         <!-- tip 클래스 유무, 분기 처리 필요 -->
         <article class="myPhtoticketFlip">
             <div class="title_area">
-                <span class="title">다크워터스(2D)</span>
-                <span class="title-sm">예매번호 : 001-0000-0000-002</span>
+                <!-- title 단독 사용시, title-single 사용  -->
+                <span class="title title-single">다크워터스(2D)</span>
                 <!-- 광주충장로 점일 때 -->
                 <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
             </div>
-            <div class="swiper-container ">
+            <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="flip-container">
@@ -88,7 +100,8 @@
                                 <div class="front">
                                     <div class="dim"></div>
                                     <div class="inner">
-                                        <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" alt="">
+                                        <img src="../images/phototicket/main/sample.png"
+                                             alt="">
                                         <a href="javascript:void(0)" class="btn-toggle">
                                             <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
                                                 <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -99,7 +112,8 @@
                                                 </g>
                                             </svg>
                                         </a>
-                                        <a class="btn-flip _flip" href="javascript:void(0)"><i class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
                                 </div>
                                 <div class="back">
@@ -123,10 +137,16 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <label>
-                                            <input value="1" name="group1" type='checkbox'/>
-                                            <span></span>
-                                        </label>
+                                        <a href="javascript:void(0)" class="btn-toggle">
+                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -140,12 +160,18 @@
                                 <div class="front">
                                     <div class="dim"></div>
                                     <div class="inner">
-                                        <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
+                                        <img src="../images/phototicket/main/sample.png"
                                              alt="">
-                                        <label>
-                                            <input value="1" name="group2" type='checkbox'/>
-                                            <span></span>
-                                        </label>
+                                        <a href="javascript:void(0)" class="btn-toggle">
+                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -171,10 +197,16 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <label>
-                                            <input value="1" name="group2" type='checkbox'/>
-                                            <span></span>
-                                        </label>
+                                        <a href="javascript:void(0)" class="btn-toggle">
+                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -188,12 +220,18 @@
                                 <div class="front">
                                     <div class="dim"></div>
                                     <div class="inner">
-                                        <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
+                                        <img src="../images/phototicket/main/sample.png"
                                              alt="">
-                                        <label>
-                                            <input value="1" name="group3" type='checkbox'/>
-                                            <span></span>
-                                        </label>
+                                        <a href="javascript:void(0)" class="btn-toggle">
+                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -219,10 +257,16 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <label>
-                                            <input value="1" name="group3" type='checkbox'/>
-                                            <span></span>
-                                        </label>
+                                        <a href="javascript:void(0)" class="btn-toggle">
+                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -234,14 +278,13 @@
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="btn_area">
+            <div class="btn_area btn_area_sm">
                 <div class="inner">
-                    <p class="text-lg">포토티켓 제작이 완료되었습니다.</p>
-                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
-                        생년월일+휴대폰번호를 입력하여 출력해주세요</p>
+                    <p class="text-lg">출력이 완료된 포토티켓입니다.</p>
+                    <p class="text-sm">이미 출력된 카드는 재출력이 불가합니다.</p>
                     <div>
-                        <a class="btn-outline-red" href="javascript:void(0);">자랑하기</a>
-                        <a class="btn-grey" href="javascript:void(0);">결제취소</a>
+                        <a class="btn-ani button--wapasha _btnBoast">자랑하기</a>
+                        <a class="btn-grey" href="javascript:void(0);">삭제하기</a>
                     </div>
                 </div>
             </div>
@@ -254,14 +297,13 @@
     작성자 : 이주연
     내용 : 포토티켓 추가
     -->
+<script> var screenId = "PT003";</script>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
-<script> var screenId = "PT004";</script>
 <script type="text/javascript" src="../js/phototicket.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
 <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-<!--  [E] 2020.04.20	-->
 <!--  [E] 2020.04.20	-->
 </body>
 </html>
