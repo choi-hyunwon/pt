@@ -504,7 +504,8 @@
 .photo_ticket .popShare {position:fixed; left:0; bottom:-100%; width:100%; height: 135px; max-height:80vh; background-color:#fff; border-radius:20px 20px 0 0; z-index:9}
 .photo_ticket .popShare .popLayerContainer{margin-bottom: 18px;}
 .photo_ticket .popShare .popLayerContainer { padding-bottom: 0}
-.photo_ticket .popShare .popLayerContainer .list  li {  position: relative; line-height: 80px; padding: 0 20px}
+.photo_ticket .popShare .popLayerContainer .list  li {  position: relative; height: 80px; padding: 0 20px}
+.photo_ticket .popShare .popLayerContainer .list  li a { display: block; line-height: 80px;}
 .photo_ticket .popShare .popLayerContainer .list  li i { position: absolute; top: 26px; display: inline-block;}
 .photo_ticket .popShare .popLayerContainer .list  li .sns { display: inline-block; padding-left: 32px;}
 /* [E] 공유하기 팝업 */
