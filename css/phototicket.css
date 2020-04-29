@@ -490,7 +490,7 @@
 .photo_ticket .row {display: flex;flex-wrap: wrap;}
 .photo_ticket .inputBox {position: relative; padding: 0 20px; overflow: hidden}
 .photo_ticket .inputBox:before {content: '~';position: absolute;left: 50%;top: 12px;display: block;margin-left: -3px;}
-.photo_ticket .inputBox span {width: 47%; display: block;height: 36px;line-height: 36px;}
+.photo_ticket .inputBox span {width: 46%; display: block;height: 36px;line-height: 36px;}
 .photo_ticket .inputBox span:first-child {float: left;}
 .photo_ticket .inputBox span:last-child {float: right;}
 .photo_ticket .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
