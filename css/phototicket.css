@@ -149,7 +149,7 @@
 #header_box.pt_header nav.type_pt .inner a.active {color: #fb4357; border-color: #fb4357}
 #header_box.pt_header nav.type_pt .icon_search { color: #666666; border: 0; float: right; text-align: right; margin-right: 0;}
 #header_box.pt_header nav.type_pt .icon_search.active { color: #666666 !important; }
-#header_box.pt_header nav.type_pt .icon_search i {display: inline-block;position: absolute;right: 46px;top: 13px;}
+#header_box.pt_header nav.type_pt .icon_search i {display: inline-block;position: absolute;right: 51px;top: 13px;}
 /** [S]
 	날짜 : 2020.04.24
 	작성자 : 이주연
