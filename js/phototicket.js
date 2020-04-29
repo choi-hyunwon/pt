@@ -116,44 +116,25 @@
         load: function () {
             var photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
                 speed: 400,
+                width : '260',
                 autoPlay: true,
                 autoHeight: false,
                 direction: 'horizontal',
                 loop: false,
-                spaceBetween: 40,
                 slidesPerView: 1,
                 centeredSlides: true,
                 breakpointsInverse: false,
                 roundLengths: false,
                 breakpoints: {
                     320: {
-                        slidesPerView: 1,
                         spaceBetween: 20,
                     },
                     360: {
-                        slidesPerView: 1,
                         spaceBetween: 40
                     }
                 },
                 on: {
                     init: function () {
-                        var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth - 260) / 2;
-
-                        // setTimeout(function () {
-                        //     $('.myPhtoticketFlip .swiper-container')
-                        //         .css({
-                        //             'width': '100%',
-                        //             'margin': '0 auto',
-                        //             'padding-left': nPadding
-                        //         })
-                        // }, 100)
-                        $('.slider_wrap .swiper-container')
-                            .css({
-                                'width': '100%',
-                                'margin': '0 auto',
-                                'padding-left': nPadding
-                            })
                     },
                 }
             });
