@@ -943,7 +943,7 @@
 	background: #ffffff;
 	color: var(--watermelon);
 	border: 1px solid var(--watermelon);
-	transition: background .2s;
+	transition: background .5s;
 }
 .md-btn-ripple.on::after {
 	content: '';
@@ -955,7 +955,7 @@
 	left: 50px;
 	border-radius: 50%;
 	background: rgba(255,255,255,.8);
-	animation: md-btn-ripple 0.6s ease-out;
+	animation: md-btn-ripple .5s ease-in;
 	opacity: 0;
 }
 .md-btn-ripple.off {
@@ -976,7 +976,7 @@
 	left: 50px;
 	border-radius: 50%;
 	background: rgba(251,67,87,.8);
-	animation: md-btn-ripple2 .2s ease-out;
+	animation: md-btn-ripple2 .5s ease-in;
 	opacity: 0;
 }
 @keyframes md-btn-ripple {
