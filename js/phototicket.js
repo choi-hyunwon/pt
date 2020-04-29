@@ -64,8 +64,13 @@
             }
 
             $('.btn-toggle').on('click', function () {
-                $(this).toggleClass('active');
-            })
+                $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                if($(this).hasClass('active')) {
+                    $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
+                } else {
+                    $(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                }
+            });
 
             // 공유하기 팝업
             popLayerShowHide("icon_share", "popShare", "popFogBg");
