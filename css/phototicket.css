@@ -24,11 +24,11 @@
 
 /*  [S] btn-toggle   */
 .btn-toggle {display:inline-block;position: absolute;left: -30px;top: -28px;}
-.btn-toggle .white {stroke: #efefef;}
-.btn-toggle .outline {stroke: #efefef;}
-.btn-toggle .check {stroke: #c6c6c6;}
+.btn-toggle .white-circle {stroke: #efefef; transform:scale(1)}
+.btn-toggle .outline {stroke: #efefef;transform:scale(1)}
+.btn-toggle .check {stroke: #c6c6c6;transform:scale(1)}
 .btn-toggle.active .outline {transform: rotate(0deg);transform-origin: center;stroke: #fb4357;}
-.btn-toggle.active .white-circle {animation: .15s ease-in .15s forwards circle;transform: none;transform-origin: center;}
+.btn-toggle.active .white-circle {animation: .15s ease-in .15s forwards circle; transform: none; transform-origin: center;}
 .btn-toggle.active .check {animation: .1s cubic-bezier(0.65, 0, 1, 1) .3s forwards check;stroke-dasharray: 0, 75px;stroke: #ffffff;}
 .btn-toggle.active .check-group {animation: .1s ease-in-out check-group;transform-origin: center;}
 /*  [E] btn-toggle   */
