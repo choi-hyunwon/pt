@@ -355,7 +355,7 @@
 .myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137); margin-bottom: 15px;}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px);}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible}
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 100%; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000;}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container img { width: 100%; height: 100%; }

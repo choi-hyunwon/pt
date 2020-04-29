@@ -189,16 +189,16 @@
                 on: {
                     init: function () {
                         // console.log('동작');
-                        var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth - 282) / 2
-                        setTimeout(function () {
-                            $('.myPhtoticketFlip .swiper-container')
-                                .css({
-                                    'width': '100%',
-                                    'margin': '0 auto',
-                                    'padding-left': nPadding
-                                })
-                        }, 100)
+                        // var nWindowWidth = $(window).width();
+                        // var nPadding = (nWindowWidth - 282) / 2
+                        // setTimeout(function () {
+                        //     $('.myPhtoticketFlip .swiper-container')
+                        //         .css({
+                        //             'width': '100%',
+                        //             'margin': '0 auto',
+                        //             'padding-left': nPadding
+                        //         })
+                        // }, 100)
                     },
                 }
             });
@@ -226,16 +226,16 @@
                 },
                 on: {
                     init: function () {
-                        var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth - 290) / 2
-                        setTimeout(function () {
-                            $('.myPhtoticketFlip .swiper-container')
-                                .css({
-                                    'width': '100%',
-                                    'margin': '0 auto',
-                                    'padding-left': nPadding
-                                })
-                        }, 100)
+                        // var nWindowWidth = $(window).width();
+                        // var nPadding = (nWindowWidth - 290) / 2
+                        // setTimeout(function () {
+                        //     $('.myPhtoticketFlip .swiper-container')
+                        //         .css({
+                        //             'width': '100%',
+                        //             'margin': '0 auto',
+                        //             'padding-left': nPadding
+                        //         })
+                        // }, 100)
                     },
                 }
             });
