@@ -493,7 +493,7 @@
 .photo_ticket .inputBox span {width: 46%; display: block;height: 36px;line-height: 36px;}
 .photo_ticket .inputBox span:first-child {float: left;}
 .photo_ticket .inputBox span:last-child {float: right;}
-.photo_ticket .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+.photo_ticket .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
 .photo_ticket .inputBox span input[type='date']:focus {outline: none}
 .photo_ticket .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
 .photo_ticket .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
