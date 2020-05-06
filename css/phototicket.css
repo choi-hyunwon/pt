@@ -796,13 +796,13 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 }
 
 /* Wapasha */
-.btn-ani.button--wapasha {
+.btn-ani.btn-boast {
 	background: var(--watermelon);
 	color: #fff;
 	-webkit-transition: background-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, color 0.3s;
 }
-.button--wapasha::before {
+.btn-boast::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -821,11 +821,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
-.button--wapasha.active {
+.btn-boast.active {
 	background-color: #fff;
 	color: var(--watermelon);
 }
-.button--wapasha.active::before {
+.btn-boast.active::before {
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 	opacity: 1;
