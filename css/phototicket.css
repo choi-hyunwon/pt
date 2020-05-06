@@ -239,7 +239,7 @@
 /*  [E] 포토티켓 - 헤더 컴포넌트    */
 
 /*  [S] 내 포토티켓    */
-.content_wrap.photo_ticket .mypt_wrap { position: relative; padding: 0 0 20px;}
+.content_wrap.photo_ticket .mypt_wrap { position: relative; padding: 72px 0 20px;}
 /*   내 포토티켓 - 카드 컴포넌트(빈 카드 화면 일 경우)   */
 .content_wrap.photo_ticket .mypt_wrap.none .title_wrap { margin-bottom: 20px;}
 .content_wrap.photo_ticket .mypt_wrap.none .card_wrap p {text-align: center; color: #101010; font-size: 15px; line-height: 19px; margin-bottom: 12px;}
@@ -416,7 +416,7 @@
 /* [S]포토티켓 플립 슬라이더 - app */
 .myPhtoticketFlip { padding-top: 11px; }
 .myPhtoticketFlip .title_area .title {display:block; font-size: 20px; line-height: 24px; font-weight: bold; letter-spacing: -2px; text-align: center; color: #222222; margin-bottom: 4px;padding: 0 30px;text-overflow: ellipsis;}
-.myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137); margin-bottom: 15px;}
+.myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137);}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 
 .myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 21px;}
@@ -481,7 +481,7 @@
 .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더 - web */
-.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px; }
+.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 22px 30px 0; }
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px;margin-right: 29px;}
 
 /* [S] 포토티켓만 한개만 보여질 경우  */
@@ -908,108 +908,4 @@
 }
 .button--sacnite.button--inverted.active::before {
 	box-shadow: inset 0 0 0 2px #fff;
-}
-
-/* Button style */
-.md-btn {
-	font-size: 16px;
-	display: inline-block;
-	width: 135px;
-	height: 44px;
-	line-height: 44px;
-	text-align: center;
-	vertical-align: middle;
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	border: 0;
-	font-weight: 600;
-	border-radius: 22px;
-	background: var(--watermelon);
-	color: #fff;
-	outline: 0;
-}
-.md-btn:hover {
-	color: #ffffff;
-}
-/*
- Ripple
-*/
-.md-btn-ripple.on {
-	overflow: hidden;
-	position: relative;
-	background: #ffffff;
-	color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	transition: background 10s;
-}
-.md-btn-ripple.on::after {
-	content: '';
-	display: block;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	top: 7px;
-	left: 50px;
-	border-radius: 50%;
-	background: rgb(255,255,255);
-	animation: md-btn-ripple 10s;
-	opacity: 0;
-}
-.md-btn-ripple.off {
-	overflow: hidden;
-	position: relative;
-	background: var(--watermelon);
-	transition: background 10s;
-	border: 1px solid var(--watermelon);
-	color: #ffffff;
-	opacity: 1;
-}
-.md-btn-ripple.off::after {
-	content: '';
-	display: block;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	top: 7px;
-	left: 50px;
-	border-radius: 50%;
-	color: #ffffff;
-	background: rgb(251,67,87);
-	animation: md-btn-ripple2 10s;
-	opacity: 0;
-}
-@keyframes md-btn-ripple {
-	0% {
-		transform: scale(0);
-		opacity: 1;
-	}
-	20% {
-		transform: scale(2);
-	}
-	50% {
-		transform: scale(3);
-	}
-	100% {
-		transform: scale(4);
-		opacity: 1;
-	}
-}
-@keyframes md-btn-ripple2 {
-	0% {
-		transform: scale(0);
-	}
-	20% {
-		transform: scale(2);
-	}
-	50% {
-		transform: scale(3);
-	}
-	100% {
-		transform: scale(4);
-	}
 }
