@@ -31,6 +31,11 @@
                 $(this).hasClass('active') ? $(this).removeClass('active').text('자랑하기') : $(this).text('자랑취소').addClass('active');
             });
 
+            // 조회기간 클릭 이벤트 다중처리 X
+            $('._dayClick').on('click', function () {
+                $(this).hasClass('active') ? $(this).siblings().removeClass('active') : $(this).addClass('active').siblings().removeClass('active');
+            });
+
             // 이벤트 슬라이더 - 메인 공통
             var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
                 speed: 400,
