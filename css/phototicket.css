@@ -12,7 +12,7 @@
 	padding-top:constant(safe-area-inset-top);
 	padding-bottom:constant(safe-area-inset-bottom);
 	padding-top[:env(safe-area-inset-top);
-	padding-bottom:env(safe-area-inset-left);
+	padding-bottom:env(safe-area-inset-bottom);
 }
 .photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
 .photo_ticket .primary { color: #ff2f35;}
