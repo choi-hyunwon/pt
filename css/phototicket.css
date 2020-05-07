@@ -34,7 +34,8 @@
 .btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
-
+.popToast {display: none;position: fixed;left: 50%;bottom: calc(245px + constant(safe-area-inset-bottom));bottom: calc(245px + env(safe-area-inset-bottom));transform: translate(-50%, 0);z-index: 99999;}
+.popToast:before {content: attr(data-comment);display: inline-block;position: relative;left: -8%;padding: 13px 8% 14px;font-size: 14px;color: #fff;line-height: 17px;text-align: center;background: rgba(0,0,0,0.6);border-radius: 22px 22px;white-space: nowrap;}
 
 /*  [S] btn-toggle   */
 .btn-toggle {display:inline-block;position: absolute;left: -30px;top: -25px;}
@@ -454,7 +455,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .popLayerFooter{width:100%;}
  .popLayerFooter .btnPopConfirm{display:block; width:100%; height:50px; font-weight:400; font-size:16px; color:#fff; line-height:50px; text-align:center; background-color:#373e46}
  .btnPopClose{position:absolute; right:0; top:6px; display:block; width:38px; height:38px; background-position:left -22px}
-
  .com_pop_wrap{position:fixed; top:100%; right:100%; bottom:100%; left:100%; width:100%; height:100%; z-index:100}
  .com_pop_fog{position:fixed; top:150%; left:0; width:100%; height:100%; background-color:#000}
  .com_pop_header{position:relative; height:50px; padding-left:20px; line-height:50px; font-weight:400; font-size:16px; text-align:left; color:#000; vertical-align:middle; border-bottom:1px solid #d3d6db}
@@ -464,17 +464,17 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .popLayerHeader {height:55px; padding-left:18px; line-height:50px; font-weight:400; font-size:14px; text-align:left; color:#373e46; vertical-align:middle; border-bottom:1px solid #dcdee3}
  .popLayerHeader h1 {line-height: 55px; color: #030303;font-weight: bold;font-size: 17px;letter-spacing: -2px;}
  .popLayerHeader .btn_close {left: auto; right: 13px;display: inline-block;position: absolute; top: 12px;}
- .popScheduleInfo {position:fixed; left:0; bottom:-100%; width:100%; height: 216px; max-height:80vh; background-color:#fff; border-radius:16px 16px 0 0; z-index:9}
+ .popScheduleInfo {position:fixed; left:0; bottom:-100%; width:100%; height: 223px; max-height:80vh; background-color:#fff; border-radius:16px 16px 0 0; z-index:9}
  .popScheduleInfo .popLayerContainer{margin-bottom: 18px;}
  .popScheduleInfo .popLayerFooter.w50p{overflow:hidden; width:100%; padding:0 0 constant(safe-area-inset-bottom) 0; background:linear-gradient(to left, var(--dustyOrange), var(--watermelon))}
- .popScheduleInfo .popLayerFooter.w50p a {display:block; float:left; position:relative; width:50%; font-weight:600; color:#fff; line-height:50px; text-align:center;font-size: 17px; letter-spacing: -.43px; }
+ .popScheduleInfo .popLayerFooter.w50p a {display:block; float:left; position:relative; width:50%; font-weight:600; color:#fff; line-height:52px; text-align:center;font-size: 17px; letter-spacing: -.43px; }
  .popScheduleInfo .popLayerFooter.w50p a:first-child:before{content:none}
  .DatepickerBox {padding: 20px 20px 6px;}
- .DatepickerBox li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
+ .DatepickerBox li {float: left;height: 36px; margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
  .DatepickerBox li.lg {flex: 0 0 23%; margin-right: 0}
- .DatepickerBox li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+ .DatepickerBox li a {display: block; font-size: 14px; text-align: center; line-height: 36px; color:#666666; border-radius: 8px;background: rgba(242,242,242,.8);}
  .DatepickerBox li.active a {background: var(--watermelon); color: #ffffff}
- .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;color: #fff; line-height: 50px; font-size: 17px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
+ .stem_btn01 {float: left;display: block;width: 50%;min-height: 52px;color: #fff; line-height: 52px; font-size: 17px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
  .stem_btn01:first-child {border-left: 0 !important;}
  .row {display: flex;flex-wrap: wrap;}
  .inputBox {position: relative; padding: 0 20px; overflow: hidden}
