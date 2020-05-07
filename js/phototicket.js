@@ -33,7 +33,25 @@
 
             // 조회기간 클릭 이벤트 다중처리 X
             $('._dayClick').on('click', function () {
-                $(this).hasClass('active') ? $(this).siblings().removeClass('active') : $(this).addClass('active').siblings().removeClass('active');
+                if($(this).hasClass('active')){
+                    $(this).siblings().removeClass('active');
+                    $('._inputDate').attr( 'disabled', true );
+                }
+                else {
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $('._inputDate').attr( 'disabled', true );
+                }
+            });
+            // 조회기간 활성화/비활성화
+            $('._direct').on('click', function () {
+                if($(this).hasClass('active')){
+                    $(this).siblings().removeClass('active');
+                    $('._inputDate').attr( 'disabled', false );
+                }
+                else {
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $('._inputDate').attr( 'disabled', false );
+                }
             });
 
             // 이벤트 슬라이더 - 메인 공통
