@@ -285,13 +285,13 @@
 
     <!-- [S] 기간검색 팝업  -->
     <div class="popLayer">
-        <div class="popFogBg" style="opacity: 0.5; top: 0px; display: block;"></div>
+        <div class="popFogBg" style="opacity: 0.5; top: 0; display: block;"></div>
         <!--  [S]
             날짜 : 2020.05.06
             작성자 : 이주연
             내용 : 기간 검색 팝업 추가
         -->
-        <div class="popScheduleInfo" style="bottom: 0px;">
+        <div class="popScheduleInfo" style="bottom: 0;">
             <div class="popLayerHeader">
                 <h1>조회기간</h1>
                 <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
@@ -313,14 +313,16 @@
                         </span>
                 </div>
             </div>
-            <div class="popLayerFooter w50p ">
-                <a class="stem_btn01" href="javascript:void(0);">초기화</a>
+            <div class="popLayerFooter w50p">
+                <a id="filterToast" class="stem_btn01" href="javascript:void(0);">초기화</a>
                 <a class="stem_btn01" href="javascript:void(0);">적용</a>
             </div>
         </div>
         <!--   [E] 기간검색 팝업   -->
     </div>
     <!-- [E] 기간검색 팝업  -->
+
+
 </div>
 <!--
     날짜 : 2020.04.24

@@ -27,16 +27,17 @@
 .photo_ticket .btn-badge-grey .dday::after {content:''; position: absolute; height: 12px; border-right: 1px solid rgb(165,165,165); top: 2px; right: 4px;}
 .content_wrap.photo_ticket .cancel_area { padding-top: 2px !important; }
 .content_wrap.photo_ticket .cancel_area .btn-cancel { display: inline-block; padding-bottom: 2px; font-size: 13px; color: rgb(118,118,118);font-weight: 500; letter-spacing: -2px; border-bottom: 1px solid rgb(202,202,202)}
-.btn-ani {width: 135px; height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;}
+.btn-ani {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;}
 .btn-ani:hover {color:#ffffff;}
 .btn-ani:focus {outline: none;}
 .btn-ani.btn-boast {background: var(--watermelon);color: #fff;-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
-.btn-boast::before {content: '';position: absolute;top: 0;left: 0;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
+.btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
 
+
 /*  [S] btn-toggle   */
-.btn-toggle {display:inline-block;position: absolute;left: -30px;top: -28px;}
+.btn-toggle {display:inline-block;position: absolute;left: -30px;top: -25px;}
 .btn-toggle .white-circle {stroke: #efefef; transform:scale(1)}
 .btn-toggle .outline {stroke: #efefef;transform:scale(1)}
 .btn-toggle .check {stroke: #c6c6c6;transform:scale(1)}
@@ -339,7 +340,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137);}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 21px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 24px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000;}
@@ -369,11 +370,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .back .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
 .myPhtoticketFlip .back .inner .sign .lg {text-align: center; font-size: 13px; font-weight: bold; line-height: 16px; letter-spacing: -.54px;}
 .myPhtoticketFlip .back .inner .sign .sm {text-align: center; color:#898989; font-size: 10px; line-height: 11px;}
-.myPhtoticketFlip .back .inner .btn-toggle {top: -54px;left: -37px;}
+.myPhtoticketFlip .back .inner .btn-toggle {top: -52px;left: -37px;}
 .myPhtoticketFlip .flip-container.active .flipper {transform: rotateY(180deg);}
 
 /*  포토티켓 플립 슬라이더 - pagination  */
-.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets { bottom: -1px; }
+.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets { bottom: -8px; }
 .myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 1.5px; }
 .myPhtoticketFlip .swiper-pagination-bullet-active { background: var(--watermelon) }
 .myPhtoticketFlip .swiper-pagination-bullet { width: 5px; height: 5px;}
@@ -392,7 +393,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .flip-container .flipper .back label{top: -53px}
 
 /* 포토티켓 플립 슬라이더 - 버튼 영역 */
-.myPhtoticketFlip .btn_area { position: relative; width: 100%; margin-top: -15px;}
+.myPhtoticketFlip .btn_area { position: relative; width: 100%; margin-top: -15px; padding: 11px 15px 0;}
 .myPhtoticketFlip .btn_area.btn_area_sm { padding-top: 14px;}
 .myPhtoticketFlip .btn_area .inner {margin-bottom: 15px;}
 .myPhtoticketFlip .btn_area .btn-red i {position: absolute;left: 56px;top: 11px;}
@@ -402,7 +403,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더 - web */
-.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 23px 30px 0;}
+.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 33px 30px 0;}
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px;margin-right: 29px;}
 
 /* [S] 포토티켓만 한개만 보여질 경우  */
@@ -415,12 +416,15 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 포토티켓만 한개만 보여질 경우  */
 
 /* [S] CGV광주충정로 점일 경우  */
-.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 15px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {width: 246px; padding-top: 44px; height: 386px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {width: 225px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
 .myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -39px;left: -36px; }
+.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -35px;left: -36px; }
 .myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px; width: 260px; margin-right: 28px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -11px;}
 /* [E] CGV광주충정로 점일 경우  */
 
 /* [S] 플립슬라이더 팝업 헤더 */
@@ -480,7 +484,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .inputBox span:last-child {float: right;}
  .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:focus {outline: none}
- .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242);}
+ .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:#cbcbcb; border-radius: 8px; background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
  .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: 0;}
 /* [E] 기간검색 팝업 */
@@ -544,11 +548,16 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.photo_ticket .title_wrap .all .btn-all i {right: 13px;}
 }
 @media only screen and (min-height: 735px) {
-	.myPhtoticketFlip .swiper-container {height: 470px;margin-bottom: 49px !important;}
+	.myPhtoticketFlip .swiper-container {height: 470px;margin-bottom: 49px !important; padding-top: 80px;}
 	.myPhtoticketFlip .swiper-container .swiper-slide .flip-container { width: 260px;height: 405px;}
 	.myPhtoticketFlip .front {width: 262px;height: 398px;}
 	.myPhtoticketFlip .back {width: 262px;height: 398px;}
-	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -2px;}
+	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -25px;}
+
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {padding-top: 80px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {height: 340px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -35px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area {padding: 30px 15px 0;}
 }
 @media only screen and (min-width: 375px) {
 	.cgvMovieChartWrap .btnFirstMove {top: 185px;}

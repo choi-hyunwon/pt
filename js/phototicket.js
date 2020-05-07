@@ -65,6 +65,9 @@
                 centeredSlides: true,
             });
 
+            // 초기화 토스트 팝업
+            $('#filterToast').show().fadeOut(1000);
+
             // 플립 슬라이더 팝업
             // 버튼 클릭시 플립
             $('._flip').on('click', function () {
