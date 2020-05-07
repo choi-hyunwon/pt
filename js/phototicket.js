@@ -21,6 +21,20 @@
                 return false;
             });
 
+            // 제작완료 tab ---- 2020.05.07 추가
+            $('#madeDone').on('click', function () {
+                $('#printedDone').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            // 제작완료 tab ---- 2020.05.07 추가
+            $('#printedDone').on('click', function () {
+                $('#madeDone').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
             // click 이벤트
             $('._click').on('click', function () {
                 $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');

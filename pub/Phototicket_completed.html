@@ -158,15 +158,20 @@
      작성자 : 이주연
      내용 : header_box/nav 분리
     -->
+    <!--
+         날짜 : 2020.05.07
+         작성자 : 이주연
+         내용 : ul,li 태그로 변경
+        -->
     <div id="navMain" class="nav">
         <nav class="type_pt">
-            <div class="inner">
-                <a class="_tab" href="javascript:void(0);">제작완료(10)</a>
-                <a class="_tab active" href="javascript:void(0);">출력완료(3)</a>
+            <ul class="inner">
+                <li id="madeDone"><a href="javascript:void(0);">제작완료(10)</a></li>
+                <li id="printedDone" class="active"><a  href="javascript:void(0);">출력완료(3)</a></li>
                 <!--   [S] 기간 검색    -->
                 <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
                 <!--   [E] 기간 검색    -->
-            </div>
+            </ul>
         </nav>
     </div>
     <!-- [E] header_box/nav 분리 -->
@@ -281,13 +286,13 @@
 
     <!-- [S] 기간검색 팝업  -->
     <div class="popLayer">
-        <div class="popFogBg" style="opacity: 0.5; top: 0; display: block;"></div>
+        <div class="popFogBg"></div>
         <!--  [S]
             날짜 : 2020.05.06
             작성자 : 이주연
             내용 : 기간 검색 팝업 추가
         -->
-        <div class="popScheduleInfo" style="bottom: 0;">
+        <div class="popScheduleInfo">
             <div class="popLayerHeader">
                 <h1>조회기간</h1>
                 <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
@@ -314,7 +319,7 @@
                 <a class="stem_btn01" href="javascript:void(0);">적용</a>
             </div>
             <!-- [S] 토스트 팝업 추가 2020.05.07  -->
-            <div id="filterToast" class="popToast" data-comment="초기화 되었습니다."></div>
+            <div id="filterToast" class="popToast" data-comment="초기화되었습니다."></div>
             <!-- [E] 토스트 팝업 추가 2020.05.07  -->
         </div>
         <!--   [E] 기간검색 팝업   -->
