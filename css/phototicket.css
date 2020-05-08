@@ -320,7 +320,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .btn-heart-lg.active i {animation-duration: .5s;-webkit-animation-name: stroke2;animation-name: stroke2;}
 /* [E] 2020.04.28 하트 버튼 애니메이션 추가 */
 
-.photo_ticket .ptboast_wrap { position: relative; margin-bottom: 40px; padding-bottom: 40px;}
+.photo_ticket .ptboast_wrap { position: relative; margin-bottom: 40px; padding-bottom: 20px;}
 .photo_ticket .ptboast_wrap .title_wrap { margin-bottom: 0 }
 /* [E] 포토티켓 자랑하기  */
 
