@@ -4,22 +4,16 @@
     CGV 포토티켓
 */
 /* [S]포토티켓 공통 */
-.wrap {
-	padding-right:constant(safe-area-inset-right);
-	padding-left:constant(safe-area-inset-left);
-	padding-right:env(safe-area-inset-right);
-	padding-left:env(safe-area-inset-left);
-}
-.photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
-.photo_ticket .primary { color: #ff2f35;}
+.wrap {padding-right:constant(safe-area-inset-right);padding-left:constant(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-left:env(safe-area-inset-left);}
+.clearfix::after { content: ''; clear: both; display: block;}
+.primary { color: var(--watermelon);}
 .photo_ticket.container article::before {height: 7px;}
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
-.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@2x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
 .photo_ticket .btn-outline-red {display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px; background-color: #ffffff;}
-.photo_ticket .btn-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 44px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -.5px;}
+.photo_ticket .btn-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 44px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: 600; letter-spacing: -.5px;}
 .photo_ticket .btn-red.disabled { background-color: rgba(251,61,87,.5); border: 0;}
 .photo_ticket .btn-red.btn-lg { width: 165px; height: 50px; line-height: 48px;border-radius: 25px;font-size: 18px}
-.photo_ticket .btn-grey { display: inline-block; width: 135px; height: 44px; line-height: 42px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: bold; letter-spacing: -2px;border: 1px solid #bebebe}
+.photo_ticket .btn-grey { display: inline-block; width: 135px; height: 44px; line-height: 42px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: 600; letter-spacing: -.5px;border: 1px solid #bebebe}
 .photo_ticket .btn-badge-red { display: inline-block; text-align: center; width: 125px; height: 25px; border-radius:12px; line-height: 25px; font-size: 12px; background-color: #ffffff; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px;}
 .photo_ticket .btn-badge-grey { display: inline-block; text-align: center; width: 125px; height: 25px; border-radius:12px; font-weight: 500; line-height: 25px; font-size: 13px; background-color: #ffffff; border: 1px solid rgb(208,208,208); color: #222222; letter-spacing: -2px;}
 .photo_ticket .btn-badge-grey.active { display: inline-block; width: 125px; height: 25px; border-radius:12px; line-height: 23px; font-size: 12px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -2px;}
@@ -27,17 +21,19 @@
 .photo_ticket .btn-badge-grey .dday::after {content:''; position: absolute; height: 12px; border-right: 1px solid rgb(165,165,165); top: 2px; right: 4px;}
 .content_wrap.photo_ticket .cancel_area { padding-top: 2px !important; }
 .content_wrap.photo_ticket .cancel_area .btn-cancel { display: inline-block; padding-bottom: 2px; font-size: 13px; color: rgb(118,118,118);font-weight: 500; letter-spacing: -2px; border-bottom: 1px solid rgb(202,202,202)}
-.btn-ani {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;}
-.btn-ani:hover {color:#ffffff;}
-.btn-ani:focus {outline: none;}
-.btn-ani.btn-boast {background: var(--watermelon);color: #fff;-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
+.btn-boast:hover {color:#ffffff;}
+.btn-boast:focus {outline: none;}
+.btn-boast {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;background: var(--watermelon);-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
 .btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
+.btn-boast.disabled {background-color: rgba(251,67,87,.5)}
 .popToast {display: none;position: fixed;left: 50%; bottom: calc(245px + constant(safe-area-inset-bottom)); bottom: calc(245px + env(safe-area-inset-bottom));transform: translate(-50%, 0);z-index: 99999;}
 .popToast:before {content: attr(data-comment);display: inline-block;position: relative;left: -8%;padding: 13px 8% 14px;font-size: 14px;color: #fff;line-height: 17px;text-align: center;background: rgba(0,0,0,0.6);border-radius: 22px 22px;white-space: nowrap;}
+.loadingIng {overflow: hidden;position: fixed;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;z-index: 100;background: rgba(0,0,0,0.5);}
+.img_loading {width: 44px;max-width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
 
-/*  [S] btn-toggle   */
+	/*  [S] btn-toggle   */
 .btn-toggle {display:inline-block;position: absolute;left: -30px;top: -25px;}
 .btn-toggle .white-circle {stroke: #efefef; transform:scale(1)}
 .btn-toggle .outline {stroke: #efefef;transform:scale(1)}
@@ -46,7 +42,7 @@
 .btn-toggle.active .white-circle {animation: .15s ease-in .15s forwards circle; transform: none; transform-origin: center;}
 .btn-toggle.active .check {animation: .1s cubic-bezier(0.65, 0, 1, 1) .3s forwards check;stroke-dasharray: 0, 75px;stroke: #ffffff;}
 .btn-toggle.active .check-group {animation: .1s ease-in-out check-group;transform-origin: center;}
-/*  [E] btn-toggle   */
+	/*  [E] btn-toggle   */
 
 .btn-outline-red {position: relative}
 .btn-outline-red i {display: inline-block;position: absolute;left: 27px;top: 10px;}
@@ -55,25 +51,25 @@
 /* [E]포토티켓 공통 */
 
 /* [S]팝업 공통 */
-.photo_ticket .popup{position: fixed;left: 0;bottom: auto;width: 100%;padding-bottom: 100px;height: calc(100% - 100px);background: #fff;z-index: 9999;}
-.photo_ticket .popup_dim{display:none;position:fixed;overflow:hidden;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9000;opacity:0}
-.photo_ticket .popup_dim.active {display: block;opacity: 1;overflow: auto;}
-.photo_ticket .popup_dim:focus{outline:none}
-.photo_ticket .full_popup .popup{height:100%;padding-bottom:0}
-.photo_ticket .slide_popup .popup{height:auto}
-.photo_ticket .popup_header{position:relative;height:44px;line-height:44px;background:#fff}
-.photo_ticket .popup_header .btn_close{display:inline-block;position:absolute;left:12px;top:12px}
-.photo_ticket .popup_header h1{padding-left:48px;font-size:17px;line-height:45px;color:#030303;font-weight:bold;}
-.photo_ticket .popup_container{overflow:hidden;padding-bottom:45px;}
-.photo_ticket .btn_flexBox {display:flex;justify-content:space-between}
-.photo_ticket .btn_flexBox a {text-align:center}
-.photo_ticket .btn_flexBox a + a:after {content:"";position:absolute;top:50%;display:block;width:1px;height:18px;margin-top:-9px;background:#5a616b}
-.photo_ticket .com_btn_full_action {position:relative;display:block;width:100%;height:auto;min-height:46px;letter-spacing: -2px; padding:14px 0;background-color:#373e46;font-size:16px;color:#fff !important;text-align:center}
-.photo_ticket .popup {position: fixed;left: 0;bottom: 0;width: 100%;padding-bottom: 100px;height: calc(100% - 100px);background: #fff;z-index: 9999;}
-.photo_ticket .popAlert .popup{top:50%;left:50%;width:250px;height:auto;bottom:auto;margin:0;padding:0;transform:translate(-50% , -50%)}
-.photo_ticket .popAlert .popup_container {padding-bottom:0;}
-.photo_ticket .alert_txt {padding:24px 15px;font-size:13px;color: rgb(55,62,70); letter-spacing: -1px; line-height:19px;text-align:center; word-break: keep-all;}
-.photo_ticket .alert_txt span {letter-spacing: -1px}
+ .popup{position: fixed;left: 0;bottom: auto;width: 100%;padding-bottom: 100px;height: calc(100% - 100px);background: #fff;z-index: 9999;}
+ .popup_dim{display:none;position:fixed;overflow:hidden;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9000;opacity:0}
+ .popup_dim.active {display: block;opacity: 1;overflow: auto;}
+ .popup_dim:focus{outline:none}
+ .full_popup .popup{height:100%;padding-bottom:0}
+ .slide_popup .popup{height:auto}
+ .popup_header{position:relative;height:44px;line-height:44px;background:#fff}
+ .popup_header .btn_close{display:inline-block;position:absolute;left:12px;top:12px}
+ .popup_header h1{padding-left:48px;font-size:17px;line-height:45px;color:#030303;font-weight:bold;}
+ .popup_container{overflow:hidden;padding-bottom:45px;}
+ .btn_flexBox {display:flex;justify-content:space-between}
+ .btn_flexBox a {text-align:center}
+ .btn_flexBox a + a:after {content:"";position:absolute;top:50%;display:block;width:1px;height:18px;margin-top:-9px;background:#5a616b}
+ .com_btn_full_action {position:relative;display:block;width:100%;height:auto;min-height:46px;letter-spacing: -2px; padding:14px 0;background-color:#373e46;font-size:16px;color:#fff !important;text-align:center}
+ .popup {position: fixed;left: 0;bottom: 0;width: 100%;padding-bottom: 100px;height: calc(100% - 100px);background: #fff;z-index: 9999;}
+ .popAlert .popup{top:50%;left:50%;width:250px;height:auto;bottom:auto;margin:0;padding:0;transform:translate(-50% , -50%)}
+ .popAlert .popup_container {padding-bottom:0;}
+ .alert_txt {padding:24px 15px;font-size:13px;color: rgb(55,62,70); letter-spacing: -1px; line-height:19px;text-align:center; word-break: keep-all;}
+ .alert_txt span {letter-spacing: -1px}
 /* [E]팝업 공통 */
 
 /*  [S] sprite 이미지 */
@@ -107,6 +103,7 @@
 	.icon_rating.icon_all {background-image: url("../images/phototicket/common/ico_all@3x.png");}
 	.icon_rating.icon_notyet {background-image: url("../images/phototicket/common/ico_notyet@3x.png");}
 }
+.sprite.sprite-pt {content:''; background-image:url('../images/phototicket/common/phototicket@2x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
 .sprite.sprite-pt.sprite-cardNum {width: 27px;height: 20px;background-position: 0 -64px;}
 .sprite.sprite-pt.sprite-icBack {width: 30px;height: 30px;background-position: -10px 1px;}
 .sprite.sprite-pt.sprite-icBoastNor {width: 20px;height: 20px;background-position:-80px -59px;}
@@ -336,10 +333,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [S]포토티켓 플립 슬라이더 - app */
 .myPhtoticketFlip { padding-top: 11px; }
 .myPhtoticketFlip .title_area .title {display:block; font-size: 20px; line-height: 24px; font-weight: bold; letter-spacing: -2px; text-align: center; color: #222222; margin-bottom: 4px;padding: 0 30px;text-overflow: ellipsis;}
-.myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137);}
+.myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: #898989;}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
+.myPhtoticketFlip .title_area .tip {display: block;color: var(--watermelon);font-size: 12px;line-height: 15px;text-align: center;margin-bottom: 0;letter-spacing: -1.5px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 24px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 27px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000;}
@@ -358,7 +356,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .back .inner .title .rating {display: inline-block;position: absolute;right: 0;top: -7px; }
 .myPhtoticketFlip .back .inner .info { padding-left: 10px; margin-bottom: 20px;}
 .myPhtoticketFlip .back .inner .info li { position: relative; font-size: 10px; line-height: 12px; color: #555555; margin-bottom: 5px;}
-.myPhtoticketFlip .back .inner .info li::after { position: absolute; content: ''; background: #7a7a7a; width: 2px; height: 2px; border-radius: 50%; top: 4px; left: -5px;}
+.myPhtoticketFlip .back .inner .info li::after { position: absolute; content: ''; background: #7a7a7a; width: 2px; height: 2px; border-radius: 50%; top: 5px; left: -5px;}
 .myPhtoticketFlip .back .inner .info li:last-child  { margin-bottom: 0;}
 .myPhtoticketFlip .back .inner .info li:last-child  { margin-bottom: 0;}
 .myPhtoticketFlip .back .inner .info li.bar span:first-child { position: relative; padding-right: 8px; }
@@ -413,18 +411,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip.onlyPhoto .badge-area .btn-badge-grey{ text-align: center; width: 155px; }
 .myPhtoticketFlip.onlyPhoto .front { width: 268px; height: 413px; margin: 0 auto 5px; }
 /* [E] 포토티켓만 한개만 보여질 경우  */
-
-/* [S] CGV광주충정로 점일 경우  */
-.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {width: 246px; padding-top: 44px; height: 386px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {width: 225px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
-.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -35px;left: -36px; }
-.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px; width: 260px; margin-right: 28px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -11px;}
-/* [E] CGV광주충정로 점일 경우  */
 
 /* [S] 플립슬라이더 팝업 헤더 */
 .photo_ticket .pop_header {overflow: hidden; width: 100%;background-color: #fff;z-index: 2;height: auto;top:0;padding-top: 0;border: none;position: absolute; line-height: 50px;font-weight: 400;font-size: 14px;text-align: left;color: #373e46;vertical-align: middle;padding-left: 0;border-bottom: 0;}
@@ -482,7 +468,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .inputBox span:last-child {float: right;}
  .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:focus {outline: none}
- .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:#cbcbcb; border-radius: 8px; background: rgba(242,242,242,.8);}
+ .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color: #b3b3b3; border-radius: 8px; background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
  .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: 0;}
 /* [E] 기간검색 팝업 */
@@ -490,7 +476,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [S] 공유하기 팝업 */
  .popShare {position:fixed; left:0; bottom:-100%; width:100%; max-height:80vh; background-color:#fff; border-radius:20px 20px 0 0; z-index:9}
  .popShare .popLayerContainer { padding:20px 0;}
- .popShare .popLayerContainer .list  li {      position: relative;height: 40px;line-height: 40px;width: 100%;padding: 0 20px;}
+ .popShare .popLayerContainer .list  li { position: relative;height: 40px;line-height: 40px;width: 100%; padding: 0 20px;}
  .popShare .popLayerContainer .list  li a {padding: 5px 0;}
  .popShare .popLayerContainer .list  li i { position: absolute; top: 8px; display: inline-block;}
  .popShare .popLayerContainer .list  li .sns { display: inline-block; padding-left: 32px;}
@@ -530,8 +516,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .popOtherPhototicket .popLayerContainer .btn-red { padding-left: 22px;font-weight: 600;box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5) }
 .popOtherPhototicket .popLayerContainer .myPhtoticketFlip.onlyPhoto .front { width: 287px; height: 440px; }
 .popOtherPhototicket .popLayerContainer .myPhtoticketFlip .btn_area .inner > div { padding-top: 24px; }
-/* [E] 다른 사람이 자랑한 포토티켓 */
 
+/* [E] 다른 사람이 자랑한 포토티켓 */
 @media only screen and (max-width: 350px){
 	.photo_ticket .card_wrap .movie_info .info .title { font-size: 10px }
 	.photo_ticket .card_wrap .movie_info .info .date { font-size: 10px }
@@ -545,17 +531,30 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.photo_ticket .title_wrap .all .btn-all { padding: 15px 22px 15px 0;; }
 	.photo_ticket .title_wrap .all .btn-all i {right: 13px;}
 }
+@media only screen and (max-height: 735px) {
+	/* [S] CGV광주충정로 점일 경우  */
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {width: 246px; padding-top: 47px; height: 386px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {width: 225px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
+	.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -35px;left: -36px; }
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px; width: 260px; margin-right: 28px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -11px;}
+	/* [E] CGV광주충정로 점일 경우  */
+}
 @media only screen and (min-height: 735px) {
 	.myPhtoticketFlip .swiper-container {height: 470px;margin-bottom: 49px !important; padding-top: 80px;}
 	.myPhtoticketFlip .swiper-container .swiper-slide .flip-container { width: 260px;height: 405px;}
 	.myPhtoticketFlip .front {width: 262px;height: 398px;}
 	.myPhtoticketFlip .back {width: 262px;height: 398px;}
 	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -25px;}
-
-	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {padding-top: 80px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {height: 340px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -35px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area {padding: 30px 15px 0;}
+	.myPhtoticketFlip .btn_area {padding: 0 15px;}
+	/*.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {padding-top: 80px;}*/
+	/*.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {height: 340px;}*/
+	/*.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -35px;}*/
+	/*.myPhtoticketFlip.myPhtoticketFlip-small .btn_area {padding: 30px 15px 0;}*/
 }
 @media only screen and (min-width: 375px) {
 	.cgvMovieChartWrap .btnFirstMove {top: 185px;}

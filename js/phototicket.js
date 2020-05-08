@@ -40,9 +40,55 @@
                 $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
             });
 
-            // 자랑하기 버튼
+            // 자랑하기 버튼 --- 2020.05.07 수정
             $('._btnBoast').on('click', function () {
-                $(this).hasClass('active') ? $(this).removeClass('active').text('자랑하기') : $(this).text('자랑취소').addClass('active');
+                if($(this).hasClass('active')) {
+                    $(this).removeClass('active').text('자랑하기');
+                }
+                else {
+                    $(this).text('자랑취소').addClass('active');
+                    // $('#pop_alert').addClass('active');
+                }
+            });
+
+            // 자랑하기 버튼 클릭시 alert 팝업
+            $('._alertBoast').on('click',function () {
+                $('#pop_alert').addClass('active');
+            })
+
+            // 취소 선택시 팝업 창 닫기 --- 2020.05.08 추가
+            function uploadCancel (){
+                $('#pop_alert').removeClass('active');
+                $('#pop_alert2').removeClass('active');
+                $('#pop_alert3').removeClass('active');
+                $('#pop_alert4').removeClass('active');
+            }
+
+            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            $('._confirmBtn').on('click',function () {
+                $('#pop_alert').removeClass('active');
+                $('#pop_alert2').addClass('active');
+            });
+
+            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            $('._cancelBtn').on('click',function () {
+                uploadCancel();
+            });
+
+            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            $('._cancelPay').on('click',function () {
+                $('#pop_alert3').addClass('active');
+            });
+
+            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            $('._confirmPay').on('click',function () {
+                $('#pop_alert4').addClass('active');
+                $('#pop_alert3').removeClass('active');
+            });
+
+            // 삭제하기 버튼 클릭 이벤트 --- 2020.05.08 추가
+            $('._deleteBtn').on('click',function () {
+                $('#pop_alert3').addClass('active');
             });
 
             // 조회기간 클릭 이벤트 다중처리 X
@@ -56,6 +102,7 @@
                     $('._inputDate').attr( 'disabled', true );
                 }
             });
+
             // 조회기간 활성화/비활성화
             $('._direct').on('click', function () {
                 if($(this).hasClass('active')){
@@ -79,9 +126,14 @@
                 centeredSlides: true,
             });
 
-            // 초기화 토스트 팝업
+            // 초기화 토스트 팝업 --- 2020.05.07
             $('._reset').on('click',function () {
                 $('#filterToast').show().fadeOut(1000);
+            })
+
+            // 초기화 토스트 팝업 --- 2020.05.07
+            $('._cancelPop').on('click',function () {
+                $('#cancelToast').show().fadeOut(1000);
             })
 
             // 플립 슬라이더 팝업
@@ -89,6 +141,7 @@
             $('._flip').on('click', function () {
                 $(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
             });
+
 
             //사이트맵
             window.siteMapFn = siteMapFn;
@@ -105,8 +158,8 @@
                 dimed();
             }
 
+            // 체크 박스 버튼 클릭 이벤트
             $('.btn-toggle').on('click', function () {
-
                 if($(this).hasClass('active')) {
                     $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
                     $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
@@ -136,6 +189,9 @@
 
             function alertMessage() {
                 jQuery('#pop_alert').show();
+                jQuery('#pop_alert2').show();
+                jQuery('#pop_alert3').show();
+                jQuery('#pop_alert4').show();
                 dimed();
             }
 
@@ -496,7 +552,6 @@
         var $popLayer = $('.' + _popLayer);
         var $fogBg = $('.' + _fogBg);
         var _isFogBg = $fogBg.is(':visible');
-
 
         $btn.off('click');
         $btn.on({

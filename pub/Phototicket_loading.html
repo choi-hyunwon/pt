@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+<!--
+  날짜 : 2020.05.08
+  작성자 : 이주연
+  내용 : 로딩 페이지 추가
+-->
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -301,35 +306,10 @@
         <!-- [E] 플립 슬라이더 -->
     </section>
     <!-- [E] 포토티켓 제작 완료 -->
-
-    <!-- [S] 2020.05.06 공유하기 팝업 추가  -->
-    <div class="popLayer">
-        <div class="popFogBg"></div>
-        <!-- [S] 공유하기 팝업 -->
-        <div class="popShare">
-            <div class="popLayerHeader">
-                <h1>공유하기</h1>
-                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
-            </div>
-            <div class="popLayerContainer">
-                <ul class="list">
-                    <li><a href="#"><i class="sprite sprite-pt sprite-kakao"></i><span class="sns">카카오톡</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- [E] 공유하기 팝업  -->
 </div>
-<!--
-    2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
--->
-<!--
-    2020.04.20
-    작성자 : 이주연
-    내용 : <script> var screenId = "PT003";</script> 추가
--->
+<div class="loadingIng">
+    <img src="../images/common/loading.gif" alt="로딩중" class="img_loading">
+</div>
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
 <script>var screenId = "PT003";</script>
