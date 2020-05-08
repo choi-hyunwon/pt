@@ -141,12 +141,12 @@
 
             // 초기화 토스트 팝업 --- 2020.05.07
             $('._reset').on('click',function () {
-                $('#filterToast').show().fadeOut(1000);
+                $('#filterToast').show().fadeOut(3000);
             })
 
             // 초기화 토스트 팝업 --- 2020.05.07
             $('._cancelPop').on('click',function () {
-                $('#cancelToast').show().fadeOut(1000);
+                $('#cancelToast').show().fadeOut(3000);
             })
 
             // 플립 슬라이더 팝업
