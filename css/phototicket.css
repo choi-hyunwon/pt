@@ -427,7 +427,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .badge.badge_grey .dday::after {border-color:rgba(164,164,164,.5)}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);color:#ffffff}
 .photo_ticket .pop_header .badge .dday {position: relative;font-size: 15px;font-weight: bold;letter-spacing: -1.1px;padding-right: 17px;}
-.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 10px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 4px;}
+.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 10px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 5px;}
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}
