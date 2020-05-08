@@ -163,7 +163,7 @@ nav.type_pt .icon_search i {display: inline-block; position: absolute;right: 51p
 
 #navMain.nav {position: relative; height:47px; top: 44px; padding: 0 20px; z-index: 7}
 #navMain.nav.active {content: none;}
-#navMain.nav::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: 0; border-bottom: 1px solid #dddddd; z-index: 2;}
+/*#navMain.nav::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: 0; border-bottom: 1px solid #dddddd; z-index: 2;}*/
 #navMain.nav::before {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -6px; border-bottom: 7px solid #f2f2f2; z-index: 1;}
 
 nav.type_pt2 {position: fixed; height: 47px; padding: 0 20px;z-index: 7;left: 0;top: 44px;}
