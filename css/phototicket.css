@@ -290,12 +290,12 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .card_wrap.single .movie_info {padding: 22px 19px 0 106px;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
-.photo_ticket .imgcard_wrap { padding: 9px 15px 0;}
-.photo_ticket .ptboast_wrap .row { margin-bottom: 25px;}
+.photo_ticket .imgcard_wrap { padding: 9px 15px 0; overflow: hidden;}
 .photo_ticket .ptboast_wrap .row::after { content: ''; clear: both; display: block;}
-.photo_ticket .ptboast_wrap .row .col { position: relative; float: left; width: 50%; padding-right: 8px; }
-.photo_ticket .ptboast_wrap .row .col:last-child { padding-right: 0; padding-left: 8px;}
-.photo_ticket .ptboast_wrap .row .col:last-child .btn_like { right: -8px; }
+.photo_ticket .ptboast_wrap .col { position: relative; float: left; width: calc(50% - 4px); height: auto; margin-right: 8px; margin-bottom: 25px; }
+.photo_ticket .ptboast_wrap .col:nth-child(2n) { margin-right: 0 }
+/*.photo_ticket .ptboast_wrap .col:last-child { padding-right: 0; padding-left: 8px;}*/
+/*.photo_ticket .ptboast_wrap .col:last-child .btn_like { right: -8px; }*/
 .photo_ticket .imgcard_wrap .card { position: relative; display: block; border-radius: 10px; box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.08); background-color: #ffffff; padding: 10px 10px 8px 10px; cursor: pointer}
 .photo_ticket .imgcard_wrap .card .img { display: block; border-radius: 10px; }
 .photo_ticket .imgcard_wrap .card .img img { width: 100%;}
