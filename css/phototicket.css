@@ -286,6 +286,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
    - 뱃지가 없을 경우
    - 상단 nav에 border가 있을 경우
 */
+.photo_ticket .card_wrap.single {padding: 27px 15px 0;}
 .photo_ticket .card_wrap.single .movie_info {padding: 22px 19px 0 106px;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
