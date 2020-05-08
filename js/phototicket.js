@@ -158,14 +158,17 @@
                 dimed();
             }
 
-            // 체크 박스 버튼 클릭 이벤트
+            // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.08
             $('.btn-toggle').on('click', function () {
                 if($(this).hasClass('active')) {
                     $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
                     $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
+                    $('.btn-boast').addClass('disabled');
+
                 } else {
                     $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
                     $(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                    $('.btn-boast').removeClass('disabled');
                 }
             });
 

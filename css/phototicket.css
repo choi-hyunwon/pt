@@ -26,6 +26,7 @@
 .btn-boast {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;background: var(--watermelon);-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
 .btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
+.btn-boast.active.disabled {cursor: pointer; background-color: #ffffff}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
 .btn-boast.disabled {background-color: rgba(251,67,87,.5)}
 .popToast {display: none;position: fixed;left: 50%; bottom: calc(245px + constant(safe-area-inset-bottom)); bottom: calc(245px + env(safe-area-inset-bottom));transform: translate(-50%, 0);z-index: 99999;}
@@ -249,6 +250,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /*   내 포토티켓 - 카드 컴포넌트(빈 카드 화면 일 경우)   */
 .content_wrap.photo_ticket .mypt_wrap.none .title_wrap { margin-bottom: 20px;}
 .content_wrap.photo_ticket .mypt_wrap.none .card_wrap p {text-align: center; color: #101010; font-size: 15px; line-height: 19px; margin-bottom: 12px;}
+.content_wrap.photo_ticket .mypt_wrap.none .card_wrap p.pt {padding-top: 200px}
 .content_wrap.photo_ticket .mypt_wrap.none .card_wrap .btn_grey {width: 165px; margin-bottom: 20px; height: 36px; line-height: 34px;}
 
 /*  포토티켓 자랑하기 - (빈 카드 화면 일 경우)   */
