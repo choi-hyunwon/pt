@@ -50,13 +50,26 @@
                     // $('#pop_alert').addClass('active');
                 }
             });
+            // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.08
+            $('.btn-toggle').on('click', function () {
+                if($(this).hasClass('active')) {
+                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                    $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
+                    $('.btn-boast').addClass('disabled');
+
+                } else {
+                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                    $(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                    $('.btn-boast').removeClass('disabled');
+                }
+            });
 
             // 자랑하기 버튼 클릭시 alert 팝업
             $('._alertBoast').on('click',function () {
                 $('#pop_alert').addClass('active');
             })
 
-            // 취소 선택시 팝업 창 닫기 --- 2020.05.08 추가
+            // 취소 선택시 팝업 창 닫기 함수 추가--- 2020.05.08
             function uploadCancel (){
                 $('#pop_alert').removeClass('active');
                 $('#pop_alert2').removeClass('active');
@@ -158,19 +171,7 @@
                 dimed();
             }
 
-            // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.08
-            $('.btn-toggle').on('click', function () {
-                if($(this).hasClass('active')) {
-                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
-                    $('.btn-boast').addClass('disabled');
 
-                } else {
-                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    $(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                    $('.btn-boast').removeClass('disabled');
-                }
-            });
 
             // 공유하기 팝업
             popLayerShowHide("icon_share", "popShare", "popFogBg");
