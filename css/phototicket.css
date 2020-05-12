@@ -423,7 +423,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .badge.badge_grey .dday::after {border-color:rgba(164,164,164,.5)}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);color:#ffffff}
 .photo_ticket .pop_header .badge .dday {position: relative;font-size: 15px;font-weight: bold;letter-spacing: -1.1px;padding-right: 17px;}
-.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 10px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 5px;}
+.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 11px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 4px;}
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}
@@ -537,9 +537,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
-	.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -35px;left: -36px; }
-	/*.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px; width: 260px;;}*/
+	.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -11px;}
 	/* [E] CGV광주충정로 점일 경우  */
 }
