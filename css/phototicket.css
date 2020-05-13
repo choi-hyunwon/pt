@@ -366,11 +366,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 
 /* [S] 플립슬라이더 뒷면 text가 올 경우 */
 .myPhtoticketFlip .back.text .inner {padding: 38px 20px 20px 20px;}
-.myPhtoticketFlip .back.text .inner .title { font-size: 12px; color: #000000; line-height: 15px; border-bottom: 1px solid #000000; margin-bottom: 15px;}
+.myPhtoticketFlip .back.text .inner .title { font-size: 12px; color: #000000; line-height: 15px; border-bottom: 1px solid #000000; margin-bottom: 15px;padding-bottom: 2px;}
 .myPhtoticketFlip .back.text .inner .title_lg { font-size: 14px; color: #000000; line-height: 17px; margin-bottom: 2px; font-weight: bold}
 .myPhtoticketFlip .back.text .inner .title_sm { font-size: 11px; color: #000000; line-height: 17px; margin-bottom: 16px;}
 .myPhtoticketFlip .back.text .inner .title .rating {display: inline-block;position: absolute; width: 16px; height:16px;right: 20px; top: 35px;color: #ffffff; background-color: #000000; border-radius: 50%; text-align: center;line-height: 16px; font-size: 10px;}
-.myPhtoticketFlip .back.text .inner .info { padding-left: 10px; margin-bottom: 20px;}
+.myPhtoticketFlip .back.text .inner .info { padding-left: 10px; margin-bottom: 18px;}
 .myPhtoticketFlip .back.text .inner .info li { position: relative; font-size: 10px; line-height: 12px; color: #000000; margin-bottom: 5px;}
 .myPhtoticketFlip .back.text .inner .info li::after { position: absolute; content: ''; background: #000000; width: 2px; height: 2px; border-radius: 50%; top: 5px; left: -5px;}
 .myPhtoticketFlip .back.text .inner .info li:last-child  { margin-bottom: 0;}
@@ -379,7 +379,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .back.text .inner .info li.bar span:first-child::after { position: absolute; content: ''; border-right: 1px solid #555555; height: 8px; top:1px; right: 4px; }
 .myPhtoticketFlip .back.text .inner .bg_grey {width: 100%; height: 90px; background: #ffffff; border: 1px solid #000000; border-radius: 6px; padding: 16px 0 0 0; margin-bottom: 14px;}
 .myPhtoticketFlip .back.text .inner .bg_grey .number {text-align: center; font-size: 12px; font-weight: bold; line-height: 15px; margin-bottom: 4px; }
-.myPhtoticketFlip .back.text .inner .bg_grey .number span {font-size: 11px; letter-spacing: -1.5px}
+.myPhtoticketFlip .back.text .inner .bg_grey .number span {font-size: 11px; letter-spacing: 0}
 .myPhtoticketFlip .back.text .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
 .myPhtoticketFlip .back.text .inner .sign .lg {text-align: center; font-size: 13px; font-weight: bold; line-height: 16px; letter-spacing: -.54px;}
 .myPhtoticketFlip .back.text .inner .sign .sm {text-align: center; color:#000000; font-size: 10px; line-height: 11px;}

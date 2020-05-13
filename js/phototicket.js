@@ -1,243 +1,254 @@
 // 포토티켓
 // 작성일 : 2020.04.20
 // 작성자 : 이주연
-var front = {
-    event : {},
-    slider : {},
-    page : {},
-    fn : {},
-};
+var front = (function () {
 
-(function (jQuery) {
-    // console.log(jQuery)
+    var event = {};
+    var slider = {};
+    var page = {};
+    
+    // 이벤트
+    event.btnHeartClick = function () {
+        jQuery('._btnHeart').on('click', function () {
+            jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
+        });
+    }
+    event._commonHandlers = function () {
 
-    front.event._commonHandlers = {
-        load: function () {
-            /**
-             * 날짜 : 2020.05.11
-             * 내용 : ajax 호출 다음 함수 실행
-             * - 이슈 : 기존 함수 실행 후, ajax 호출이 되어 슬라이더 실행이 안됨
-             * - 사용 방법 : ajax 호출 후, 함수 실행
-             */
-            front.slider.eventSlider();
+        // header 클릭 이벤트
+        jQuery('#navMain ._tab').on('click', function () {
+            jQuery('._tab').removeClass('active');
+            jQuery(this).addClass('active');
+            return false;
+        });
 
-            /**
-             * 날짜 : 2020.05.12
-             * 수정 사항 : ajax 호출 다음 함수 실행해야함
-             * heart 클릭 이벤트 함수 추가
-             */
-            front.event.btnHeartClick();
+        // 제작완료 tab ---- 2020.05.07 추가
+        jQuery('#madeDone').on('click', function () {
+            jQuery('#printedDone').removeClass('active');
+            jQuery(this).addClass('active');
+            return false;
+        });
 
-            jQuery('.btnTop').on({
-                click: function (e) {
-                    e.preventDefault();
-                    jQuery('html').stop().animate({scrollTop: '0'});
-                }
-            });
+        // 제작완료 tab ---- 2020.05.07 추가
+        jQuery('#printedDone').on('click', function () {
+            jQuery('#madeDone').removeClass('active');
+            jQuery(this).addClass('active');
+            return false;
+        });
 
-            // header 클릭 이벤트
-            jQuery('#navMain ._tab').on('click', function () {
-                jQuery('._tab').removeClass('active');
-                jQuery(this).addClass('active');
-                return false;
-            });
+        // click 이벤트
+        jQuery('._click').on('click', function () {
+            jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
+        });
 
-            // 제작완료 tab ---- 2020.05.07 추가
-            jQuery('#madeDone').on('click', function () {
-                jQuery('#printedDone').removeClass('active');
-                jQuery(this).addClass('active');
-                return false;
-            });
-
-            // 제작완료 tab ---- 2020.05.07 추가
-            jQuery('#printedDone').on('click', function () {
-                jQuery('#madeDone').removeClass('active');
-                jQuery(this).addClass('active');
-                return false;
-            });
-
-            // click 이벤트
-            jQuery('._click').on('click', function () {
-                jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
-            });
-
-            // 자랑하기 버튼 --- 2020.05.07 수정
-            jQuery('._btnBoast').on('click', function () {
-                if(jQuery(this).hasClass('active')) {
-                    jQuery(this).removeClass('active').text('자랑하기');
-                }
-                else {
-                    jQuery(this).text('자랑취소').addClass('active');
-                    // jQuery('#pop_alert').addClass('active');
-                }
-            });
-            // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.11
-            jQuery('.myPhtoticketFlip .front .btn-toggle').first().addClass('active');
-            jQuery('.myPhtoticketFlip .back .btn-toggle').first().addClass('active');
-
-            jQuery('.btn-toggle').on('click', function () {
-                if(jQuery(this).hasClass('active')) {
-                    jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                    // jQuery('.btn-boast').addClass('disabled');
-
-                } else {
-                    jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                    // jQuery('.btn-boast').removeClass('disabled');
-                }
-            });
-
-            // 자랑하기 버튼 클릭시 alert 팝업
-            jQuery('._alertBoast').on('click',function () {
-                jQuery('#pop_alert').addClass('active');
-            })
-
-
-            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
-            jQuery('._confirmBtn').on('click',function () {
-                jQuery('#pop_alert').removeClass('active');
-                jQuery('#pop_alert2').addClass('active');
-            });
-
-            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
-            jQuery('._cancelBtn').on('click',function () {
-                jQuery('#pop_alert').removeClass('active');
-                jQuery('#pop_alert2').removeClass('active');
-                jQuery('#pop_alert3').removeClass('active');
-                jQuery('#pop_alert4').removeClass('active');
-            });
-
-            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
-            jQuery('._cancelPay').on('click',function () {
-                jQuery('#pop_alert3').addClass('active');
-            });
-
-            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
-            jQuery('._confirmPay').on('click',function () {
-                jQuery('#pop_alert4').addClass('active');
-                jQuery('#pop_alert3').removeClass('active');
-            });
-
-            // 삭제하기 버튼 클릭 이벤트 --- 2020.05.08 추가
-            jQuery('._deleteBtn').on('click',function () {
-                jQuery('#pop_alert3').addClass('active');
-            });
-
-            // 조회기간 클릭 이벤트 다중처리 X
-            jQuery('._dayClick').on('click', function () {
-                if(jQuery(this).hasClass('active')){
-                    jQuery(this).siblings().removeClass('active');
-                    jQuery('._inputDate').attr( 'disabled', true );
-                }
-                else {
-                    jQuery(this).addClass('active').siblings().removeClass('active');
-                    jQuery('._inputDate').attr( 'disabled', true );
-                }
-            });
-
-            // 조회기간 활성화/비활성화
-            jQuery('._direct').on('click', function () {
-                if(jQuery(this).hasClass('active')){
-                    jQuery(this).siblings().removeClass('active');
-                    jQuery('._inputDate').attr( 'disabled', false );
-                }
-                else {
-                    jQuery(this).addClass('active').siblings().removeClass('active');
-                    jQuery('._inputDate').attr( 'disabled', false );
-                }
-            });
-
-            // 초기화 토스트 팝업 --- 2020.05.07
-            jQuery('._reset').on('click',function () {
-                jQuery('#filterToast').show().fadeOut(1500);
-            })
-
-            // 초기화 토스트 팝업 --- 2020.05.07
-            jQuery('._cancelPop').on('click',function () {
-                jQuery('#cancelToast').show().fadeOut(1500);
-            })
-
-            // 플립 슬라이더 팝업
-            // 버튼 클릭시 플립
-            jQuery('._flip').on('click', function () {
-                jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
-            });
-
-
-            //사이트맵
-            window.siteMapFn = siteMapFn;
-
-            function siteMapFn() {
-                jQuery('#headerTitle').siblings('#siteMap').show();
-                dimed();
+        // 자랑하기 버튼 --- 2020.05.07 수정
+        jQuery('._btnBoast').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).removeClass('active').text('자랑하기');
+            } else {
+                jQuery(this).text('자랑취소').addClass('active');
+                // jQuery('#pop_alert').addClass('active');
             }
+        });
+        // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.11
+        jQuery('.myPhtoticketFlip .front .btn-toggle').first().addClass('active');
+        jQuery('.myPhtoticketFlip .back .btn-toggle').first().addClass('active');
 
-            window.close_sitemapFn = close_sitemapFn;
+        jQuery('.btn-toggle').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                // jQuery('.btn-boast').addClass('disabled');
 
-            function close_sitemapFn() {
-                jQuery('#headerTitle').siblings('#siteMap').hide();
-                dimed();
+            } else {
+                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                // jQuery('.btn-boast').removeClass('disabled');
             }
+        });
 
-            // 공유하기 팝업
-            popLayerShowHide("icon_share", "popShare", "popFogBg");
+        // 자랑하기 버튼 클릭시 alert 팝업
+        jQuery('._alertBoast').on('click', function () {
+            jQuery('#pop_alert').addClass('active');
+        })
 
-            // 기간검색 팝업
-            popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
-            jQuery('.popFogBg').on({
-                click: function (e) {
-                    var jQueryfogBg = jQuery(e.target);
-                    var jQuerypopLayer;
-                    jQueryfogBg.css({'display': 'none'});
-                    popLayerBgShowHide(jQuery('popFogBg'), jQuerypopLayer, true);
-                    jQuery('body').off('scroll touchmove mousewheel');
-                }
-            });
+        // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+        jQuery('._confirmBtn').on('click', function () {
+            jQuery('#pop_alert').removeClass('active');
+            jQuery('#pop_alert2').addClass('active');
+        });
 
-            // alert
-            window.alertMessage = alertMessage;
+        // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+        jQuery('._cancelBtn').on('click', function () {
+            jQuery('#pop_alert').removeClass('active');
+            jQuery('#pop_alert2').removeClass('active');
+            jQuery('#pop_alert3').removeClass('active');
+            jQuery('#pop_alert4').removeClass('active');
+        });
 
-            function alertMessage() {
-                jQuery('#pop_alert').show();
-                jQuery('#pop_alert2').show();
-                jQuery('#pop_alert3').show();
-                jQuery('#pop_alert4').show();
-                dimed();
+        // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+        jQuery('._cancelPay').on('click', function () {
+            jQuery('#pop_alert3').addClass('active');
+        });
+
+        // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+        jQuery('._confirmPay').on('click', function () {
+            jQuery('#pop_alert4').addClass('active');
+            jQuery('#pop_alert3').removeClass('active');
+        });
+
+        // 삭제하기 버튼 클릭 이벤트 --- 2020.05.08 추가
+        jQuery('._deleteBtn').on('click', function () {
+            jQuery('#pop_alert3').addClass('active');
+        });
+
+        // 조회기간 클릭 이벤트 다중처리 X
+        jQuery('._dayClick').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', true);
+            } else {
+                jQuery(this).addClass('active').siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', true);
             }
+        });
 
-            // pop_alert, 헤더 z-index 조정
-            jQuery('#pop_alert').hasClass('active') ? jQuery('#header_box').css('z-index', '0') : ''
-
-            // 사이트맵 위치 조정
-            if (jQuery('#header_box').hasClass('double')) {
-                jQuery('.allview_wrap .allview_box_wrap').css('top', '-44px');
-                jQuery('.photo_ticket .ptboast_wrap').css('padding-top', '56px');
+        // 조회기간 활성화/비활성화
+        jQuery('._direct').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', false);
+            } else {
+                jQuery(this).addClass('active').siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', false);
             }
+        });
 
-            //팝업 dim
-            window.dimed = dimed;
+        // 초기화 토스트 팝업 --- 2020.05.07
+        jQuery('._reset').on('click', function () {
+            jQuery('#filterToast').show().fadeOut(1500);
+        })
 
-            function dimed() {
-                if (jQuery('#fogbg').hasClass('active')) {
-                    jQuery('#fogbg').hide();
-                } else {
-                    jQuery('#fogbg').show();
-                }
+        // 초기화 토스트 팝업 --- 2020.05.07
+        jQuery('._cancelPop').on('click', function () {
+            jQuery('#cancelToast').show().fadeOut(1500);
+        })
+
+        // 플립 슬라이더 - 버튼 클릭시 플립
+        jQuery('._flip').on('click', function () {
+            jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
+        });
+
+        //사이트맵
+        window.siteMapFn = siteMapFn;
+
+        function siteMapFn() {
+            jQuery('#headerTitle').siblings('#siteMap').show();
+            dimed();
+        }
+
+        window.close_sitemapFn = close_sitemapFn;
+
+        function close_sitemapFn() {
+            jQuery('#headerTitle').siblings('#siteMap').hide();
+            dimed();
+        }
+
+        // 공유하기 팝업
+        popLayerShowHide("icon_share", "popShare", "popFogBg");
+
+        // 기간검색 팝업
+        popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
+        jQuery('.popFogBg').on({
+            click: function (e) {
+                var jQueryfogBg = jQuery(e.target);
+                var jQuerypopLayer;
+                jQueryfogBg.css({'display': 'none'});
+                popLayerBgShowHide(jQuery('popFogBg'), jQuerypopLayer, true);
+                jQuery('body').off('scroll touchmove mousewheel');
+            }
+        });
+
+        // alert
+        window.alertMessage = alertMessage;
+
+        function alertMessage() {
+            jQuery('#pop_alert').show();
+            jQuery('#pop_alert2').show();
+            jQuery('#pop_alert3').show();
+            jQuery('#pop_alert4').show();
+            dimed();
+        }
+
+        // pop_alert, 헤더 z-index 조정
+        jQuery('#pop_alert').hasClass('active') ? jQuery('#header_box').css('z-index', '0') : ''
+
+        // 사이트맵 위치 조정
+        if (jQuery('#header_box').hasClass('double')) {
+            jQuery('.allview_wrap .allview_box_wrap').css('top', '-44px');
+            jQuery('.photo_ticket .ptboast_wrap').css('padding-top', '56px');
+        }
+
+        //팝업 dim
+        window.dimed = dimed;
+
+        function dimed() {
+            if (jQuery('#fogbg').hasClass('active')) {
+                jQuery('#fogbg').hide();
+            } else {
+                jQuery('#fogbg').show();
             }
         }
     }
 
-    front.page._PT001 = {
-        load: function () {
-            front.slider.photoSlider();
-        },
+    // 메인 슬라이더
+    slider.photoSlider = function () {
+        if (jQuery('.slider_wrap .swiper-container').length > 0) {
+            slider.photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
+                speed: 400,
+                width: '260',
+                autoPlay: true,
+                autoHeight: false,
+                direction: 'horizontal',
+                loop: false,
+                slidesPerView: 1,
+                centeredSlides: true,
+                breakpointsInverse: false,
+                roundLengths: false,
+                breakpoints: {
+                    320: {
+                        spaceBetween: 20,
+                    },
+                    360: {
+                        spaceBetween: 40
+                    }
+                },
+                on: {
+                    init: function () {
+                    },
+                }
+            });
+            slider.photoTicketSlider.translateTo(0, 1, true);
+        }
+    }
+    // 이벤트 슬라이더 - 메인 공통
+    slider.eventSlider = function () {
+        if (jQuery('.alert_wrap .swiper-container').length > 0){
+            slider.photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
+                speed: 400,
+                autoPlay: true,
+                direction: 'horizontal',
+                loop: jQuery(".alert_wrap .swiper-slide").length > 1,
+                spaceBetween: 40,
+                slidesPerView: 1,
+                centeredSlides: true,
+            });
+        }
     }
 
-    // 상세 페이지 (내 포토티켓) - 헤더에 nav가 있는 경우
-    front.page._PT002 = {
-        load: function () {
-            // nav
+    // nav
+    page.navSticky = function () {
+        if ((jQuery('.nav .type_pt') || jQuery('.nav .type_pt2')).length > 0) {
             var jbOffset = jQuery('.nav').offset();
             jQuery(window).scroll(function () {
                 if (jQuery(document).scrollTop() > jbOffset.top) {
@@ -246,145 +257,12 @@ var front = {
                     jQuery('.nav').removeClass('active');
                 }
             });
-        },
-    }
-
-    // 2020.05.11 플립슬라이더 swipe 기능 제거
-    // front.page._PT003 = {
-    //     load: function () {
-    //         front.slider.flipSlider();
-    //     },
-    // }
-
-    jQuery(this).on(front.event._commonHandlers);
-
-    switch (this.screenId) {
-        case 'PT001':
-            jQuery(this).on(front.page._PT001);
-            break; // 메인 - 플립 슬라이더
-        case 'PT002':
-            jQuery(this).on(front.page._PT002);
-            break; // 상세 페이지 (내 포토티켓) - 헤더에 nav가 있는 경우
-        // case 'PT003':
-        //     jQuery(this).on(front.page._PT003);
-        //     break; // 플립 슬라이더(normal)
-        default:
-            break;
-    }
-
-    /**
-     * SLIDER
-     */
-
-    // 메인 슬라이더 - 메인 공통
-    front.slider.photoSlider = function () {
-        front.slider.photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
-            speed: 400,
-            width : '260',
-            autoPlay: true,
-            autoHeight: false,
-            direction: 'horizontal',
-            loop: false,
-            slidesPerView: 1,
-            centeredSlides: true,
-            breakpointsInverse: false,
-            roundLengths: false,
-            breakpoints: {
-                320: {
-                    spaceBetween: 20,
-                },
-                360: {
-                    spaceBetween: 40
-                }
-            },
-            on: {
-                init: function () {
-                },
-            }
-        });
-        front.slider.photoTicketSlider.translateTo(0, 1, true);
-    }
-
-    // 이벤트 슬라이더 - 메인 공통
-    front.slider.eventSlider = function () {
-        front.slider.photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
-            speed: 400,
-            autoPlay: true,
-            direction: 'horizontal',
-            loop: jQuery(".alert_wrap .swiper-slide").length > 1,
-            spaceBetween: 40,
-            slidesPerView: 1,
-            centeredSlides: true,
-        });
-    }
-
-    // 플립 슬라이더
-    front.slider.flipSlider = function () {
-        front.slider.flipPhotoTicketSlider = new Swiper('.swiper-container', {
-            speed: 400,
-            autoHeight: false,
-            direction: 'horizontal',
-            loop: false,
-            spaceBetween: 28,
-            slidesPerView: 1,
-            centeredSlides: true,
-            breakpointsInverse: false,
-            roundLengths: false,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            on: {
-                init: function () {
-                },
-            }
-        });
-        front.slider.flipPhotoTicketSlider.translateTo(0, 500, true, true);
-    }
-
-    // console.log(this);
-
-    // 좋아요 버튼 클릭 이벤트--- 2020.05.12 추가
-    front.event.btnHeartClick = function () {
-        jQuery('._btnHeart').on('click', function () {
-            jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
-        });
-    }
-
-    /**
-     * m.cgv 가져온 함수
-     */
-    this.setScrollWidth = function (_target, _btnL) {
-        try {
-            var _width = 0;
-
-            var _targetParentPL = Number(_target.css('padding-left').replace('px', ''));
-            var _targetParentPR = Number(_target.css('padding-right').replace('px', ''));
-
-            _target.find('> li').each(function () {
-                _width = jQuery(this).outerWidth(true) + _width;
-            });
-
-            if (_target.width() < _width) {
-                _totalWidth = Math.ceil(_targetParentPL + _width + _targetParentPR) + 'px';
-            } else {
-                _totalWidth = '100%';
-            }
-
-            _target.css({'width': _totalWidth});
-
-            if (_btnL != null) {
-                (_target.parent().scrollLeft() == 0) ? _btnL.hide() : _btnL.show();
-                _target.parent().on({
-                    scroll: function () {
-                        (_target.parent().scrollLeft() == 0) ? _btnL.hide() : _btnL.show()
-                    }
-                });
-            }
-        } catch (e) {
-            win.console.log("error");
         }
-    };
+    }
 
+    /**
+     * [S] m.cgv 가져온 함수
+     */
     function popLayerHasTopShowHide(_btn, _popLayer, _fogBg, _screenId) {
         var jQuerybtn = jQuery('.' + _btn);
         var jQuerypopLayer = jQuery('.' + _popLayer);
@@ -678,11 +556,9 @@ var front = {
         }
     }
 
-    /* [S] 공통 팝업 닫음 */
     jQuery.fn.closePopupLayer = function () {
         jQuery('.btnPopClose').trigger('click');
     }
-    /* [E] 공통 팝업 닫음  */
 
     jQuery.fn.comPopupLayer = function (_state, _targetClassName, _bgOpacity) {
         /* 인자값 정의 :
@@ -1003,5 +879,30 @@ var front = {
         }
 
     };
+    /**
+     * [E] m.cgv 가져온 함수
+     */
 
-})(jQuery);
+    var init = function () {
+        // event
+        event.btnHeartClick();
+        event._commonHandlers();
+
+        // page
+        page.navSticky();
+
+        // slider
+        slider.photoSlider();
+        slider.eventSlider();
+    };
+
+    return {
+        init,
+        event,
+        slider
+    };
+})();
+
+jQuery(function () {
+    front.init();
+});
