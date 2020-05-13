@@ -297,7 +297,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
    - 상단 nav에 border가 있을 경우
 */
 .photo_ticket .card_wrap.single {padding: 27px 15px 0;}
-.photo_ticket .card_wrap.single .movie_info {padding: 22px 19px 0 106px;}
+.photo_ticket .card_wrap.single .movie_info {padding: 22px 76px 0 106px;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
 .photo_ticket .imgcard_wrap { padding: 9px 15px 0; overflow: hidden;}
@@ -348,7 +348,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 .myPhtoticketFlip .title_area .tip {display: block;color: var(--watermelon);font-size: 12px;line-height: 15px;text-align: center;margin-bottom: 0;letter-spacing: -1.5px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 27px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 415px;transform: translateY(-25px); overflow: visible; padding-top: 27px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000px;}
@@ -423,8 +423,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px; margin-right: 3px;}
 .myPhtoticketFlip.web.single .swiper-container {padding-left: 0;}
 .myPhtoticketFlip.web.single .swiper-container .swiper-slide {margin: 0 auto}
-.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container { width: 100%; height: 100%; margin: 0;}
-.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container .swiper-wrapper {height: 380px;}
+.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container { width: 100%; margin: 0;}
 
 /* [S] 포토티켓만 한개만 보여질 경우  */
 .myPhtoticketFlip.onlyPhoto { padding: 12px 0 0;} /** padding: 12px 46px 0; */
