@@ -289,6 +289,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /*  [E] 내 포토티켓    */
 .cgvMovieChartContent > li {width: 130px;}
 .cgvMovieChartContent > li .cgvMovieChartPoster {height: 185px; max-height: 185px;}
+.cgvMovieChartContent > li .cgvMovieChartBtnWrap a {line-height: 27px;}
+.cgvMovieChartContent > li .cgvMovieChartPoster a{background:transparent url('../images/main/common/noimg_176x260.png') left top scroll no-repeat;}
 /*
   [S] 포토티켓 자랑하기 - single 클래스 추가
    - 뱃지가 없을 경우

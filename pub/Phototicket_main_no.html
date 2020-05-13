@@ -146,78 +146,11 @@
     </div>
     <!-- [E] Header -->
 
-    <!-- [S] Header -->
-<!--    <div id="header_box" class="pt_header">-->
-<!--        <header id="headerTitle">-->
-<!--            <a class="title_area" href="javascript:void(0);">-->
-<!--                <i class="sprite sprite-pt sprite-icBack"></i>-->
-<!--            </a>-->
-<!--            <div class="title" id="headerTitleArea">포토티켓</div>-->
-<!--            <div class="btn_wrap">-->
-<!--                <a class="btn_info" href="javascript:void(0);">-->
-<!--                    <i class="sprite sprite-pt sprite-icInfo"></i>-->
-<!--                </a>-->
-<!--                <a class="btn_menu" href="javascript:siteMapFn();">-->
-<!--                    <i class="sprite sprite-pt sprite-icSideMenu"></i>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </header>-->
-<!--        &lt;!&ndash; [S] siteMap &ndash;&gt;-->
-<!--        <section class="allview_wrap" id="siteMap">-->
-<!--            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>-->
-<!--            <article class="allview_box_wrap">-->
-<!--                <div class="allview_box_in">-->
-<!--                    <h2 class="hidden">전체메뉴</h2>-->
-
-<!--                    <div class="allview_header">-->
-<!--                        <a href="/" class="cgv_logo">CGV 홈</a>-->
-<!--                    </div>-->
-<!--                    <div class="area">-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="My CGV"><b>My CGV</b></a><span class="countnum">1</span></li>-->
-<!--                            <li><a href="#"><b>빠른예매</b></a></li>-->
-<!--                            <li><a href="#"><b>상영시간표</b></a></li>-->
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="CGV안내">CGV안내</a></li>-->
-<!--                            <li><a href="#" title="바로오더">바로오더</a></li>-->
-<!--                            <li><a href="#" title="아트하우스">아트하우스</a></li>-->
-<!--                            <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>-->
-<!--                            <li><a href="#" title="이벤트">이벤트</a></li>-->
-<!--                            <li><a href="#" title="스토어">스토어</a></li>-->
-
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="IMAX">IMAX</a></li>-->
-<!--                            <li><a href="#" title="4DX">4DX</a></li>-->
-<!--                            <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>-->
-<!--                            <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>-->
-<!--                            <li><a href="#" title="STARIUM">STARIUM</a></li>-->
-<!--                            <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>-->
-<!--                            <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>-->
-
-<!--                            <li><a href="#" title="Screen X">Screen X</a></li>-->
-<!--                            <li><a href="#" title="Sound X">Sound X</a></li>-->
-<!--                            <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>-->
-<!--                            <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>-->
-<!--                            <li><a href="#" title="SphereX">Sphere X</a></li>-->
-<!--                            <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>-->
-<!--                            <li><a href="#" title="SKYBOX">SKYBOX</a></li>-->
-<!--                            <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>-->
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="고객센터">고객센터</a></li>-->
-<!--                            <li><a href="#" title="Club서비스">Club서비스</a></li>-->
-<!--                            <li><a href="#" title="매거진">매거진</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>-->
-<!--                </div>-->
-<!--            </article>-->
-<!--        </section>-->
-<!--        &lt;!&ndash; [E] siteMap &ndash;&gt;-->
-<!--    </div>-->
-    <!-- [E] Header -->
+    <!--
+     수정 날짜 : 2020.05.13
+     내용 : - 사용하지 않는 javascript 제거
+           - 포스터 이미지가 없을 경우 default 이미지 추가
+    -->
 
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
@@ -232,10 +165,7 @@
                             <ul class="cgvMovieChartContent">
                                 <li class="movieInfo">
                                     <div class="cgvMovieChartPoster">
-                                        <a href="javascript:openNewWebViewV5('/WebApp/MovieV4/movieDetail.aspx?MovieIdx=83126','','H-13','무비차트_#예매차트_상세^해리포터와 아즈카반의 죄수');">
-                                            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg"
-                                                 alt="해리포터와 아즈카반의 죄수">
-                                        </a>
+                                        <a href=""><img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg" alt="해리포터와 아즈카반의 죄수"></a>
                                     </div>
                                     <p class="cgbMovieTitle">해리포터와 아즈카반의 죄수</p>
                                     <div class="cgvMovieChartPer">
@@ -248,16 +178,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="cgvMovieChartBtnWrap"><a
-                                            onclick="javascript:fnNowMReserve('83126', '20022746', '해리포터와 아즈카반의 죄수', '', '00', '무비차트_#예매차트_지금예매');">지금예매</a>
+                                    <p class="cgvMovieChartBtnWrap"><a>지금예매</a>
                                     </p>
                                 </li>
                                 <li class="movieInfo">
                                     <div class="cgvMovieChartPoster">
-                                        <a href="javascript:openNewWebViewV5('/WebApp/MovieV4/movieDetail.aspx?MovieIdx=83065','','H-13','무비차트_#예매차트_상세^1917');">
-                                            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83065/83065_320.jpg"
-                                                 alt="1917">
-                                        </a>
+                                        <a href=""><img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83065/83065_320.jpg" alt="1917"></a>
                                     </div>
                                     <p class="cgbMovieTitle">1917</p>
                                     <div class="cgvMovieChartPer">
@@ -270,17 +196,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="cgvMovieChartBtnWrap"><a
-                                            onclick="javascript:fnNowMReserve('83065', '20022444', '1917', '', '00', '무비차트_#예매차트_지금예매');">지금예매</a>
+                                    <p class="cgvMovieChartBtnWrap"><a onclick="">지금예매</a>
                                     </p>
                                 </li>
                                 <li class="movieInfo">
                                     <div class="cgvMovieChartPoster">
-                                        <a href="javascript:openNewWebViewV5('/WebApp/MovieV4/movieDetail.aspx?MovieIdx=83046','','H-13','무비차트_#예매차트_상세^작은 아씨들');">
-                                            <img class="" data-src=""
-                                                 src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83046/83046_320.jpg"
-                                                 alt="작은 아씨들" style="">
-                                        </a>
+                                        <a href=""><img class="" data-src="" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83046/83046_320.jpg" alt="작은 아씨들" style=""></a>
                                     </div>
                                     <p class="cgbMovieTitle">작은 아씨들</p>
                                     <div class="cgvMovieChartPer">
@@ -293,16 +214,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="cgvMovieChartBtnWrap"><a
-                                            onclick="javascript:fnNowMReserve('83046', '20022302', '작은 아씨들', '', '00', '무비차트_#예매차트_지금예매');">지금예매</a>
+                                    <p class="cgvMovieChartBtnWrap"><a onclick="">지금예매</a>
                                     </p>
                                 </li>
                                 <li class="movieInfo">
                                     <div class="cgvMovieChartPoster">
-                                        <a href="javascript:openNewWebViewV5('/WebApp/MovieV4/movieDetail.aspx?MovieIdx=83126','','H-13','무비차트_#예매차트_상세^해리포터와 아즈카반의 죄수');">
-                                            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg"
-                                                 alt="해리포터와 아즈카반의 죄수">
-                                        </a>
+                                        <a href=""><img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg" alt="해리포터와 아즈카반의 죄수"></a>
                                     </div>
                                     <p class="cgbMovieTitle">해리포터와 아즈카반의 죄수</p>
                                     <div class="cgvMovieChartPer">
@@ -315,16 +232,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="cgvMovieChartBtnWrap"><a
-                                            onclick="javascript:fnNowMReserve('83126', '20022746', '해리포터와 아즈카반의 죄수', '', '00', '무비차트_#예매차트_지금예매');">지금예매</a>
+                                    <p class="cgvMovieChartBtnWrap"><a onclick="">지금예매</a>
                                     </p>
                                 </li>
                                 <li class="movieInfo">
                                     <div class="cgvMovieChartPoster">
-                                        <a href="javascript:openNewWebViewV5('/WebApp/MovieV4/movieDetail.aspx?MovieIdx=83065','','H-13','무비차트_#예매차트_상세^1917');">
-                                            <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83065/83065_320.jpg"
-                                                 alt="1917">
-                                        </a>
+                                        <a href=""><img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83065/83065_320.jpg" alt="1917"></a>
                                     </div>
                                     <p class="cgbMovieTitle">1917</p>
                                     <div class="cgvMovieChartPer">
@@ -337,9 +250,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <p class="cgvMovieChartBtnWrap"><a
-                                            onclick="javascript:fnNowMReserve('83065', '20022444', '1917', '', '00', '무비차트_#예매차트_지금예매');">지금예매</a>
-                                    </p>
+                                    <p class="cgvMovieChartBtnWrap"><a onclick="">지금예매</a></p>
                                 </li>
                             </ul>
                         </li>
