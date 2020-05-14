@@ -6,45 +6,31 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>CGV</title>
-    <style type="text/css">
-        .allview_wrap
-        {
-            display: none;
-        }
-
-        #vid_vplayer:-webkit-full-screen
-        {
-            width: 100%;
-            height: 100%;
-            background-color: black;
-        }
-        #vid_vplayer:-webkit-full-screen video
-        {
-            width: 100%;
-        }
-    </style>
+    <!-- [S] 운영소스 상속용 -->
     <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
     <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2020051409">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v6/preegg.css?2020051409">
-    <link rel="stylesheet" href="http://img.cgv.co.kr/WebApp/css/v6/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
     <link rel="canonical" href="http://www.cgv.co.kr/">
-    <!--  [S] 2020.05.14 위치 변경	-->
+
+    <!-- [S] 2020.04.29 위치 변경 -->
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.05.14 위치 변경	-->
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="https://nsso.cjone.com/findCookieSecured.jsp?cjssoq=h%2fWbTq57CullxPvpQNMR5dE2jwVLqlq6twsxR%2bYN2xcaJCdMuo8QClcMAxKlp4bEY%2bVxer3J9U3YhmiNOrck%2fFBOZEZ5d0NGZmZwNk9ITkFaWS92REZHNStYTjdwTE5VbGluRXNkTEVFNm90RGpxZ1ZmcWFMZll0OUJNOHR2Zm4%3d"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <!-- [E] 2020.04.29 위치 변경 -->
+
+    <script type="text/javascript" src="../js/appinterface.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
     <script type="text/javascript">
         //Global Variable
         var IsWebView_Master = false;
@@ -59,35 +45,31 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
         });
-
-        /* S [U 20200401] Footer 기능변경으로 인한 수정 */
-        var fnFooter = function( _target ){
-            var target = jQuery(_target).parent('dt');
-            if(!target.hasClass('active')){
-                target.siblings().slideDown(function(){
-                    target.addClass('active');
-                });
-            }else{
-                target.siblings().slideUp(function(){
-                    target.removeClass('active');
-                });
-            }
-        }
-        /* E [U 20200401] Footer 기능변경으로 인한 수정 */
     </script>
-    <!-- [S] 2020.05.14 위치 변경 / screenId 제거  -->
+
+    <!-- [S] 2020.04.29 위치 변경 -->
     <script type="text/javascript" src="../js/swiper.min.js"></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
-    <!-- [E] 2020.05.14 위치 변경  / screenId 제거  -->
-    <meta property="og:title" content="CGV">
-    <meta property="og:image" content="http://img.cgv.co.kr/WebApp/images/common/logo_new_kakao_prevw.png">
-    <meta property="og:description" content="CGV의 다양한 정보를 확인해보세요!">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v6/main.css?v=20200514094306">
+    <!-- [E] 2020.04.29 위치 변경 -->
+
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
 <div class="wrap">
@@ -128,7 +110,7 @@
                 <div class="swiper-container ">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="flip-container active">
+                            <div class="flip-container">
                                 <div class="flipper">
                                     <div class="front">
                                         <div class="dim"></div>
@@ -182,6 +164,9 @@
                         -->
                         <div class="swiper-slide">
                             <div class="flip-container">
+                                <!--
+                                  내용 : 뒷면 활성화시 <div class="flip-container active">
+                                -->
                                 <div class="flipper">
                                     <div class="front">
                                         <div class="dim"></div>
@@ -230,10 +215,10 @@
                             </div>
                         </div>
                         <!--
-                        날짜 : 2020.05.12
-                        내용 : back에 텍스가 올 경우
-                        변경 사항 : <div class="back text"> : text class 추가
-                    -->
+                            날짜 : 2020.05.12
+                            내용 : back에 텍스가 올 경우
+                            변경 사항 : <div class="back text"> : text class 추가
+                        -->
                         <div class="swiper-slide">
                             <div class="flip-container active">
                                 <div class="flipper">
@@ -258,13 +243,13 @@
                                     </div>
                                     <div class="back text">
                                         <div class="inner">
-                                            <p class="title">IMAX 2D(인생영화 기획전)<span class="rating">12</span></p>
-                                            <p class="title_lg">날씨의 아이(인생영화기획전)</p>
-                                            <p class="title_sm">(IMAX 2D) Weathering With You</p>
+                                            <p class="title">IMAX 2D<span class="rating">12세이상관람가</span></p>
+                                            <p class="title_lg">날씨의 아이(인생영화기획전)날씨의 아이(인생영화기획전)</p>
+                                            <p class="title_sm">(IMAX 2D) Weathering With You Weathering With You Weathering With You</p>
                                             <ul class="info">
-                                                <li class="bar"><span>CGV왕십리</span><span>2020. 03. 29(일)</span></li>
+                                                <li class="bar"><span>CGV왕십리CGV왕십리CGV왕십리CGV왕십리CGV왕십리CGV왕십리</span><span>2020. 03. 29(일)</span></li>
                                                 <li class="bar"><span>6회</span><span>21:45(오후) ~ 23:47(오후)</span></li>
-                                                <li>IMAX관</li>
+                                                <li><span>IMAX관IMAX관IMAX관IMAX관IMAX관IMAX관IMAX관IMAX관</span></li>
                                                 <li><span>일반 3명</span></li>
                                             </ul>
                                             <div class="bg_grey">

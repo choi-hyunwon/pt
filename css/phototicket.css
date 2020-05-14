@@ -583,7 +583,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /*   내 포토티켓 - 카드 컴포넌트   */
 .photo_ticket .card_wrap {padding: 0 15px;}
 .photo_ticket .card_wrap .card { position: relative; display: block; width: 100%; height: 120px; background-color: #ffffff; border: 1px solid #efefef; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); border-radius: 10px; margin-bottom: 33px; cursor: pointer}
-.photo_ticket .card_wrap .card .img { position: absolute; top: -13px; left: 14px; display:block; width: 80px; height: 123px; border-radius: 10px; overflow: hidden;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);}
+.photo_ticket .card_wrap .card .img { position: absolute; top: -13px; left: 14px; display:block; width: 80px; height: 123px; border-radius: 5px; overflow: hidden;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);}
 .photo_ticket .card_wrap .card .img img { width: 100%;}
 .photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 0; right: 0; font-size: 12px; line-height: 20px; text-align: center}
 .photo_ticket .card_wrap .movie_info { position: relative; padding: 22px 86px 0 106px;}
@@ -683,18 +683,21 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 
 /* [S] 플립슬라이더 뒷면 text가 올 경우 */
 .myPhtoticketFlip .back.text .inner {padding: 38px 20px 20px 20px;}
-.myPhtoticketFlip .back.text .inner .title { font-size: 12px; color: #000000; line-height: 15px; border-bottom: 1px solid #000000; margin-bottom: 15px;padding-bottom: 2px;}
-.myPhtoticketFlip .back.text .inner .title_lg { font-size: 14px; color: #000000; line-height: 17px; margin-bottom: 2px; font-weight: bold}
-.myPhtoticketFlip .back.text .inner .title_sm { font-size: 11px; color: #000000; line-height: 17px; margin-bottom: 16px;}
-.myPhtoticketFlip .back.text .inner .title .rating {display: inline-block;position: absolute; width: 16px; height:16px;right: 20px; top: 35px;color: #ffffff; background-color: #000000; border-radius: 50%; text-align: center;line-height: 16px; font-size: 10px;}
-.myPhtoticketFlip .back.text .inner .info { padding-left: 10px; margin-bottom: 18px;}
-.myPhtoticketFlip .back.text .inner .info li { position: relative; font-size: 10px; line-height: 12px; color: #000000; margin-bottom: 5px;}
+.myPhtoticketFlip .back.text .inner .title { font-size: 12px; color: #000000; line-height: 15px; border-bottom: 1px solid #000000; margin-bottom: 13px;padding-bottom: 2px; padding-right: 75px; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.myPhtoticketFlip .back.text .inner .title_lg { font-size: 14px; color: #000000; line-height: 17px; margin-bottom: 2px; font-weight: bold;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.myPhtoticketFlip .back.text .inner .title_sm { font-size: 11px; color: #000000; line-height: 17px; margin-bottom: 14px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.myPhtoticketFlip .back.text .inner .title .rating {display: inline-block;position: absolute; right: 20px; top: 38px;color: #000000; text-align: center;line-height: 16px; font-size: 10px;}
+.myPhtoticketFlip .back.text .inner .info { padding-left: 10px; margin-bottom: 17px;}
+.myPhtoticketFlip .back.text .inner .info li { position: relative; font-size: 10px; line-height: 12px; color: #000000;}
+.myPhtoticketFlip .back.text .inner .info li span { width: 185px;display: inline-block;line-height: 13px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 .myPhtoticketFlip .back.text .inner .info li::after { position: absolute; content: ''; background: #000000; width: 2px; height: 2px; border-radius: 50%; top: 5px; left: -5px;}
+.myPhtoticketFlip .back.text .inner .info li:first-child span:first-child { display: inline-block; width: 110px;}
 .myPhtoticketFlip .back.text .inner .info li:last-child  { margin-bottom: 0;}
 .myPhtoticketFlip .back.text .inner .info li:last-child  { margin-bottom: 0;}
-.myPhtoticketFlip .back.text .inner .info li.bar span:first-child { position: relative; padding-right: 8px; }
-.myPhtoticketFlip .back.text .inner .info li.bar span:first-child::after { position: absolute; content: ''; border-right: 1px solid #555555; height: 8px; top:1px; right: 4px; }
-.myPhtoticketFlip .back.text .inner .bg_grey {width: 100%; height: 90px; background: #ffffff; border: 1px solid #000000; border-radius: 6px; padding: 16px 0 0 0; margin-bottom: 14px;}
+.myPhtoticketFlip .back.text .inner .info li.bar span:first-child { position: relative; padding-right: 8px; max-width: 110px;width: auto;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.myPhtoticketFlip .back.text .inner .info li.bar span:last-child { width: auto}
+.myPhtoticketFlip .back.text .inner .info li.bar span:first-child::after { position: absolute; content: ''; border-right: 1px solid #555555; height: 8px; top:2px; right: 4px; }
+.myPhtoticketFlip .back.text .inner .bg_grey {width: 100%; height: 90px; background: #ffffff; border: 1px solid #000000; border-radius: 6px; padding: 16px 0 0 0; margin-bottom: 20px;}
 .myPhtoticketFlip .back.text .inner .bg_grey .number {text-align: center; font-size: 12px; font-weight: bold; line-height: 15px; margin-bottom: 4px; letter-spacing: -1px;}
 .myPhtoticketFlip .back.text .inner .bg_grey .number span {font-size: 11px; letter-spacing: 0}
 .myPhtoticketFlip .back.text .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
@@ -762,7 +765,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .badge.badge_grey .dday::after {border-color:rgba(164,164,164,.5)}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);color:#ffffff}
 .photo_ticket .pop_header .badge .dday {position: relative;font-size: 15px;font-weight: bold;letter-spacing: -1.1px;padding-right: 17px;}
-.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 11px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 4px;}
+.photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 11px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 3px;}
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}

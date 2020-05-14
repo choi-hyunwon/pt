@@ -14,11 +14,31 @@ var front = (function () {
         });
     }
 
-    // front.event.btnFlipClick()
+    // front.event.btnFlipClick() - 플립 버튼 클릭 이벤트
     event.btnFlipClick = function () {
         // 플립 슬라이더 - 버튼 클릭시 플립
         jQuery('._flip').on('click', function () {
             jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
+        });
+    }
+
+    // front.event.btnToggleClick() - 플립 체크 박스 이벤트
+    event.btnToggleClick = function () {
+        // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.11
+        jQuery('.myPhtoticketFlip .front .btn-toggle').first().addClass('active');
+        jQuery('.myPhtoticketFlip .back .btn-toggle').first().addClass('active');
+
+        jQuery('.btn-toggle').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                // jQuery('.btn-boast').addClass('disabled');
+
+            } else {
+                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                // jQuery('.btn-boast').removeClass('disabled');
+            }
         });
     }
 
@@ -57,22 +77,6 @@ var front = (function () {
             } else {
                 jQuery(this).text('자랑취소').addClass('active');
                 // jQuery('#pop_alert').addClass('active');
-            }
-        });
-        // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.11
-        jQuery('.myPhtoticketFlip .front .btn-toggle').first().addClass('active');
-        jQuery('.myPhtoticketFlip .back .btn-toggle').first().addClass('active');
-
-        jQuery('.btn-toggle').on('click', function () {
-            if (jQuery(this).hasClass('active')) {
-                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                // jQuery('.btn-boast').addClass('disabled');
-
-            } else {
-                jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                // jQuery('.btn-boast').removeClass('disabled');
             }
         });
 
