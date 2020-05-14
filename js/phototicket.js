@@ -203,6 +203,7 @@ var front = (function () {
                 jQuery('#fogbg').show();
             }
         }
+        front.event.resizeWindow();
     }
 
     // 메인 슬라이더
@@ -224,7 +225,7 @@ var front = (function () {
                         spaceBetween: 20,
                     },
                     360: {
-                        spaceBetween: 40
+                        spaceBetween: 30
                     }
                 },
                 on: {
@@ -266,9 +267,13 @@ var front = (function () {
 
     // for iPhontX, iPhoneXR
     fn.photoImage = function () {
-        console.log('포토티켓 자랑하기')
-        var width = jQuery('.imgcard_wrap .card .img img').width();
-        jQuery('.imgcard_wrap .card .img img').height(width * 1.53)
+        var width = jQuery('.imgcard_wrap .card .img').width();
+        jQuery('.imgcard_wrap .card .img').height(width * 1.6)
+    }
+    event.resizeWindow = function () {
+        jQuery(window).on('resize', function () {
+            front.fn.photoImage();
+        });
     }
 
     /**
