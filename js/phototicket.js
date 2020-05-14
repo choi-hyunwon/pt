@@ -5,14 +5,23 @@ var front = (function () {
 
     var event = {};
     var slider = {};
-    var page = {};
-    
+    var fn = {};
+
     // 이벤트
     event.btnHeartClick = function () {
         jQuery('._btnHeart').on('click', function () {
             jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
         });
     }
+
+    // front.event.btnFlipClick()
+    event.btnFlipClick = function () {
+        // 플립 슬라이더 - 버튼 클릭시 플립
+        jQuery('._flip').on('click', function () {
+            jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
+        });
+    }
+
     event._commonHandlers = function () {
 
         // header 클릭 이벤트
@@ -134,11 +143,6 @@ var front = (function () {
             jQuery('#cancelToast').show().fadeOut(1500);
         })
 
-        // 플립 슬라이더 - 버튼 클릭시 플립
-        jQuery('._flip').on('click', function () {
-            jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
-        });
-
         //사이트맵
         window.siteMapFn = siteMapFn;
 
@@ -233,7 +237,7 @@ var front = (function () {
     }
     // 이벤트 슬라이더 - 메인 공통
     slider.eventSlider = function () {
-        if (jQuery('.alert_wrap .swiper-container').length > 0){
+        if (jQuery('.alert_wrap .swiper-container').length > 0) {
             slider.photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
                 speed: 400,
                 autoPlay: true,
@@ -247,7 +251,7 @@ var front = (function () {
     }
 
     // nav
-    page.navSticky = function () {
+    fn.navSticky = function () {
         if ((jQuery('.nav .type_pt') || jQuery('.nav .type_pt2')).length > 0) {
             var jbOffset = jQuery('.nav').offset();
             jQuery(window).scroll(function () {
@@ -258,6 +262,13 @@ var front = (function () {
                 }
             });
         }
+    }
+
+    // for iPhontX, iPhoneXR
+    fn.photoImage = function () {
+        console.log('포토티켓 자랑하기')
+        var width = jQuery('.imgcard_wrap .card .img img').width();
+        jQuery('.imgcard_wrap .card .img img').height(width * 1.53)
     }
 
     /**
@@ -885,11 +896,11 @@ var front = (function () {
 
     var init = function () {
         // event
-        event.btnHeartClick();
         event._commonHandlers();
 
         // page
-        page.navSticky();
+        fn.navSticky();
+        fn.photoImage();
 
         // slider
         slider.photoSlider();
@@ -899,7 +910,8 @@ var front = (function () {
     return {
         init,
         event,
-        slider
+        slider,
+        fn,
     };
 })();
 
