@@ -414,6 +414,13 @@
                         <a class="btn-boast active _cancelPop">자랑취소</a>
                         <a class="btn-grey" href="javascript:void(0);">결제취소</a>
                     </div>
+                    <div style="width: 100%; height: 75px; line-height: 25px; background: pink; text-align: center; padding: 0; margin-bottom: 0">
+                        수정 날짜 : 2020.05.15<br/>삭제하기 팝업<br/>phototicket.js L:114~117
+                    </div>
+                    <div>
+                        <a class="btn-boast">자랑하기</a>
+                        <a class="btn-grey _deleteBtn" href="javascript:void(0);">삭제하기</a>
+                    </div>
                     <!-- [S] 토스트 팝업 추가 2020.05.07  -->
                     <div id="cancelToast" class="popToast" data-comment="자랑취소가 완료되었습니다."></div>
                     <!-- [E] 토스트 팝업 추가 2020.05.07  -->
@@ -496,6 +503,20 @@
         </div>
     </div>
     <!-- [E] 내 포토티켓 상세> “자랑하기” 버튼 선택 -->
+
+    <!-- [S] 2020.05.15 추가 / 내 포토티켓 상세> “삭제하기” 버튼 선택  -->
+    <div id="pop_alertDelete" class="popup_dim popAlert">   <!-- 팝업 활성화 addClass('active') -->
+        <div class="popup">
+            <div class="popup_container">
+                <p class="alert_txt">포토티켓 이미지를 삭제하시겠습니까?<br/><span class="primary">제작된 포토티켓은 복구가 불가합니다.</span></p>
+                <div class="btn_flexBox">
+                    <a href="#" class="com_btn_full_action">확인</a>
+                    <a href="#" class="com_btn_full_action _cancelBtn">취소</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [E] 내 포토티켓 상세> “삭제하기” 버튼 선택 -->
 </div>
 <!--
     2020.04.20

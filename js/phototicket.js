@@ -97,6 +97,7 @@ var front = (function () {
             jQuery('#pop_alert2').removeClass('active');
             jQuery('#pop_alert3').removeClass('active');
             jQuery('#pop_alert4').removeClass('active');
+            jQuery('#pop_alertDelete').removeClass('active');
         });
 
         // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
@@ -110,9 +111,9 @@ var front = (function () {
             jQuery('#pop_alert3').removeClass('active');
         });
 
-        // 삭제하기 버튼 클릭 이벤트 --- 2020.05.08 추가
+        // 삭제하기 버튼 클릭 이벤트 --- 2020.05.15 수정
         jQuery('._deleteBtn').on('click', function () {
-            jQuery('#pop_alert3').addClass('active');
+            jQuery('#pop_alertDelete').addClass('active');
         });
 
         // 조회기간 클릭 이벤트 다중처리 X
