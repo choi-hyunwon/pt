@@ -210,6 +210,12 @@ var front = (function () {
         front.event.resizeWindow();
     }
 
+    if(jQuery('btn-toggle').hasClass('active')) {
+        var a = jQuery('btn-toggle').children();
+        console.log(a)
+
+    }
+
     // 메인 슬라이더
     slider.photoSlider = function () {
         if (jQuery('.slider_wrap .swiper-container').length > 0) {
