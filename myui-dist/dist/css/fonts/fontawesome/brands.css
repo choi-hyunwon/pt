@@ -7,8 +7,12 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url("../../../fonts/fontawesome/Font Awesome 5 Brands-Regular-400.otf"); }
+  src: url("../../../fonts/fontawesome/Font Awesome 5 Brands-Regular-400.otf");
+}
 
 .fab {
   font-family: 'Font Awesome 5 Brands';
-  font-weight: 400; }
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=brands.css.map */

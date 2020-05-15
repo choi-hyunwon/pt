@@ -7,9 +7,13 @@
   font-style: normal;
   font-weight: 900;
   font-display: auto;
-  src: url("../../../fonts/fontawesome/Font Awesome 5 Free-Solid-900.otf"); }
+  src: url("../../../fonts/fontawesome/Font Awesome 5 Free-Solid-900.otf");
+}
 
 .fa,
 .fas {
   font-family: 'Font Awesome 5 Free';
-  font-weight: 900; }
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=solid.css.map */
