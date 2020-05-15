@@ -465,6 +465,8 @@ var front = (function () {
                         fnFixedScroll(false);
                         _target.hide();
                         _contentTarget.hide();
+                        $("#startDt").val("");
+                        $("#endDt").val("");
                     });
                 }
             }, function () {
