@@ -417,17 +417,6 @@ var front = (function () {
             click: function () {
                 jQueryfogBg.css({'opacity': '.5', 'top': '0'});
                 popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
-
-//                if(_popLayer == 'popMiniMap'){  // 미니맵일 경우 예외처리
-//                    var winWidth = jQuery(window).outerWidth();
-//                    var activeItemLeft = jQuery('.popMiniMap_Schedule_list li.active').offset().left;
-//                    var scrollLeft = jQuery('.popMiniMap_Schedule_list').scrollLeft();
-//                    var itemWidth = jQuery('.popMiniMap_Schedule_list li.active').outerWidth();
-//
-//                    var centerScroll = scrollLeft + activeItemLeft - (winWidth - itemWidth) / 2;
-//
-//                    jQuery('.popMiniMap_Schedule_list').scrollLeft(centerScroll)
-//                }
             }
         });
     }
@@ -465,8 +454,8 @@ var front = (function () {
                         fnFixedScroll(false);
                         _target.hide();
                         _contentTarget.hide();
-                        $("#startDt").val("");
-                        $("#endDt").val("");
+                        jQuery("#startDt").val(""); // 2020.05.15 추가(개발)
+                        jQuery("#endDt").val("");  // 2020.05.15 추가(개발)
                     });
                 }
             }, function () {

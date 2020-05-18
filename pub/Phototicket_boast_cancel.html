@@ -87,7 +87,7 @@
              -->
             <div>
                 <p class="badge badge-red">
-                    <span class="dday">D-20</span><span class="text">출력가능일 4월 4일까지</span>
+                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>
                 </p>
             </div>
             <a class="btn_close btnPopClose" href="javascript:void(0);">
@@ -95,90 +95,85 @@
             </a>
         </div>
         <!-- [S] 플립 슬라이더 -->
-        <!-- tip 클래스 유무, 분기 처리 필요 -->
+        <!-- 광주충장로점일 때, 분기 처리 필요 -->
         <!--
-          수정 날짜 :  2020.05.12
-          내용 : - back 화면 이미지 처리
-                - L:148~150 추가
-                - <div class="back">안쪽 정보(<p class="title">,<p class="title_lg">,<p class="title_sm">,<ul class="info">,<div class="bg_grey">,<div class="sign"> 삭제
-      -->
-        <article class="myPhtoticketFlip">
+         날짜 : 2020.05.11
+         추가 사항 : 데이터가 1개일 경우 single 클래스 추가(가운데 정렬)
+       -->
+        <article class="myPhtoticketFlip web single">
             <div class="title_area">
                 <span class="title">다크워터스(2D)</span>
                 <span class="title-sm">예매번호 : 001-0000-0000-002</span>
                 <!-- 광주충장로 점일 때 -->
-                <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
+                <!--                <span class="tip">CGV광주충장로에서만 출력가능합니다.</span>-->
             </div>
             <div class="slider-wrap">
-                <div class="swiper-container ">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="flip-container active">
-                            <div class="flipper">
-                                <div class="front">
-                                    <div class="dim"></div>
-                                    <div class="inner">
-                                        <img src="../images/phototicket/main/sample.png"
-                                             alt="">
-                                        <a href="javascript:void(0)" class="btn-toggle">
-                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
-                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
-                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
-                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
-                                                </g>
-                                            </svg>
-                                        </a>
-                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
-                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
-                                    </div>
-                                </div>
-                                <div class="back">
-                                    <div class="inner">
-                                        <!--
-                                            수정 날짜 :  2020.05.12
-                                            내용 : - back 화면 이미지 처리
-                                                  - L:148~150 추가
-                                                  - <div class="back">안쪽 정보(<p class="title">,<p class="title_lg">,<p class="title_sm">,<ul class="info">,<div class="bg_grey">,<div class="sign"> 삭제
-                                        -->
-                                        <div class="img">
-                                            <img src="../images/phototicket/main/photo_back.png" alt="">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <div class="dim"></div>
+                                        <div class="inner">
+                                            <img src="../images/phototicket/main/movie5@2x.png" alt="">
+                                            <a href="javascript:void(0)" class="btn-toggle">
+                                                <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                        <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                        <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                        <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <a class="btn-flip _flip" href="javascript:void(0)"><i class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                         </div>
-                                        <a href="javascript:void(0)" class="btn-toggle active">
-                                            <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
-                                                    <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
-                                                    <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
-                                                    <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
-                                                </g>
-                                            </svg>
-                                        </a>
-                                        <a class="btn-flip _flip" href="javascript:void(0)"><i class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <!--
+                                                수정 날짜 :  2020.05.12
+                                                내용 : - back 화면 이미지 처리
+                                                      - L:148~150 추가
+                                                      - <div class="back">안쪽 정보(<p class="title">,<p class="title_lg">,<p class="title_sm">,<ul class="info">,<div class="bg_grey">,<div class="sign"> 삭제
+                                            -->
+                                            <div class="img">
+                                                <img src="../images/phototicket/main/photo_back.png" alt="">
+                                            </div>
+                                            <a href="javascript:void(0)" class="btn-toggle active">
+                                                <svg width="46px" height="46px" viewBox="0 0 133 133" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <circle class="filled-circle" fill="#fb4357" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                        <circle class="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                                                        <circle class="outline" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                                                        <polyline class="check" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <a class="btn-flip _flip" href="javascript:void(0)"><i class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Add Pagination -- 제거 -->
+                    <!--                <div class="swiper-pagination"></div>-->
                 </div>
-                <!-- 자랑 취소 페이지에서, pagination 제거 -->
-                <!--  <div class="swiper-pagination"></div>-->
-            </div>
             </div>
             <div class="btn_area">
                 <div class="inner">
                     <p class="text-lg">포토티켓 제작이 완료되었습니다.</p>
-                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
+                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br>
                         생년월일+휴대폰번호를 입력하여 출력해주세요</p>
                     <div>
-                        <a class="btn-ani btn-boast _btnBoast">자랑하기</a>
+                        <a class="btn-ani btn-boast _btnBoast active">자랑취소</a>
                         <a class="btn-grey" href="javascript:void(0);">결제취소</a>
                     </div>
                 </div>
             </div>
         </article>
-        <!-- [E] 플립 슬라이더 -->
     </section>
     <!-- [E] 포토티켓 제작 완료 -->
 
@@ -200,14 +195,6 @@
     </div>
     <!-- [E] 공유하기 팝업  -->
 </div>
-<!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-<!--<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>-->
-<!--<script type="text/javascript" src="../js/swiper.min.js"></script>-->
-<!--<script type="text/javascript" src="../js/phototicket.js"></script>-->
 <!--  [E] 2020.04.20	-->
 </body>
 </html>

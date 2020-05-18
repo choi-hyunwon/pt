@@ -52,6 +52,11 @@
         });
     </script>
 
+    <!--
+       2020.05.18
+       작성자 : 이주연
+       내용 : screenId 추가  <script> var screenId = "PT002";</script> 제거
+    -->
     <!-- [S] 2020.04.29 위치 변경 -->
     <script type="text/javascript" src="../js/swiper.min.js"></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
@@ -184,7 +189,12 @@
                 - card_wrap클래스에 single 클래스 추가
                 - badge 유무에 따른, 분기 처리
             -->
-            <div class="card_wrap single">
+            <!--
+               날짜 : 2020.05.18
+               이슈 : 뱃지가 없을 경우, 포토티켓 타이틀이 길면 뱃지의 영역포함하여 짤림 => 뱃지가 있을 경우 없을 경우 분기 처리 필요
+               추가 내용 : 출력완료 탭에 completed 클래스 추가
+            -->
+            <div class="card_wrap single completed">
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
                         <img src="../images/phototicket/main/movie2@2x.png" alt="영화 이미지">
@@ -198,10 +208,10 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
+<!--                    <div class="badge badge-red">-->
+<!--                        <p class="dday">D-8</p>-->
+<!--                        <p class="txt">출력가능일</p>-->
+<!--                    </div>-->
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
@@ -216,10 +226,10 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
+<!--                    <div class="badge badge-red">-->
+<!--                        <p class="dday">D-8</p>-->
+<!--                        <p class="txt">출력가능일</p>-->
+<!--                    </div>-->
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
@@ -236,17 +246,17 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
+<!--                    <div class="badge badge-red">-->
+<!--                        <p class="dday">D-10</p>-->
+<!--                        <p class="txt">출력가능일</p>-->
+<!--                    </div>-->
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
                         <img src="../images/phototicket/main/movie4@2x.png" alt="영화 이미지">
                     </div>
                     <div class="movie_info">
-                        <p class="title">어바웃타임(인생영화인생영화)</p>
+                        <p class="title">어바웃타임(인생영화인생영화인생영화인생영화)</p>
                         <div class="info">
                             <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
                         </div>
@@ -254,10 +264,10 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge-blue">
-                        <p class="dday">D-17</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
+<!--                    <div class="badge badge-blue">-->
+<!--                        <p class="dday">D-17</p>-->
+<!--                        <p class="txt">출력가능일</p>-->
+<!--                    </div>-->
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
@@ -274,10 +284,10 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
+<!--                    <div class="badge badge-red">-->
+<!--                        <p class="dday">D-10</p>-->
+<!--                        <p class="txt">출력가능일</p>-->
+<!--                    </div>-->
                 </a>
             </div>
             <!--
@@ -330,16 +340,5 @@
     </div>
     <!-- [E] 기간검색 팝업  -->
 </div>
-    <!--
-        날짜 : 2020.04.24
-        작성자 : 이주연
-        내용 :
-         - <script> var screenId = "PT002";</script> 추가
-         - PT002 : 내 포토티켓 페이지
-    -->
-<!--<script> var screenId = "PT002";</script>
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script type="text/javascript" src="../js/phototicket.js"></script>-->
 </body>
 </html>

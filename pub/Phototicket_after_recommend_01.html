@@ -72,18 +72,25 @@
     <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
+<!--
+    수정 날짜 : 2020.05.18
+    수정 내용 : 클래스명 변경
+-->
 <div class="wrap">
     <section class="content_wrap container photo_ticket">
         <!-- [S] 내가 자랑한 포토티켓 -->
-        <div class="popMyPhototicket"  style="display: block;top: 0;">
-            <div class="popLayerHeader">
-                <h1>
-                    <a class="name" href="javascript:void(0);">내가 자랑한 포토티켓</a>
-                </h1>
-                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+        <div class="pop_phototicket">
+            <div class="pop_header">
+                <h1>내가 자랑한 포토티켓</h1>
+                <a class="btn_close btnPopClose" href="javascript:void(0);">
+                    <i class="sprite sprite-pt sprite-icClose"></i>
+                </a>
             </div>
-            <div class="popLayerContainer">
-                <div class="myPhtoticketFlip onlyPhoto myPhoto">
+            <!--
+             날짜 : 2020.05.18
+             내용 : 다른 사람의 포토티켓일 경우 other 클래스 추가
+            -->
+            <div class="myPhtoticketFlip web single">
                     <div class="badge-area">
                         <p class="btn-badge-grey">
                             <span class="dday">자랑한 날</span><span class="date">2020.03.31</span>
@@ -91,13 +98,14 @@
                     </div>
                     <div class="front">
                         <div class="inner">
-                            <img src="../images/phototicket/main/sample.png" alt="">
+                            <img src="../images/phototicket/main/movie5@2x.png" alt="">
                         </div>
                     </div>
                     <div class="btn_area">
                         <div class="inner">
                             <div>
-                                <a class="btn-heart-lg _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNorLarge"></i><span>25</span></a>
+                                <a class="btn-heart-lg _click" href="javascript:void(0);"><i
+                                        class="sprite sprite-pt sprite-icBtnLikeNorLarge"></i><span>125</span></a>
                             </div>
                             <div class="cancel_area">
                                 <a class="btn-cancel" href="javascript:void(0);">자랑취소하기</a>
@@ -105,20 +113,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         <!-- [E] 내가 자랑한 포토티켓 -->
     </section>
 </div>
-<!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-<!--<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>-->
-<!--<script type="text/javascript" src="../js/swiper.min.js"></script>-->
-<!--<script type="text/javascript" src="../js/phototicket.js"></script>-->
-<!--  [E] 2020.04.20	-->
 <!--  [E] 2020.04.20	-->
 </body>
 </html>
