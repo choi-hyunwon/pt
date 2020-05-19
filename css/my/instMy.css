@@ -6,6 +6,7 @@
     --watermelon:#fb4357;
     --dustyOrange:#ef642f;
     --coolGrey:#9197a3;
+    --colorBalck222222:#222222;
 }
 /* [E] Variables */
 
@@ -17,46 +18,40 @@
 .cPHistoryTitle.type4.renewal-menu > li.active > a {font-weight: 600;}
 /* [E] ul_menu */
 
-
 .comCGVWrap1 h1 {padding: 16px 25px 16px 25px;}
-/*.cPHistory { background: #fff; }*/
-/*.cPHistory .cPHistoryTitle{overflow:hidden; !* padding:7px 28px 9px *!}*/
-/*.cPHistory .cPHistoryTitle li{float:left; width:50%; padding-left:4px}*/
-/*.cPHistory .cPHistoryTitle li:first-child{padding-left:0}*/
-/*.cPHistory .cPHistoryTitle li a{display:block; height:28px; font-weight:600; font-size:13px; color:#000; line-height:24px; text-align:center; border:2px solid #fff}*/
-/*.cPHistory .cPHistoryTitle li.active a{height:28px; border:2px solid #000; border-radius:16px}*/
-/*.cPHistory ~ .comCGVWrap1{display:none}*/
 .cPHistory + .comCGVWrap1{position:relative; margin-bottom: 0;}
 .cPHistory + .comCGVWrap1:before {content: none;}
 .cPHistory + .comCGVWrap1:after{content: none;}
 
-/*.cPHistoryTitle.type3 {padding:7px 11px 9px;}*/
-/*.cPHistoryTitle.type3 li {width:33.3%;}*/
-/*.cPHistoryTitle.type3 li:nth-child(2) {width:33.4%;}*/
-/*.cPHistoryTitle.type4.renewal-menu { padding: 0; }*/
-/*.cPHistoryTitle.type4.renewal-menu > li { width: 20%; display: table; table-layout: fixed; height: 45px; padding: 0; }*/
-/*.cPHistoryTitle.type4.renewal-menu > li > a { border: none; font-size: 13px; display: table-cell; vertical-align: middle; height: 100%; color: #9197a3; letter-spacing: -1px; }*/
-/*.cPHistoryTitle.type4.renewal-menu > li.active > a { color: #000; }*/
-
-/*.cPHistoryList.renewal-list .movieBookingType1 .movieBookingDetailValue { color: #fc5c4f; }*/
-/*.cPHistoryList.renewal-list li a .movieBookingDetail.has-other .movieBookingDetailTitle { max-width: calc(100% - 155px); width: auto; }*/
-
-/*.cPHistoryList.renewal-list li a .movieBookingDetail.has-other .other-payment { float: left; padding-left: 4px; }*/
-
 /* [S] popup */
-/* S > POPUP */
 .popup_dim{display:none; overflow:hidden; position:fixed; left:0; top:-100%; width:100%; height:100%; z-index:9; background-color:rgba(0, 0, 0, 0.6); opacity:0}
 .popup_dim .popup{top:-100vh; left:-100vw; right:-100vw; bottom:-100vh; padding-right:constant(safe-area-inset-right); padding-right:env(safe-area-inset-right); padding-left:constant(safe-area-inset-left); padding-left:env(safe-area-inset-left)}
 .popup_dim .popup .popup_container .container_header{padding:18px 32px 16px;}
 .popup_dim .popup .popup_container .container_header h1{padding:0 10px; font-size:17px; text-align:center; line-height:17px}
 .popup_dim .popup .popup_container .container_footer {width: 100%;padding-top: 30px;}
 .popup_dim .popup .popup_container .container_footer .btnPopConfirm {display: block;width: 100%;height: 50px;font-weight: 400;font-size: 16px;color: #fff;line-height: 50px;text-align: center; background: linear-gradient(to left, var(--dustyOrange), var(--watermelon));}
-
-.popup_select_search .popup_container {padding: 0 20px;}
+.popup_select_search .popup_container {background: #ffffff}
 .popup_select_search .container_header {height: 55px;padding-left: 18px;line-height: 50px;font-weight: 400;font-size: 14px;text-align: left;color: #373e46;vertical-align: middle;border-bottom: 1px solid #dcdee3;}
 .popup_select_search .container_header h1 { line-height: 55px;color: #030303;font-weight: bold;font-size: 17px;letter-spacing: -2px;}
 .popup_select_search .container_header .btn_close { left: auto;right: 13px;display: inline-block;position: absolute;top: 12px;}
-
 .popup_select_search .container_content { margin-bottom: 18px;}
+/* [E] POPUP */
 
-/* E > POPUP */
+.my_phototicket_list {position: relative; width: 100%; height: 90px;}
+.my_phototicket_list::after {content: ''; position: absolute; width: 100%; border-bottom: 1px solid #e4e4e4; bottom: 0; left: 0;}
+.my_phototicket_list li {float: left; height: 90px;}
+.my_phototicket_list li:nth-child(1) {width: 20%; text-align: center; padding-top: 17px;}
+.my_phototicket_list li:nth-child(1) .date { font-size: 12px; line-height: 15px; color: #4b4f56;}
+.my_phototicket_list li:nth-child(2) {width:53%; padding-top: 16px;}
+.my_phototicket_list li:nth-child(2) span {display: block;}
+.my_phototicket_list li:nth-child(2) .title {font-size: 14px; line-height: 17px; letter-spacing: -.5px; padding-bottom: 4px;}
+.my_phototicket_list li:nth-child(2) .amount {position: relative; font-size: 12px; line-height: 15px; color: #4b4f56; padding-bottom: 7px;}
+.my_phototicket_list li:nth-child(2) .amount::after {content: '매'; position: absolute; font-size: 12px; line-height: 15px; color: #6a707a;}
+.my_phototicket_list li:nth-child(2) .cancel-btn a {font-size: 12px; line-height: 15px; color: #4a90e2;}
+.my_phototicket_list li:nth-child(2) .cancel-btn.cancel a {font-size: 12px; line-height: 15px; color: var(--colorBalck222222);}
+.my_phototicket_list li:nth-child(3) {width: 27%; text-align: center; padding-top: 16px;}
+.my_phototicket_list li:nth-child(3) .value { font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }
+.my_phototicket_list li:nth-child(3) .value::after {content: '원'; font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }
+.my_phototicket_list li:nth-child(3) .value.cancel {color: var(--watermelon); }
+.my_phototicket_list li:nth-child(3) .value.cancel::before {content: '-'; font-size: 14px; line-height: 17px; color: var(--watermelon); letter-spacing: -.5px; }
+.my_phototicket_list li:nth-child(3) .value.cancel::after {content: '원'; font-size: 14px; line-height: 17px; color: var(--watermelon); letter-spacing: -.5px; }
