@@ -73,9 +73,9 @@ var front = (function () {
         // 자랑하기 버튼 --- 2020.05.07 수정
         jQuery('._btnBoast').on('click', function () {
             if (jQuery(this).hasClass('active')) {
-                jQuery(this).removeClass('active').text('자랑하기');
+                jQuery(this).removeClass('active');
             } else {
-                jQuery(this).text('자랑취소').addClass('active');
+                // jQuery(this).text('자랑취소').addClass('active');
                 // jQuery('#pop_alert').addClass('active');
             }
         });
@@ -88,7 +88,7 @@ var front = (function () {
         // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
         jQuery('._confirmBtn').on('click', function () {
             jQuery('#pop_alert').removeClass('active');
-            jQuery('#pop_alert2').addClass('active');
+            // jQuery('#pop_alert2').addClass('active');
         });
 
         // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
@@ -98,6 +98,7 @@ var front = (function () {
             jQuery('#pop_alert3').removeClass('active');
             jQuery('#pop_alert4').removeClass('active');
             jQuery('#pop_alertDelete').removeClass('active');
+            jQuery('#pop_alertCancel').removeClass('active');
         });
 
         // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
@@ -107,13 +108,18 @@ var front = (function () {
 
         // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
         jQuery('._confirmPay').on('click', function () {
-            jQuery('#pop_alert4').addClass('active');
+            // jQuery('#pop_alert4').addClass('active');
             jQuery('#pop_alert3').removeClass('active');
         });
 
         // 삭제하기 버튼 클릭 이벤트 --- 2020.05.15 수정
         jQuery('._deleteBtn').on('click', function () {
             jQuery('#pop_alertDelete').addClass('active');
+        });
+
+        // 삭제하기 버튼 클릭 이벤트 --- 2020.05.19 추가
+        jQuery('._alertCancel').on('click', function () {
+            jQuery('#pop_alertCancel').addClass('active');
         });
 
         // 조회기간 클릭 이벤트 다중처리 X
@@ -183,9 +189,10 @@ var front = (function () {
 
         function alertMessage() {
             jQuery('#pop_alert').show();
-            jQuery('#pop_alert2').show();
+            // jQuery('#pop_alert2').show();
             jQuery('#pop_alert3').show();
-            jQuery('#pop_alert4').show();
+            jQuery('#pop_alertCancel').show();
+           // jQuery('#pop_alert4').show();
             dimed();
         }
 

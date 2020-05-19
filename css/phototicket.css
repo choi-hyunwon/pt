@@ -323,6 +323,7 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 .clearfix::after { content: ''; clear: both; display: block;}
 .primary { color: var(--watermelon);}
 .photo_ticket.container article::before {height: 7px;}
+.photo_ticket.container article::after {content: ''; position: absolute; width: 100%;height: 1px; border-top: 1px solid #dddddd; top: 0; left: 0;}
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
 .photo_ticket .btn_grey i.sprite-icDownMore { display: inline-block }
 .photo_ticket .btn-outline-red {display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px; background-color: #ffffff;}
@@ -340,7 +341,7 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 .btn-boast:hover {color:#ffffff;}
 .btn-boast:focus {outline: none;}
 .btn-boast {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;background: var(--watermelon);-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
-.btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
+.btn-boast::before {content: '';position: absolute;top: 0;left: -2px;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
 .btn-boast.active.disabled {cursor: pointer; background-color: #ffffff}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
@@ -710,6 +711,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 플립슬라이더 뒷면 text가 올 경우 */
 
 /* [S] 광주충장로 지점 */
+.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container {padding-left: 20px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
 .myPhtoticketFlip .btn-flip {display: inline-block;position: absolute;right: 7px;bottom: 5px;}
@@ -738,14 +740,14 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더 - web */
-.myPhtoticketFlip.web .swiper-container { width: 100%; height: 415px; overflow: auto; padding-left: 20px;}
+.myPhtoticketFlip.web .swiper-container { width: 100%; height: 415px; overflow: auto; padding-left: 28px;}
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px; margin-right: 3px;}
 .myPhtoticketFlip.web.single .swiper-container {padding-left: 0;}
 .myPhtoticketFlip.web.single .swiper-container .swiper-slide {margin: 0 auto}
 
 /* [S] 플립슬라이더 팝업 헤더 */
 .photo_ticket .pop_header {overflow: hidden; width: 100%;background-color: #fff;z-index: 2;height: auto;top:0;padding-top: 0;border: none;position: absolute; line-height: 50px;font-weight: 400;font-size: 14px;text-align: left;color: #373e46;vertical-align: middle;padding-left: 0;border-bottom: 0;}
-.photo_ticket .pop_header a {line-height: 55px;}
+.photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;line-height: 47px; top: 8px;}
 .photo_ticket .pop_header .btn_share {position: absolute;left: 15px;top: 9px;}
 .photo_ticket .pop_header > div {width: 100%;height: 47px;padding-top: 14px;}
 .photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 28px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
@@ -759,7 +761,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 11px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 3px;}
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
-.photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}
 /* [E] 플립슬라이더 팝업 헤더 */
 /* [E]포토티켓 플립 슬라이더 - app */
 
@@ -831,7 +832,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [S] 내가 or 다른 사람이 자랑한 포토티켓 */
 .pop_phototicket {position:fixed; width:100%; height: 100%; top: 0; background-color:#fff; z-index:9; overflow: auto; padding-top: 47px;}
 .pop_phototicket .pop_header { height: 47px; padding-left: 0; border-bottom: 0;}
-.pop_phototicket .pop_header h1 {line-height: 47px;font-size: 17px;padding-left: 20px;letter-spacing: -.5px;}
+.pop_phototicket .pop_header h1 {line-height: 47px; font-size: 17px; padding-left: 20px; letter-spacing: -1.5px;}
 .pop_phototicket .pop_header .btn_close { top: 11px; right: 7px;}
 .pop_phototicket .pop_header .name { padding-left: 20px;letter-spacing: 0; }
 .pop_phototicket .btn_area { margin-top: 0 }
@@ -870,7 +871,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
 	.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner {padding: 30px 20px 20px 20px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area { margin-top: -30px; padding: 0 15px 0; }
+	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area { margin-top: -30px; padding: 3px 15px 0; }
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .title .rating {top: 29px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .info {margin-bottom: 12px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .info li.bar span:first-child {max-width: 90px;}
