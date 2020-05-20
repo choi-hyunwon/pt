@@ -598,6 +598,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .card_wrap .badge { position: absolute; width: 68px; height: 68px; border-radius: 50%; text-align: center; color: #ffffff; right: 9px; bottom: 26px;}
 .photo_ticket .card_wrap .badge.badge_red { background-color: #ff2f35;}
 .photo_ticket .card_wrap .badge.badge-blue{ background-color: #209eff;}
+.photo_ticket .card_wrap .badge.badge-grey{ background-color: #929292;}
 .photo_ticket .card_wrap .badge { background-color: #ff2f35}
 .photo_ticket .card_wrap .badge .dday { font-weight: bold; font-size: 18px; padding-top: 20px; margin-bottom: 2px; letter-spacing: 1px;}
 .photo_ticket .card_wrap .badge .txt { font-size: 10px; font-weight: 300;}

@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>온라인 예약 / 결제내역</title>
+    <title>쿠폰함</title>
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
@@ -77,6 +77,7 @@
 </head>
 <body>
 <div class="wrap">
+
     <!-- [S] HEADER -->
     <div id="header_box">
         <header id="headerTitle" class="cls_headertitle_box">
@@ -85,9 +86,7 @@
                     <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴">
                 </div>
             </a>
-            <div class="title" id="headerTitleArea">
-                온라인 예약/결제내역
-            </div>
+            <div class="title" id="headerTitleArea">쿠폰함</div>
         </header>
         <section class="allview_wrap" id="siteMap">
             <div id="fogbg" onclick="javascript:close_sitemapFn();"></div>
@@ -143,96 +142,164 @@
     </div>
     <!-- [E] HEADER -->
 
-    <section class="content_wrap container no_height" id="ContainerView">
-        <article class="cPHistory">
-            <ul id="ul_menu" class="cPHistoryTitle type4 renewal-menu v2">
-                <li id="li_menu_ticket"><a href="javascript:void(0);">영화예매</a></li>
-                <li id="li_menu_instOrder" class=""><a href="javascript:void(0);">패스트오더</a></li>
-                <li id="li_menu_popcorn" class=""><a href="javascript:void(0);">기프트샵</a></li>
-                <li class="active"><a href="javascript:void(0);">포토티켓</a></li>
-                <li id="li_menu_workatcgv" class=""><a href=javascript:void(0);>플레이존</a></li>
-                <li id="li_menu_parking" class=""><a href="javascript:void(0);">주차인증</a></li>
-            </ul>
-        </article>
-
-        <!--  [S]  결제완료 내역이 존재하지 않을 경우     -->
-        <article class="comCGVWrap1 store_payment_history_list_wrap" style="display: block;">
+    <section class="content_wrap container" id="ContainerView">
+        <!-- S 관람권 기프트콘 카드
+            Desctiption :
+                - class 'couponList' 에 리스트가 없을경우 자식노드인 li 테그에 class 'noData' 추가하고 내용 삽입(사용가능한 쿠폰이 없습니다.)
+                - 관람권 기프트콘 카드 5종류
+                - D-day 추가 span태그 class 'giftconDetailPeriodDday' 추가 20180323 : CKC
+        -->
+        <article class="comCGVWrap1">
+            <p class="comCGVBtnTWrap"><a href="javascript:void(0);" class="btnComCGVReg" onclick="InputTemp();">+ 쿠폰 등록</a></p>
             <h1>
-                <p class="comCGVList1TotalCntWrap">영화예매</p>
-                <a href="javascript:void(0);" class="btnLayerPop" data-popup="popSearch" data-popup-direction="UP">
-                    <span>결제완료</span>
-                    <span>7일</span>
+                <p class="comCGVList1TotalCntWrap">총<span class="comCGVList1TotalCnt">17</span>개</p>
+                <a href="javascript:void(0);" class="btnLayerPop">
+                    <span>유형전체</span>
+                    <span>전체구분</span>
+                    <span>사용가능</span>
+                    <span>3개월</span>
                 </a>
             </h1>
-            <ul id="ul_popcornPaymentList" class="comCGVList1 store_payment_history_list"><li class="noData">결제완료 내역이 존재하지 않습니다.</li></ul>
+            <ul class="comCGVList1 couponList"><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=jx8zETnOKAFGJbfhY%2flmuA%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=ggSpCyXUSogglSwI1kr92Q%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=NiaX4s6WS7gaVKOMGmv2pA%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=SCKUBGYoIZWNrj%2fs9l8zIQ%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=rFjgcM3GbbK7EUC8O%2fp9gw%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=O3hCLLJYmtPLdtn2vGGfwQ%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=Y6xpR2XxK7YsLgYpkb3XAg%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=niTxBQwtUFlnjeZnfhfA%2fg%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=%2fedst3NN%2fMjFaroKLk%2bCqg%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType2">
+                <span class="couponType">포토<br>티켓</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[N차관람] 날씨의아이 포토티켓 무료</span>
+                    <span class="couponDetailPeriod">2020.05.01 ~ 2020.05.31</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=FVPO07hYgtg92ycA0tjEnA%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType1">
+                <span class="couponType">매점</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club] 아메리카노 50%①</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#키오스크 #현장할인 #홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=%2bxJJF6SCXQEyKkfI9gU5Cw%3d%3d&amp;useflag=0&amp;barcode=use&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType1">
+                <span class="couponType">매점</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club] 아메리카노 50%②</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#키오스크 #현장할인 #홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=2eWoWGj%2b022p8%2byxUq4p%2fg%3d%3d&amp;useflag=0&amp;barcode=use&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType0">
+                <span class="couponType">매표</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club]둘이서 만원 쿠폰①</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=PqTD1RLksslgl898E2J1vQ%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType0">
+                <span class="couponType">매표</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club]둘이서 만원 쿠폰②</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=gAH8CWBa1J0hIh6p%2fMOkQA%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType1">
+                <span class="couponType">매점</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club]스몰세트 1천원할인①</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#키오스크 #현장할인 #홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=PThq5%2fM8YwdfLXgrMPtT0A%3d%3d&amp;useflag=0&amp;barcode=use&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType1">
+                <span class="couponType">매점</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[아트하우스Club]스몰세트 1천원할인②</span>
+                    <span class="couponDetailPeriod">2020.01.14 ~ 2020.06.30</span>
+                    <span class="couponDetailHash">#키오스크 #현장할인 #홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=jZdGLNa4JcH41pC2DJeyEg%3d%3d&amp;useflag=0&amp;barcode=use&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li><li class="couponType0">
+                <span class="couponType">매표</span>
+                <p class="couponDetail">
+                    <span class="couponDetailTitle">[Thankscard] 일반2D 무료관람</span>
+                    <span class="couponDetailPeriod">2019.01.21 ~ 2021.01.21</span>
+                    <span class="couponDetailHash">#홈페이지 #모바일 </span>
+                </p>
+                <a href="couponDetail.aspx?type=0&amp;number=OtbcnmohRv0k4mwNOZfMkA%3d%3d&amp;useflag=0&amp;barcode=&amp;st=&amp;et=" class="spriteBefore btnArrowR">펼치기</a>
+            </li></ul>
         </article>
-        <!--  [E]  결제완료 내역이 존재하지 않을 경우     -->
-
-        <!--  [S]  결제취소 내역이 존재하지 않을 경우     -->
-        <article class="comCGVWrap1 store_payment_history_list_wrap" style="display: none;">
-            <h1>
-                <p class="comCGVList1TotalCntWrap">총<span id="span_parking_total_count" class="comCGVList1TotalCnt">0</span>개</p>
-                <a href="javascript:void(0);" class="btnLayerPop" data-popup="popSearch" data-popup-direction="UP">
-                    <span>결제취소</span>
-                    <span>1개월</span>
-                </a>
-            </h1>
-            <ul id="ul_parkingPaymentList" class="comCGVList1 store_payment_history_list"><li class="noData">결제취소 내역이 존재하지 않습니다.</li></ul>
-        </article>
-        <!-- [E]  결제취소 내역이 존재하지 않을 경우     -->
-
-        <!-- [S] 조건검색레이어 팝업 -->
-        <div class="popup_dim" id="popSearch">
-            <div class="popup popup_my_select">
-                <div class="popup_container">
-                    <div class="container_header">선택<a href="#none" class="btn_close"><i class="sprite sprite-icClose"><span class="sr-only">팝업 닫기</span></i></a>
-                    </div>
-                    <div class="container_content">
-                        <!--
-                            날짜 : 2020.05.20
-                            작성자 : 이주연
-                            - _payState 클릭 이벤트 (instMy.js L:34-38) 참고
-                            - 결제완료/결제취소 버튼 활성화 상태('active' 클래스 추가)
-                        -->
-                        <dl class="state">
-                            <dt>상태 구분</dt>
-                            <dd class="left active _payState"><a href="javascript:void(0);">결제완료</a></dd>
-                            <dd class="right _payState"><a href="javascript:void(0);">결제취소</a></dd>
-                        </dl>
-                        <!--
-                            날짜 : 2020.05.20
-                            작성자 : 이주연
-                            - 조회기간 (instMy.js L:39-106) 참고
-                            - _dayClick 클릭 이벤트 (instMy.js L:42-50) 참고
-                            - 초기값(7일)/ moment.min.js 추가
-                        -->
-                        <dl class="search">
-                            <dt>조회 기간</dt>
-                            <dd class="DatepickerBox">
-                                <span class="active _dayClick"><a id="btn_seven_days" href="javascript:void(0);">7일</a></span>
-                                <span class="_dayClick"><a id="btn_one_month" href="javascript:void(0);">1개월</a></span>
-                                <span class="_dayClick"><a id="btn_three_month" href="javascript:void(0);">3개월</a></span>
-                                <span class="_dayClick"><a id="btn_six_month" href="javascript:void(0);">6개월</a></span>
-                                <span class="lg _dayClick _direct"><a href="javascript:void(0);">직접입력</a></span>
-                            </dd>
-                            <dd class="inputBox">
-                                <span class="inputBoxStart">
-                                    <input id="startDt" class="_inputDate" title="date" type="date" disabled="">
-                                </span>
-                                <span class="inputBoxEnd">
-                                    <input id="endDt" class="_inputDate" title="date" type="date" disabled="">
-                                </span>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="container_footer">
-                        <a href="javascript:void(0);" class="btnPopConfirm">확인</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- [E] 조건검색레이어 팝업 -->
     </section>
+
 </div>
 
 <!-- [S] FOOTER -->

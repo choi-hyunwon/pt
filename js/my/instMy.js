@@ -31,17 +31,79 @@ var front = (function () {
         }
         /* [E] 사이트맵 */
 
-        // 기간검색 팝업
-        popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
-        jQuery('.popFogBg').on({
-            click: function (e) {
-                var jQueryfogBg = jQuery(e.target);
-                var jQuerypopLayer;
-                jQueryfogBg.css({'display': 'none'});
-                popLayerBgShowHide(jQuery('popFogBg'), jQuerypopLayer, true);
-                jQuery('body').off('scroll touchmove mousewheel');
+        // _payState 클릭 이벤트
+        jQuery('._payState').on('click', function () {
+            jQuery(this).hasClass('active') ? '' : jQuery(this).addClass('active').siblings().removeClass('active');
+        });
+
+        /* [S] 조건검색레이어 팝업 */
+
+        // 조회기간 클릭 이벤트 다중처리 X
+        jQuery('._dayClick').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', true);
+            } else {
+                jQuery(this).addClass('active').siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', true);
             }
         });
+
+        // 조회기간 활성화/비활성화
+        jQuery('._direct').on('click', function () {
+            if (jQuery(this).hasClass('active')) {
+                jQuery(this).siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', false);
+            } else {
+                jQuery(this).addClass('active').siblings().removeClass('active');
+                jQuery('._inputDate').attr('disabled', false);
+            }
+        });
+
+        //조회기간 - 초기값
+        var _today        = moment().format('YYYY-MM-DD');
+        var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
+
+        jQuery("#startDt").val(_prevMovieDay);
+        jQuery("#endDt").val(_today);
+
+        //조회기간 - 7일 선택시
+        jQuery("#btn_seven_days").on("click", function() {
+            var _today        = moment().format('YYYY-MM-DD');
+            var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
+
+            jQuery("#startDt").val(_prevMovieDay);
+            jQuery("#endDt").val(_today);
+        });
+
+        //조회기간 - 1개월 선택시
+        jQuery("#btn_one_month").on("click", function() {
+            var _today        = moment().format('YYYY-MM-DD');
+            var _prevMovieDay = moment().add(-1, 'months').format('YYYY-MM-DD');
+
+            jQuery("#startDt").val(_prevMovieDay);
+            jQuery("#endDt").val(_today);
+        });
+
+        //조회기간 - 3개월 선택시
+        jQuery("#btn_three_month").on("click", function() {
+            var _today        = moment().format('YYYY-MM-DD');
+            var _prevMovieDay = moment().add(-3, 'months').format('YYYY-MM-DD');
+
+            jQuery("#startDt").val(_prevMovieDay);
+            jQuery("#endDt").val(_today);
+        });
+
+        //조회기간 - 6개월 선택시
+        jQuery("#btn_six_month").on("click", function() {
+            var _today        = moment().format('YYYY-MM-DD');
+            var _prevMovieDay = moment().add(-6, 'months').format('YYYY-MM-DD');
+
+            jQuery("#startDt").val(_prevMovieDay);
+            jQuery("#endDt").val(_today);
+        });
+
+        /* [E] 조건검색레이어 팝업 */
 
         // alert
         window.alertMessage = alertMessage;
@@ -103,7 +165,7 @@ var front = (function () {
             var popupDepth = $(this).data('popupDepth') || null;
 
 
-            console.log('popup OPEN', popupTarget, popupDir);
+            // console.log('popup OPEN', popupTarget, popupDir);
 
             $('#' + popupTarget).css({'top':'0'});
             $('#' + popupTarget).attr('data-popup-direction', popupDir);
@@ -162,17 +224,13 @@ var front = (function () {
 
 
         $('.popup_dim').on('click', function(e){
-            console.log("console.log('popup DIM CLOSE');");
+            // console.log("console.log('popup DIM CLOSE');");
 
             if(e.currentTarget === e.target){	// console.log("DIM 영역");
                 var popupDir = $(this).attr('data-popup-direction');
                 $.setClosePopup($(this), popupDir);
             }else{	//	console.log("DIM 이외 영역");
             }
-
-
-
-
         });
         /* E 팝업 */
 
@@ -192,10 +250,10 @@ var front = (function () {
                         if(typeof $.fn[_property] == 'function'){
                             $.fn[property]();
                         }else{
-                            console.log('jQuery.fn.' + _property + ' 함수를 선언하세요');
+                            // console.log('jQuery.fn.' + _property + ' 함수를 선언하세요');
                         }
                     }else{
-                        console.log('data-fn 에 실행할 함수명을 선언하세요');
+                        // console.log('data-fn 에 실행할 함수명을 선언하세요');
                     }
                 }
             }
@@ -483,89 +541,6 @@ var front = (function () {
         return str;
 
     }
-
-    function setDataState(value){
-        $("#setDataState").val(value);
-    }
-
-    function setDataSort(value){
-        $("#setDataSort").val(value);
-    }
-
-    function getDate(value){
-        var today = new Date();
-        today.setMonth(today.getMonth()-parseInt(value));
-        var dd = today.getDate();
-        var mm = today.getMonth()+1; //January is 0!
-        var yyyy = today.getFullYear();
-
-        if(dd<10) {
-            dd='0'+dd
-        }
-
-        if(mm<10) {
-            mm='0'+mm
-        }
-
-        today = yyyy+'-'+mm+'-'+dd;
-        return today;
-
-    }
-
-    function setDataMonth(value){
-        $("#setDataMonth").val(value);
-        $("#start_date").val(getDate(value));
-    }
-
-    jQuery.fn.closePopupLayer = function () {
-        jQuery('.btnPopClose').trigger('click');
-    }
-
-    jQuery.fn.comPopupLayer = function (_state, _targetClassName, _bgOpacity) {
-        /* 인자값 정의 :
-            _state  :
-                - true : open
-                - false : close
-            _targetClassName : 팝업레이어 className
-            _bgOpacity : Dim opacity (0 ~ 1)
-        */
-
-        if (_state) {
-            fnScrollFixed(true);
-            jQuery('.com_pop_fog').css({'opacity': _bgOpacity, 'top': '0', 'display': 'block'});
-
-            //jQuery('.com_pop_fog').css({'opacity':_bgOpacity, 'top':'0'});
-            jQuery('.btnTop').hide();
-
-            jQuery('.com_pop_btn_close').on({
-                click: function (e) {
-                    jQuery('.com_pop_fog').trigger('click');
-                }
-            });
-
-            jQuery('.com_pop_fog').on({
-                click: function (e) {
-                    jQuery('.com_pop_btn_close, .com_pop_fog').off('click');
-                    jQuery('.btnTop').show();
-                    jQuery('.com_pop_fog').css({'display': 'none'});
-                    //jQuery(e.target).css({'top':'150%'});
-                    fnScrollFixed(false);
-                    jQuery('.' + _targetClassName).show().stop().animate({'bottom': '0'}, 200, function () {
-                        jQuery('.' + _targetClassName).hide();
-                    });
-                }
-            });
-            setTimeout(function () {
-                jQuery('.com_pop_header').find('a:first').focus();
-            }, 0);
-            jQuery('.' + _targetClassName).show().stop().animate({'bottom': '100%'}, 200, function () {
-            });
-        } else {
-            jQuery('.com_pop_fog').trigger('click');
-        }
-        return this;
-    }
-
     /**
      * [E] m.cgv 가져온 함수
      */

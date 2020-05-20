@@ -51,6 +51,7 @@
 
     <!-- [S] my js -->
     <script type="text/javascript" src="./../js/my/instMy.js"></script>
+    <script type="text/javascript" src="https://img.cgv.co.kr/WebApp/js/v5/contents/lib/moment.min.js"></script>
     <!-- [S] my js -->
     <script type="text/javascript">
         //Global Variable
@@ -154,70 +155,139 @@
             </ul>
         </article>
 
-        <!--  [S]  결제완료 내역이 존재하지 않을 경우     -->
-        <!-- TODO! AMOUNT/VALUE 처리 -->
-        <article class="comCGVWrap1 store_payment_history_list_wrap" style="display: block">
+        <!--  [S]  결제완료 내역     -->
+        <article class="comCGVWrap1" id="contents_ticket" style="display: block;">
             <h1>
-                <p class="comCGVList1TotalCntWrap">영화예매</p>
-                <a href="javascript:void(0);" class="btnLayerPop">
+                <p class="comCGVList1TotalCntWrap">총<span id="span_reservation_total_count" class="comCGVList1TotalCnt">4</span>개</p>
+                <a href="javascript:void(0);" class="btnLayerPop" data-popup="popSearch" data-popup-direction="UP">
                     <span>결제완료</span>
-                    <span>1개월</span>
+                    <span>7일</span>
                 </a>
             </h1>
-            <ul class="my_phototicket_list">
-                <li>
-                    <span class="date">04.02</span>
+            <ul id="ul_ticketPaymentList" class="comCGVList1 cPHistoryList renewal-list">
+                <li class="movieBookingType0">
+                    <a href="javascript:fnReservDetail('MQWLFDBdvFSzJEEtZbT8hNLyVIj2%2bUPbqCPA9hlCTT8%3d')">
+                        <span class="movieBookingDetailPeriod">04.02</span>
+                        <span class="movieBookingDetail has-other">
+                            <span class="movieBookingDetailTitle">날씨의 아이(인생영화 기억전)</span>
+                            <span class="other-payment"></span>
+                            <span class="movieBookingDetailValue">4,000원</span>
+                        </span>
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            수정 사항 : <span class="photoTicketValue"></span> 추가
+                        -->
+                        <span class="photoTicketValue">4매</span>
+                        <span class="movieBookingDetailState">결제완료</span>
+                    </a>
                 </li>
-                <li>
-                    <span class="title">날씨의아이(인생영화 기억전)</span>
-                    <span class="amount">4</span>
-                    <span class="cancel-btn"><a href="javascript:void(0);">결제완료</a></span>
+                <li class="movieBookingType0">
+                    <a href="javascript:fnReservDetail('MQWLFDBdvFSzJEEtZbT8hNLyVIj2%2bUPbqCPA9hlCTT8%3d')">
+                        <span class="movieBookingDetailPeriod">04.02</span>
+                        <span class="movieBookingDetail has-other">
+                            <span class="movieBookingDetailTitle">날씨의 아이(인생영화 기억전)</span>
+                            <span class="other-payment"></span>
+                            <span class="movieBookingDetailValue">4,000원</span>
+                        </span>
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            수정 사항 : <span class="photoTicketValue"></span> 추가
+                        -->
+                        <span class="photoTicketValue">4매</span>
+                        <span class="movieBookingDetailState">결제완료</span>
+                    </a>
                 </li>
-                <li>
-                    <span class="value">2,000</span>
+                <li class="movieBookingType1">
+                    <a href="javascript:fnReservDetail('MQWLFDBdvFSzJEEtZbT8hNLyVIj2%2bUPbqCPA9hlCTT8%3d')">
+                        <span class="movieBookingDetailPeriod">04.02</span>
+                        <span class="movieBookingDetail has-other">
+                            <span class="movieBookingDetailTitle">날씨의 아이(인생영화 기억전)</span>
+                            <span class="other-payment"></span>
+                            <span class="movieBookingDetailValue">4,000원</span>
+                        </span>
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            수정 사항 : <span class="photoTicketValue"></span> 추가
+                        -->
+                        <span class="photoTicketValue">4매</span>
+                        <span class="movieBookingDetailState">결제취소</span>
+                    </a>
                 </li>
-            </ul>
-            <ul class="my_phototicket_list">
-                <li>
-                    <span class="date">04.02</span>
-                </li>
-                <li>
-                    <span class="title">날씨의아이(인생영화 기억전)</span>
-                    <span class="amount">4</span>
-                    <span class="cancel-btn"><a href="javascript:void(0);">결제완료</a></span>
-                </li>
-                <li>
-                    <span class="value">4,000</span>
-                </li>
-            </ul>
-            <ul class="my_phototicket_list">
-                <li>
-                    <span class="date">04.02</span>
-                </li>
-                <li>
-                    <span class="title">날씨의아이(인생영화 기억전)</span>
-                    <span class="amount">4</span>
-                    <span class="cancel-btn cancel"><a href="javascript:void(0);">결제취소</a></span>
-                </li>
-                <li>
-                    <span class="value cancel">4,000</span>
-                </li>
-            </ul>
-            <ul class="my_phototicket_list">
-                <li>
-                    <span class="date">04.02</span>
-                </li>
-                <li>
-                    <span class="title">날씨의아이(인생영화 기억전)</span>
-                    <span class="amount">4</span>
-                    <span class="cancel-btn cancel"><a href="javascript:void(0);">결제취소</a></span>
-                </li>
-                <li>
-                    <span class="value cancel">4,000</span>
+                <li class="movieBookingType1">
+                    <a href="javascript:fnReservDetail('MQWLFDBdvFSzJEEtZbT8hNLyVIj2%2bUPbqCPA9hlCTT8%3d')">
+                        <span class="movieBookingDetailPeriod">04.02</span>
+                        <span class="movieBookingDetail has-other">
+                            <span class="movieBookingDetailTitle">날씨의 아이(인생영화 기억전)</span>
+                            <span class="other-payment"></span>
+                            <span class="movieBookingDetailValue">4,000원</span>
+                        </span>
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            수정 사항 : <span class="photoTicketValue"></span> 추가
+                        -->
+                        <span class="photoTicketValue">4매</span>
+                        <span class="movieBookingDetailState">결제취소</span>
+                    </a>
                 </li>
             </ul>
         </article>
-        <!--  [E]  결제완료 내역이 존재하지 않을 경우     -->
+        <!--  [E]  결제완료 내역     -->
+
+        <!-- [S] 조건검색레이어 팝업 -->
+        <div class="popup_dim" id="popSearch">
+            <div class="popup popup_my_select">
+                <div class="popup_container">
+                    <div class="container_header">선택<a href="#none" class="btn_close"><i class="sprite sprite-icClose"><span class="sr-only">팝업 닫기</span></i></a>
+                    </div>
+                    <div class="container_content">
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            - _payState 클릭 이벤트 (instMy.js L:34-38) 참고
+                            - 결제완료/결제취소 버튼 활성화 상태('active' 클래스 추가)
+                        -->
+                        <dl class="state">
+                            <dt>상태 구분</dt>
+                            <dd class="left active _payState"><a href="javascript:void(0);">결제완료</a></dd>
+                            <dd class="right _payState"><a href="javascript:void(0);">결제취소</a></dd>
+                        </dl>
+                        <!--
+                            날짜 : 2020.05.20
+                            작성자 : 이주연
+                            - 조회기간 (instMy.js L:39-106) 참고
+                            - _dayClick 클릭 이벤트 (instMy.js L:42-50) 참고
+                            - 초기값(7일)/ moment.min.js 추가
+                        -->
+                        <dl class="search">
+                            <dt>조회 기간</dt>
+                            <dd class="DatepickerBox">
+                                <span class="active _dayClick"><a id="btn_seven_days" href="javascript:void(0);">7일</a></span>
+                                <span class="_dayClick"><a id="btn_one_month" href="javascript:void(0);">1개월</a></span>
+                                <span class="_dayClick"><a id="btn_three_month" href="javascript:void(0);">3개월</a></span>
+                                <span class="_dayClick"><a id="btn_six_month" href="javascript:void(0);">6개월</a></span>
+                                <span class="lg _dayClick _direct"><a href="javascript:void(0);">직접입력</a></span>
+                            </dd>
+                            <dd class="inputBox">
+                                <span class="inputBoxStart">
+                                    <input id="startDt" class="_inputDate" title="date" type="date" disabled="">
+                                </span>
+                                <span class="inputBoxEnd">
+                                    <input id="endDt" class="_inputDate" title="date" type="date" disabled="">
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="container_footer">
+                        <a href="javascript:void(0);" class="btnPopConfirm">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [E] 조건검색레이어 팝업 -->
     </section>
 </div>
 

@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>온라인 예약 / 결제내역</title>
+    <title>취소완료</title>
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
@@ -85,9 +85,7 @@
                     <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴">
                 </div>
             </a>
-            <div class="title" id="headerTitleArea">
-                온라인 예약/결제내역
-            </div>
+            <div class="title" id="headerTitleArea">취소완료</div>
         </header>
         <section class="allview_wrap" id="siteMap">
             <div id="fogbg" onclick="javascript:close_sitemapFn();"></div>
@@ -143,95 +141,108 @@
     </div>
     <!-- [E] HEADER -->
 
-    <section class="content_wrap container no_height" id="ContainerView">
-        <article class="cPHistory">
-            <ul id="ul_menu" class="cPHistoryTitle type4 renewal-menu v2">
-                <li id="li_menu_ticket"><a href="javascript:void(0);">영화예매</a></li>
-                <li id="li_menu_instOrder" class=""><a href="javascript:void(0);">패스트오더</a></li>
-                <li id="li_menu_popcorn" class=""><a href="javascript:void(0);">기프트샵</a></li>
-                <li class="active"><a href="javascript:void(0);">포토티켓</a></li>
-                <li id="li_menu_workatcgv" class=""><a href=javascript:void(0);>플레이존</a></li>
-                <li id="li_menu_parking" class=""><a href="javascript:void(0);">주차인증</a></li>
-            </ul>
-        </article>
+    <section class="content_wrap container payment-history" id="ContainerView">
+        <!--  [S]  결제내역 상세화면     -->
 
-        <!--  [S]  결제완료 내역이 존재하지 않을 경우     -->
-        <article class="comCGVWrap1 store_payment_history_list_wrap" style="display: block;">
-            <h1>
-                <p class="comCGVList1TotalCntWrap">영화예매</p>
-                <a href="javascript:void(0);" class="btnLayerPop" data-popup="popSearch" data-popup-direction="UP">
-                    <span>결제완료</span>
-                    <span>7일</span>
-                </a>
-            </h1>
-            <ul id="ul_popcornPaymentList" class="comCGVList1 store_payment_history_list"><li class="noData">결제완료 내역이 존재하지 않습니다.</li></ul>
-        </article>
-        <!--  [E]  결제완료 내역이 존재하지 않을 경우     -->
-
-        <!--  [S]  결제취소 내역이 존재하지 않을 경우     -->
-        <article class="comCGVWrap1 store_payment_history_list_wrap" style="display: none;">
-            <h1>
-                <p class="comCGVList1TotalCntWrap">총<span id="span_parking_total_count" class="comCGVList1TotalCnt">0</span>개</p>
-                <a href="javascript:void(0);" class="btnLayerPop" data-popup="popSearch" data-popup-direction="UP">
-                    <span>결제취소</span>
-                    <span>1개월</span>
-                </a>
-            </h1>
-            <ul id="ul_parkingPaymentList" class="comCGVList1 store_payment_history_list"><li class="noData">결제취소 내역이 존재하지 않습니다.</li></ul>
-        </article>
-        <!-- [E]  결제취소 내역이 존재하지 않을 경우     -->
-
-        <!-- [S] 조건검색레이어 팝업 -->
-        <div class="popup_dim" id="popSearch">
-            <div class="popup popup_my_select">
-                <div class="popup_container">
-                    <div class="container_header">선택<a href="#none" class="btn_close"><i class="sprite sprite-icClose"><span class="sr-only">팝업 닫기</span></i></a>
-                    </div>
-                    <div class="container_content">
-                        <!--
-                            날짜 : 2020.05.20
-                            작성자 : 이주연
-                            - _payState 클릭 이벤트 (instMy.js L:34-38) 참고
-                            - 결제완료/결제취소 버튼 활성화 상태('active' 클래스 추가)
-                        -->
-                        <dl class="state">
-                            <dt>상태 구분</dt>
-                            <dd class="left active _payState"><a href="javascript:void(0);">결제완료</a></dd>
-                            <dd class="right _payState"><a href="javascript:void(0);">결제취소</a></dd>
-                        </dl>
-                        <!--
-                            날짜 : 2020.05.20
-                            작성자 : 이주연
-                            - 조회기간 (instMy.js L:39-106) 참고
-                            - _dayClick 클릭 이벤트 (instMy.js L:42-50) 참고
-                            - 초기값(7일)/ moment.min.js 추가
-                        -->
-                        <dl class="search">
-                            <dt>조회 기간</dt>
-                            <dd class="DatepickerBox">
-                                <span class="active _dayClick"><a id="btn_seven_days" href="javascript:void(0);">7일</a></span>
-                                <span class="_dayClick"><a id="btn_one_month" href="javascript:void(0);">1개월</a></span>
-                                <span class="_dayClick"><a id="btn_three_month" href="javascript:void(0);">3개월</a></span>
-                                <span class="_dayClick"><a id="btn_six_month" href="javascript:void(0);">6개월</a></span>
-                                <span class="lg _dayClick _direct"><a href="javascript:void(0);">직접입력</a></span>
-                            </dd>
-                            <dd class="inputBox">
-                                <span class="inputBoxStart">
-                                    <input id="startDt" class="_inputDate" title="date" type="date" disabled="">
-                                </span>
-                                <span class="inputBoxEnd">
-                                    <input id="endDt" class="_inputDate" title="date" type="date" disabled="">
-                                </span>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="container_footer">
-                        <a href="javascript:void(0);" class="btnPopConfirm">확인</a>
-                    </div>
-                </div>
+        <article class="my_productCode_wrap">
+            <div class="info">
+                <span class="date">2020.04.02</span>
+                <span class="code">202000200000011</span>
             </div>
-        </div>
-        <!-- [E] 조건검색레이어 팝업 -->
+            <!--
+             날짜 : 2020.05.20
+             작성자 : 이주연
+             내용 : 결제 취소 버튼 클릭 후, cancel 클래스 추가
+            -->
+            <div class="btn_wrap">
+                <a class="cancel" href="javascript:void(0)">취소 완료</a>
+            </div>
+        </article>
+
+        <article class="my_productInfo_wrap">
+            <h2>제작 상품 정보</h2>
+            <div class="img_wrap">
+                <img src="../images/my/temp/movie4@2x.png" alt="">
+            </div>
+            <div class="productInfo">
+                <strong>타오르는 여인의 초상</strong>
+                <span class="date">2020.03.29 일요일・21:45~23:47</span>
+                <span class="place">왕십리・IMAX관</span>
+                <p><span class="total">총 4매</span><span class="price">4,000원</span></p>
+            </div>
+        </article>
+
+        <article class="payment-detail-wrap">
+            <h2>결제정보<span>2020.05.20 15:30</span></h2>
+            <dl class="payment-detail">
+                <dt>CGV 할인쿠폰</dt>
+                <dd>1,000원</dd>
+            </dl>
+            <dl class="payment-detail">
+                <dt>CJ ONE 포인트</dt>
+                <dd>1,100원</dd>
+            </dl>
+            <dl class="payment-detail">
+                <dt>신용카드</dt>
+                <dd>1,900원</dd>
+            </dl>
+            <dl class="payment-detail total-price-wrap">
+                <dt>총 결제금액</dt>
+                <dd class="bTLine">4,000원</dd>
+            </dl>
+        </article>
+
+        <article class="payment-detail-wrap">
+            <h2>취소/환불정보<span>2020.05.20 18:00</span></h2>
+            <ul class="payment-summary">
+                <li>
+                    <span class="sum-tit">결제금액</span>
+                    <p class="sum-price">48,000</p>
+                </li>
+                <li class="min-wrap">
+                    <span class="sum-tit">환불금액</span>
+                    <p class="sum-price">10,700</p>
+                </li>
+                <li class="tot-wrap">
+                    <span class="sum-tit">TOTAL</span>
+                    <p class="sum-price">37,300</p>
+                </li>
+            </ul>
+            <dl class="payment-detail">
+                <dt>CGV 할인쿠폰</dt>
+                <dd>1,000원</dd>
+            </dl>
+            <dl class="payment-detail">
+                <dt>CJ ONE 포인트</dt>
+                <dd>1,100원</dd>
+            </dl>
+            <dl class="payment-detail">
+                <dt>신용카드</dt>
+                <dd>1,900원</dd>
+            </dl>
+            <dl class="payment-detail total-price-wrap">
+                <dt>총 결제금액</dt>
+                <dd class="bTLine">-4,000원</dd>
+            </dl>
+        </article>
+
+        <article class="cPPaymentInfoWrap">
+            <div class="rules">
+                <h3>환불안내</h3>
+                <ul class="comDetailList">
+                    <li>신용카드<br>결제 후 3일 이내 취소 시 승인 취소 가능<br>3일 이후 예매 취소시 영업일 기준 3~5일 이내 카드사에서 환불 </li>
+                    <li>휴대폰 결제<br>결제 일자 기준 당월(1일~말일) 취소만 가능<br>익월 취소 관련 문의는 CGV 고객센터(1544-1122) 연락 요망 </li>
+                    <li>계좌이체<br>예매일 이후 7일 이내 취소 시, 자동 환불 은행 : 취소 후 즉시 처리 가능<br>조흥, 신한, 회한,한미 ,우리, 우체국, 전북, 경남, 광주, 대구, 새마을, 제주 우리은행의 경우 당일 취소분만 즉시 처리 가능<br>수동 환불 은행: 농협(취소 후 2~3일 이내 입금)<br>부산/제일/우리(취소 후 3~5일 이내 입금)<br>예매 7일 이후~ 상영시간 30분 전 취소 시, 환불은 환불 요청일로 부터 7일 이상 소요됨</li>
+                    <li>카카오페이<br>카카오페이머니나 카카오포인트를 사용하신 경우 각각의 잔액으로 원복되며, 카드 결제를 하신 경우는 카드사 정책에 따라 승인취소가 진행되며 3일 이후 매입 취소시 영업일 기준 3~10일 소요됩니다.</li>
+                    <li>PAYCO<br>PAYCO 쿠폰/포인트를 사용하신 경우 각각의 쿠폰/포인트로 원복되며 쿠폰의 경우 조건에 따라 재사용이 불가 할 수 있습니다. 카드 결제금액은 카드사 정책에 따라 승인취소가 진행되며 3일 이후 매입 취소시 영업일 기준 3~10일 소요됩니다.</li>
+                    <li>Smile Pay<br>스마일캐시를 사용하신 경우 스마일캐시로 원복되며, 카드 결제금액은 카드사 정책에 따라 승인취소가 진행되며 3일 이후 매입취소 시 영업일 기준 3~10일 소요됩니다.</li>
+                    <li>NAVER Pay<br>간편 신용카드/체크카드 : 취소 완료 후 3~5영업일 이후 환불(승인/매입 구분 불가)<br>간편 계좌이체 : 취소 완료 즉시 환불(단, 은행 정기점검시간등에는 환불 실패)<br>포인트 : 취소 완료 즉시 환불</li>
+                    <li>카카오톡 선물하기 복합상품<br>카카오톡 선물하기 복합상품 (2인 PKG / 1인 PKG)은 매점쿠폰 사용 시, 예매 티켓 환불 불가.<br>※ 단, 매점 쿠폰 미 사용 시, 예매 티켓 환불 가능하며, 재 예매 시, 새로운 매점 쿠폰 발급.<br><br><br>기타 환불 관련 문의는 CGV 고객센터 1544-1122로 연락 바랍니다.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!--  [E]  결제내역 상세화면    -->
     </section>
 </div>
 

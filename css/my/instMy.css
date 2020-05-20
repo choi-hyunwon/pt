@@ -6,9 +6,28 @@
     --watermelon:#fb4357;
     --dustyOrange:#ef642f;
     --coolGrey:#9197a3;
+    --brownishGrey:#666666;
     --colorBalck222222:#222222;
 }
 /* [E] Variables */
+
+/* [S] image */
+.sprite.sprite-icClose { display: block; width: 30px; height: 30px;}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1){
+    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose.png'); background-size:30px 30px}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose@2x.png'); background-size:30px 30px}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal@2x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio:3){
+    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose@3x.png'); background-size:30px 30px}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal@3x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+
+}
 
 /* [S] ul_menu */
 .cPHistoryTitle.type4.renewal-menu.v2 {overflow: auto; padding: 0 18px; font-size: 0; text-align: center; white-space: nowrap;}
@@ -26,17 +45,43 @@
 /* [S] popup */
 .popup_dim{display:none; overflow:hidden; position:fixed; left:0; top:-100%; width:100%; height:100%; z-index:9; background-color:rgba(0, 0, 0, 0.6); opacity:0}
 .popup_dim .popup{top:-100vh; left:-100vw; right:-100vw; bottom:-100vh; padding-right:constant(safe-area-inset-right); padding-right:env(safe-area-inset-right); padding-left:constant(safe-area-inset-left); padding-left:env(safe-area-inset-left)}
-.popup_dim .popup .popup_container .container_header{padding:18px 32px 16px;}
-.popup_dim .popup .popup_container .container_header h1{padding:0 10px; font-size:17px; text-align:center; line-height:17px}
-.popup_dim .popup .popup_container .container_footer {width: 100%;padding-top: 30px;}
+.popup_dim .popup .popup_container .container_footer {width: 100%;padding-top: 20px;}
 .popup_dim .popup .popup_container .container_footer .btnPopConfirm {display: block;width: 100%;height: 50px;font-weight: 400;font-size: 16px;color: #fff;line-height: 50px;text-align: center; background: linear-gradient(to left, var(--dustyOrange), var(--watermelon));}
-.popup_select_search .popup_container {background: #ffffff}
-.popup_select_search .container_header {height: 55px;padding-left: 18px;line-height: 50px;font-weight: 400;font-size: 14px;text-align: left;color: #373e46;vertical-align: middle;border-bottom: 1px solid #dcdee3;}
-.popup_select_search .container_header h1 { line-height: 55px;color: #030303;font-weight: bold;font-size: 17px;letter-spacing: -2px;}
-.popup_select_search .container_header .btn_close { left: auto;right: 13px;display: inline-block;position: absolute;top: 12px;}
-.popup_select_search .container_content { margin-bottom: 18px;}
-/* [E] POPUP */
 
+    /* [S] 조건 검색 레이어 팝업 */
+    .popup_my_select { position: fixed; left: 0; bottom: -100%; width: 100%; background-color: #fff;z-index: 9; border-radius: 16px 16px 0 0;}
+    .popup_my_select .popup_container {background: #ffffff; border-radius: 16px 16px 0 0;}
+    .popup_my_select .container_header {height: 55px;padding-left: 18px;line-height: 55px;font-weight: 600;font-size: 17px;text-align: left;color: #373e46;vertical-align: middle;border-bottom: 1px solid #dcdee3;}
+    .popup_my_select .container_header .btn_close { left: auto;right: 13px;display: inline-block;position: absolute;top: 12px;}
+    .popup_my_select .container_content { padding: 0 20px; }
+    .popup_my_select .container_content .state { overflow: hidden;padding-top: 10px; }
+    .popup_my_select .container_content .state dt { float: left;width: 100%; padding: 8px 0;font-weight: normal;font-size: 17px;line-height: 20px;color: var(--colorBalck222222);}
+    .popup_my_select .container_content .state dd { width: 47.2%; height: 36px;}
+    .popup_my_select .container_content .state dd.left { float: left;}
+    .popup_my_select .container_content .state dd.right { float: right;}
+    .popup_my_select .container_content .state dd a {display: inline-block; width: 100%;height: 100%;line-height: 36px;border: 0;font-size: 14px; color: var(--brownishGrey);border-radius: 8px;background: rgba(242,242,242,.8);text-align: center}
+    .popup_my_select .container_content .state dd.active a { background: var(--watermelon);color: #ffffff; }
+    .popup_my_select .container_content .search { overflow: hidden;padding-top: 30px; }
+    .popup_my_select .container_content .search dt { float: left;width: 100%;padding: 8px 0;font-weight: 400;font-size: 17px;line-height: 15px;color: var(--colorBalck222222);}
+    .popup_my_select .container_content .search .DatepickerBox {display: flex;flex-wrap: wrap; padding: 8px 1px 0;margin-bottom: 6px;}
+    .popup_my_select .container_content .search .DatepickerBox span {float: left;height: 36px;margin-right: 6px;width: 123px;flex: 0 0 17%;max-width: 33.333333%;}
+    .popup_my_select .container_content .search .DatepickerBox span a {display: block;font-size: 14px;text-align: center;line-height: 36px;color: #666666;border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .DatepickerBox span.active a {background: var(--watermelon);color: #ffffff;}
+    .popup_my_select .container_content .search .DatepickerBox span.lg {flex: 0 0 23%;margin-right: 0;}
+    .popup_my_select .container_content .search .inputBox {position: relative;overflow: hidden;}
+    .popup_my_select .container_content .search .inputBox:before {content: '~';position: absolute;left: 50%;top: 12px;display: block;margin-left: -3px;}
+    .popup_my_select .container_content .search .inputBox span {width: 46%;display: block;height: 36px;line-height: 36px;}
+    .popup_my_select .container_content .search .inputBox span:first-child {float: left;}
+    .popup_my_select .container_content .search .inputBox span:last-child {float: right;}
+    .popup_my_select .container_content .search .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px;border: 0;color: #b3b3b3;border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px;height: 36px;border: 0;color: rgb(102,102,102);border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .inputBox span input[type='date']::after {content: '';display: block;position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -33px -6px;z-index: 1;}
+    .popup_my_select .container_content .search .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -10px -6px;z-index: 1;}
+    /* [E] 조건 검색 레이어 팝업 */
+
+/* [E] popup */
+
+/* [S] 온라인 예약/결제내역 */
 .my_phototicket_list {position: relative; width: 100%; height: 90px;}
 .my_phototicket_list::after {content: ''; position: absolute; width: 100%; border-bottom: 1px solid #e4e4e4; bottom: 0; left: 0;}
 .my_phototicket_list li {float: left; height: 90px;}
@@ -44,14 +89,47 @@
 .my_phototicket_list li:nth-child(1) .date { font-size: 12px; line-height: 15px; color: #4b4f56;}
 .my_phototicket_list li:nth-child(2) {width:53%; padding-top: 16px;}
 .my_phototicket_list li:nth-child(2) span {display: block;}
-.my_phototicket_list li:nth-child(2) .title {font-size: 14px; line-height: 17px; letter-spacing: -.5px; padding-bottom: 4px;}
+.my_phototicket_list li:nth-child(2) .title {font-size: 14px; line-height: 17px; letter-spacing: -.5px; padding-bottom: 4px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .my_phototicket_list li:nth-child(2) .amount {position: relative; font-size: 12px; line-height: 15px; color: #4b4f56; padding-bottom: 7px;}
-.my_phototicket_list li:nth-child(2) .amount::after {content: '매'; position: absolute; font-size: 12px; line-height: 15px; color: #6a707a;}
+.my_phototicket_list li:nth-child(2) .amount i {color: #6a707a; font-style: normal;}
 .my_phototicket_list li:nth-child(2) .cancel-btn a {font-size: 12px; line-height: 15px; color: #4a90e2;}
 .my_phototicket_list li:nth-child(2) .cancel-btn.cancel a {font-size: 12px; line-height: 15px; color: var(--colorBalck222222);}
 .my_phototicket_list li:nth-child(3) {width: 27%; text-align: center; padding-top: 16px;}
 .my_phototicket_list li:nth-child(3) .value { font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }
-.my_phototicket_list li:nth-child(3) .value::after {content: '원'; font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }
 .my_phototicket_list li:nth-child(3) .value.cancel {color: var(--watermelon); }
-.my_phototicket_list li:nth-child(3) .value.cancel::before {content: '-'; font-size: 14px; line-height: 17px; color: var(--watermelon); letter-spacing: -.5px; }
-.my_phototicket_list li:nth-child(3) .value.cancel::after {content: '원'; font-size: 14px; line-height: 17px; color: var(--watermelon); letter-spacing: -.5px; }
+/* [E] 온라인 예약/결제내역 */
+
+/* [S] 결제내역 상세화면  */
+.cPHistoryList li a { padding: 16px 0; }
+.cPHistoryList li a .photoTicketValue { position: relative; float: left; max-width: 80%;padding-top: 7px;font-size: 12px; }
+.cPHistoryList li a .movieBookingDetailState { clear: both; padding-left: 20%;}
+
+.payment-history article + article { margin-top: 7px;}
+
+.my_productCode_wrap {position: relative; background: #ffffff; height: 60px; line-height: 60px; }
+.my_productCode_wrap .info {float: left; display: inline-block; line-height: 60px; padding-left: 20px;}
+.my_productCode_wrap .info span { font-size: 14px; color: #6a707a; }
+.my_productCode_wrap .info .date {display: inline-block; line-height: 17px;}
+.my_productCode_wrap .info .code {position: relative; display: inline-block; line-height: 17px; padding-left: 14px;}
+.my_productCode_wrap .info .code::before {content: ''; position: absolute; width: 1px; height: 12px;border-left: 1px solid #6a707a;left: 5px;top: 2px;}
+.my_productCode_wrap .btn_wrap {position: absolute;right:19px; top: 17px;}
+.my_productCode_wrap .btn_wrap a {display: inline-block; width: 90px; height: 27px; border-radius: 19px; border: 1px solid rgba(145,151,163,.4);text-align: center; font-size: 13px; color: #4b4f56; line-height: 26px;}
+.my_productCode_wrap .btn_wrap a.cancel {color: #4e88cf; width: 61px; font-size: 14px; border: 0; cursor: default;font-weight: 600; }
+
+.my_productInfo_wrap {overflow: hidden;padding: 13px 20px 16px;border-bottom: 1px solid #ddd; background: #ffffff;}
+.my_productInfo_wrap h2 { margin-bottom: 12px;padding-top: 7px;}
+.my_productInfo_wrap .img_wrap {float: left; overflow: hidden; width: 80px;height: 120px;border-radius: 5px;border: 1px solid rgba(153,153,153,.1);}
+.my_productInfo_wrap .img_wrap img {width: 100%;height: 100%;}
+.my_productInfo_wrap .productInfo {float: left;width: calc(100% - 80px);padding: 12px 0 0 13px;}
+.my_productInfo_wrap .productInfo strong {display: block;overflow: hidden;font-weight: 600;font-size: 18px;color: var(--colorBalck222222);line-height: 21px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo .date {display: block;overflow: hidden;margin-top: 9px;font-size: 14px;color: #6a6f77;line-height: 17px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo .place {display: block;overflow: hidden;margin-top: 2px;font-size: 14px;color: #6a6f77;line-height: 17px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo p {overflow: hidden;padding-top: 18px;}
+.my_productInfo_wrap .productInfo p .total {float: left;font-size: 15px;color: #222;line-height: 19px;}
+.my_productInfo_wrap .productInfo p .price {float: right;margin-top: 2px;font-weight: 700;font-size: 16px;color: var(--colorBalck222222);line-height: 19px;}
+/* [E] 결제내역 상세화면  */
+
+.couponList li {padding: 25px 30px 25px 26px}
+.couponList li .couponType { font-size: 12px; }
+.couponDetailTitle { font-size: 14px; letter-spacing: -.5px; }
+.comCGVWrap1 .comCGVList1 li .btnArrowR:before { right: 19px;}
