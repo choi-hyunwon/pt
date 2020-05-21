@@ -238,6 +238,7 @@ var front = (function () {
                 centeredSlides: true,
                 breakpointsInverse: false,
                 roundLengths: false,
+                spaceBetween: 30,
                 breakpoints: {
                     320: {
                         spaceBetween: 20,
@@ -251,7 +252,6 @@ var front = (function () {
                     },
                 }
             });
-            slider.photoTicketSlider.translateTo(0, 1, true);
         }
     }
     // 이벤트 슬라이더 - 메인 공통
@@ -261,7 +261,7 @@ var front = (function () {
                 speed: 400,
                 autoPlay: true,
                 direction: 'horizontal',
-                loop: jQuery(".alert_wrap .swiper-slide").length > 1,
+                loop: false,
                 spaceBetween: 40,
                 slidesPerView: 1,
                 centeredSlides: true,
@@ -918,7 +918,6 @@ var front = (function () {
 
         // slider
         slider.photoSlider();
-        slider.eventSlider();
     };
 
     return {

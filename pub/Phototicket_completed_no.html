@@ -155,28 +155,35 @@
     <!-- [E] Header -->
 
     <!--
-        날짜 : 2020.04.24
+        날짜 : 2020.05.21
         작성자 : 이주연
-        내용 :
-           - nav의 타입은 2가지
-           - type_pt : 포토티켓 제작완료/출력완료
-           - type_pt2 : 포토티켓 자랑하기
+        내용 : 모바일일 경우, verAPP 클래스 추가
+              ex) <section class="content_wrap container photo_ticket verAPP" id="ContainerView">
     -->
-    <div id="navMain" class="nav">
-        <nav class="type_pt">
-            <ul class="inner">
-                <li id="madeDone" class="active"><a href="javascript:void(0);">제작완료(0)</a></li>
-                <li id="printedDone"><a  href="javascript:void(0);">출력완료(0)</a></li>
-                <!--   [S] 기간 검색    -->
-                <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
-                <!--   [E] 기간 검색    -->
-            </ul>
-        </nav>
-    </div>
-    <!-- [E] header_box/nav 분리 -->
-
     <!-- [S] 제작완료 -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
+
+        <!--
+            날짜 : 2020.04.24
+            작성자 : 이주연
+            내용 :
+               - nav의 타입은 2가지
+               - type_pt : 포토티켓 제작완료/출력완료
+               - type_pt2 : 포토티켓 자랑하기
+        -->
+        <div id="navMain" class="nav">
+            <nav class="type_pt">
+                <ul class="inner">
+                    <li id="madeDone" class="active"><a href="javascript:void(0);">제작완료(0)</a></li>
+                    <li id="printedDone"><a  href="javascript:void(0);">출력완료(0)</a></li>
+                    <!--   [S] 기간 검색    -->
+                    <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
+                    <!--   [E] 기간 검색    -->
+                </ul>
+            </nav>
+        </div>
+        <!-- [E] header_box/nav 분리 -->
+
         <article class="mypt_wrap none">
             <div class="card_wrap">
                 <p class="pt">제작하신 포토티켓 내역이 없습니다.</p>

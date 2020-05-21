@@ -58,7 +58,8 @@
        내용 : screenId 추가  <script> var screenId = "PT001";</script> 제거
     -->
     <!-- [S] 2020.04.29 위치 변경 -->
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
+<!--    <script type="text/javascript" src="../js/swiper.min.js"></script>-->
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/swiper.min.js "></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
     <!-- [E] 2020.04.29 위치 변경 -->
 
@@ -716,6 +717,10 @@
             </div>
         </article>
         <!-- [E] 나의 영화 슬라이더 -->
+        <!--
+            메인 슬라이더 함수 실행시,
+            front.slider.photoSlider();
+        -->
 
         <!-- [S] 이벤트 슬라이더 영역     -->
         <article class="alert_wrap">
@@ -729,21 +734,21 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="javascript:void(0);">
-                                <span class="title">다크워터스</span>
+                                <span class="title">1다크워터스</span>
                                 <span class="txt">출력가능일이 <span class="primary">D-10 </span>남았습니다.</span>
                                 <span class="right_arrow"><i class="sprite sprite-pt sprite-icTMoreLarge"></i></span>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="javascript:void(0);">
-                                <span class="title">다크워터스</span>
+                                <span class="title">2다크워터스</span>
                                 <span class="txt">출력가능일이 <span class="primary">D-10 </span>남았습니다.</span>
                                 <span class="right_arrow"><i class="sprite sprite-pt sprite-icTMoreLarge"></i></span>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="javascript:void(0);">
-                                <span class="title">다크워터스</span>
+                                <span class="title">3다크워터스</span>
                                 <span class="txt">출력가능일이 <span class="primary">D-10 </span>남았습니다.</span>
                                 <span class="right_arrow"><i class="sprite sprite-pt sprite-icTMoreLarge"></i></span>
                             </a>
@@ -752,9 +757,10 @@
                 </div>
             </div>
         </article>
-        <script>
-
-        </script>
+        <!--
+            이벤트 함수 실행시,
+            front.slider.eventSlider();
+        -->
         <!-- [E] 이벤트 슬라이더 영역     -->
 
         <!-- [S] 이벤트 광고 영역     -->
@@ -868,10 +874,10 @@
                        날짜 : 2020.05.20
                        작성자 : 이주연
                        수정 내용 : 기간이 만료되었을 경우, badge-grey 클래스 추가
-                   -->
+                     -->
                     <div class="badge badge-grey">
-                        <p class="dday">만료</p>
-                        <p class="txt">출력가능일</p>
+                        <p class="dday">출력기간</p>
+                        <p class="txt">만료</p>
                     </div>
                 </a>
             </div>

@@ -32,10 +32,12 @@ video{background-color:#000}
 article{background-color:#fff}
 #header_box{position:fixed; top:0; width:100%; z-index:8}
 .content_wrap{position:relative;padding-top: 88px;z-index:6}
-.content_wrap.verAPP{padding-top:0}
+.content_wrap.verAPP{padding-top:0 !important;}
 nav{position:fixed; top:44px}
 nav:after{content:''; display:block; position:absolute; left:0; bottom:0; width:100%; height:1px; background-color:#dfdfdf; z-index:-1}
-
+.content_wrap.verAPP nav.type_pt,
+.content_wrap.verAPP nav.type_pt2{top: 0;}
+.content_wrap.verAPP #navMain.nav::after {top: 47px;}
 
 /* S gnb 변경 20200121 */
 .nav_v6 {box-shadow:0 2px 4px 0 rgba(0,0,0,0.18);}
@@ -323,7 +325,7 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 .clearfix::after { content: ''; clear: both; display: block;}
 .primary { color: var(--watermelon);}
 .photo_ticket.container article::before {height: 7px;}
-.photo_ticket.container article::after {content: ''; position: absolute; width: 100%;height: 1px; border-top: 1px solid #dddddd; top: 0; left: 0;}
+/*.photo_ticket.container article::after {content: ''; position: absolute; width: 100%;height: 1px; border-top: 1px solid #dddddd; top: 0; left: 0;}*/
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
 .photo_ticket .btn_grey i.sprite-icDownMore { display: inline-block }
 .photo_ticket .btn-outline-red {display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px; background-color: #ffffff;}
@@ -470,6 +472,7 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 /*#header_box.pt_header .allview_wrap .allview_box_wrap .allview_header:before {right: 20px; left: auto}*/
 
 nav.type_pt { position: fixed; height: 47px; padding: 0 20px;z-index: 7;left: 0;top: 44px;}
+nav.type_pt::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: 0; border-bottom: 1px solid #dddddd; z-index: 1;}
 nav.type_pt.active::before {content:none;}
 nav.type_pt.active::after {bottom: 5px;}
 nav.type_pt .inner { overflow: hidden; }
@@ -479,10 +482,9 @@ nav.type_pt .inner li.active a::after  {content: ''; position: absolute; border-
 nav.type_pt .icon_search {float: right; color: #222222; border: 0; font-size: 13px; text-align: right; margin-right: 0;}
 nav.type_pt .icon_search i {display: inline-block; position: absolute;right: 51px; top: 13px;}
 
-#navMain.nav {position: relative; height:47px; top: 44px; padding: 0 20px; z-index: 7}
+#navMain.nav {position: relative;}
 #navMain.nav.active {content: none;}
-/*#navMain.nav::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: 0; border-bottom: 1px solid #dddddd; z-index: 2;}*/
-#navMain.nav::before {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -6px; border-bottom: 7px solid #f2f2f2; z-index: 1;}
+#navMain.nav::after {content:''; position: absolute; width: 100%; height:0; left: 0; top: 44px; border-bottom: 7px solid #f2f2f2;; z-index: 2;}
 
 nav.type_pt2 {position: fixed; height: 47px; padding: 0 20px;z-index: 7;left: 0;top: 44px;}
 nav.type_pt2.active::before {content:none;}
@@ -564,7 +566,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .title_wrap .all {position: absolute;right: 0;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 27px 15px 15px; line-height: 30px;}
 .photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 23px; right: 17px;}
-.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 23px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
+.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 24px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
+.photo_ticket .title_wrap .title .badge.active {color: #ffffff; background: var(--watermelon); line-height: 25px; letter-spacing: -1.1px;}
 /*  [E] 포토티켓 - 헤더 컴포넌트    */
 
 /*  [S] 내 포토티켓    */
@@ -599,9 +602,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .card_wrap .badge.badge_red { background-color: #ff2f35;}
 .photo_ticket .card_wrap .badge.badge-blue{ background-color: #209eff;}
 .photo_ticket .card_wrap .badge.badge-grey{ background-color: #929292;}
+.photo_ticket .card_wrap .badge.badge-grey .dday{ font-size: 12px; padding-top: 22px; line-height: 15px;}
+.photo_ticket .card_wrap .badge.badge-grey .txt{ font-size: 12px; line-height: 15px; font-weight: 600; }
 .photo_ticket .card_wrap .badge { background-color: #ff2f35}
-.photo_ticket .card_wrap .badge .dday { font-weight: bold; font-size: 18px; padding-top: 20px; margin-bottom: 2px; letter-spacing: 1px;}
-.photo_ticket .card_wrap .badge .txt { font-size: 10px; font-weight: 300;}
+.photo_ticket .card_wrap .badge .dday { font-weight: bold; font-size: 18px; padding-top: 18px; letter-spacing: 1px; line-height: 21px;}
+.photo_ticket .card_wrap .badge .txt { font-size: 10px; font-weight: 300; line-height: 12px;}
 
 /*  [E] 내 포토티켓    */
 .cgvMovieChartContent > li {width: 130px;}
@@ -613,12 +618,13 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
    - 뱃지가 없을 경우
    - 상단 nav에 border가 있을 경우
 */
-.photo_ticket .card_wrap.single {padding: 27px 15px 0;}
+.photo_ticket .card_wrap.single {padding: 77px 15px 0;}
 .photo_ticket .card_wrap.single.completed .movie_info{padding: 22px 13px 0 106px;}
 .photo_ticket .card_wrap.single .movie_info {padding: 22px 76px 0 106px;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
 .photo_ticket .imgcard_wrap { padding: 9px 15px 0; overflow: hidden;}
+.photo_ticket .imgcard_wrap.single {padding: 63px 15px 0;}
 .photo_ticket .ptboast_wrap .row::after { content: ''; clear: both; display: block;}
 .photo_ticket .ptboast_wrap .col { position: relative; float: left; width: calc(50% - 8px); height: auto; margin-right: 16px; margin-bottom: 25px; }
 .photo_ticket .ptboast_wrap .col:nth-child(2n) { margin-right: 0 }
@@ -662,11 +668,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [S]포토티켓 플립 슬라이더 - app */
 .myPhtoticketFlip { padding-top: 11px; }
 .myPhtoticketFlip .title_area .title {display:block; font-size: 20px; line-height: 24px; font-weight: bold; letter-spacing: -2px; text-align: center; color: #222222; margin-bottom: 4px;padding: 0 30px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-.myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: #898989;}
+.myPhtoticketFlip .title_area .title-sm {position:absolute; display:block; font-size: 14px; line-height: 17px; text-align: center; color: #898989;left: 50%;top: 86px;transform: translate(-50%, 0);width: 100%;}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 .myPhtoticketFlip .title_area .tip {display: block;color: var(--watermelon);font-size: 12px;line-height: 15px;text-align: center;margin-bottom: 0;letter-spacing: -1.5px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 415px;transform: translateY(-25px); overflow: visible; padding-top: 20px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 415px;transform: translateY(-25px); overflow: visible; padding-top: 39px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000px;}
@@ -712,8 +718,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 플립슬라이더 뒷면 text가 올 경우 */
 
 /* [S] 광주충장로 지점 */
-.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container {padding-left: 20px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
+.myPhtoticketFlip.myPhtoticketFlip-small.web .swiper-container {padding-left: 20px; height: 450px; padding-top: 64px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip {position: absolute; display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;    left: 50%;top: 108px;transform: translate(-50%, 0);width: 100%;}
 .myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
 .myPhtoticketFlip .btn-flip {display: inline-block;position: absolute;right: 7px;bottom: 5px;}
 .myPhtoticketFlip .back .btn-flip {right: 7px;bottom: 5px;}
@@ -741,7 +747,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더 - web */
-.myPhtoticketFlip.web .swiper-container { width: 100%; height: 415px; overflow: auto; padding-left: 28px;}
+.myPhtoticketFlip.web .swiper-container { width: 100%; height: 425px; overflow: auto; padding-left: 28px;}
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px; margin-right: 3px;}
 .myPhtoticketFlip.web.single .swiper-container {padding-left: 0;}
 .myPhtoticketFlip.web.single .swiper-container .swiper-slide {margin: 0 auto}
@@ -751,7 +757,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;line-height: 47px; top: 8px;}
 .photo_ticket .pop_header .btn_share {position: absolute;left: 15px;top: 9px;}
 .photo_ticket .pop_header > div {width: 100%;height: 47px;padding-top: 14px;}
-.photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 28px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
+.photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 29px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
 .photo_ticket .pop_header .badge.badge-blue {background: #209eff;}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);}
 .photo_ticket .pop_header .badge.badge_grey {width: 194px; background: rgb(231,231,231);color:#222222}
@@ -762,6 +768,12 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .badge .dday::after {content: '';position: absolute;height: 11px;border-right: 1px solid rgba(255,255,255,.5);right: 7px;top: 3px;}
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
+	/* S 출력가능일 만료 --- 2020.05.21 추가	*/
+	.photo_ticket .pop_header .badge.badge_expired { background: #707070; color: #ffffff; width: 260px; }
+	.photo_ticket .pop_header .badge.badge_expired .dday { font-size: 14px; letter-spacing: -1.5px;}
+	.photo_ticket .pop_header .badge.badge_expired .text { font-size: 14px; letter-spacing: -1.5px;}
+	/* E 출력가능일 만료 --- 2020.05.21 추가	*/
+
 /* [E] 플립슬라이더 팝업 헤더 */
 /* [E]포토티켓 플립 슬라이더 - app */
 
@@ -857,12 +869,21 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.photo_ticket .card_wrap .movie_info { padding: 25px 64px 0 100px; }
 	.photo_ticket .card_wrap .movie_info > .tip { font-size: 11px }
 	.photo_ticket .card_wrap .badge { width: 54px; height: 54px; }
-	.photo_ticket .card_wrap .badge .dday { font-size: 16px; padding-top: 13px; margin-bottom: 3px; }
+	.photo_ticket .card_wrap .badge .dday { font-size: 16px; padding-top: 11px; }
 	.photo_ticket .card_wrap .card .img { left: 10px; }
 	.photo_ticket .title_wrap .title .badge { width: 85px; font-size: 10px; line-height: 25px; }
 	.photo_ticket .title_wrap .title {letter-spacing: -1.5px; }
 	.photo_ticket .title_wrap .all .btn-all { padding: 15px 22px 15px 0;; }
 	.photo_ticket .title_wrap .all .btn-all i {right: 13px;}
+	/* S 출력가능일 만료 --- 2020.05.21 추가	*/
+	.photo_ticket .card_wrap .badge.badge-grey .dday {padding-top: 16px; font-size: 11px;}
+	.photo_ticket .card_wrap .badge.badge-grey .txt {font-size: 11px;}
+	.photo_ticket .pop_header .badge.badge_expired {width: 218px;}
+	.photo_ticket .pop_header .badge.badge_expired .dday { font-size: 12px; }
+	.photo_ticket .pop_header .badge.badge_expired .text { font-size: 12px; }
+	.photo_ticket .pop_header .badge.badge_expired .dday::after { top: 1px;}
+	.photo_ticket .pop_header .badge .dday::after { top: 4px;}
+	/* E 출력가능일 만료 --- 2020.05.21 추가	*/
 }
 
 @media only screen and (min-height: 735px) {

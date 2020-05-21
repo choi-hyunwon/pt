@@ -155,31 +155,41 @@
     <!-- [E] Header -->
 
     <!--
-     [S]
-     날짜 : 2020.05.06
-     작성자 : 이주연
-     내용 : header_box/nav 분리
+    날짜 : 2020.05.21
+    작성자 : 이주연
+    내용 : 모바일일 경우, verAPP 클래스 추가
+          ex) <section class="content_wrap container photo_ticket verAPP" id="ContainerView">
     -->
-    <!--
+    <!-- [S] 제작완료 -->
+    <section class="content_wrap container photo_ticket" id="ContainerView">
+        <!--
+         [S]
+         날짜 : 2020.05.06
+         작성자 : 이주연
+         내용 : header_box/nav 분리
+        -->
+        <!--
          날짜 : 2020.05.07
          작성자 : 이주연
          내용 : ul,li 태그로 변경
         -->
-    <div id="navMain" class="nav">
-        <nav class="type_pt">
-            <ul class="inner">
-                <li id="madeDone"><a href="javascript:void(0);">제작완료(10)</a></li>
-                <li id="printedDone" class="active"><a  href="javascript:void(0);">출력완료(3)</a></li>
-                <!--   [S] 기간 검색    -->
-                <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
-                <!--   [E] 기간 검색    -->
-            </ul>
-        </nav>
-    </div>
-    <!-- [E] header_box/nav 분리 -->
-
-    <!-- [S] 제작완료 -->
-    <section class="content_wrap container photo_ticket" id="ContainerView">
+        <!--
+         날짜 : 2020.05.21
+         작성자 : 이주연
+         내용 : <div id="navMain" class="nav"> 마크업 위치 변경
+        -->
+        <div id="navMain" class="nav">
+            <nav class="type_pt">
+                <ul class="inner">
+                    <li class="_tab"><a href="javascript:void(0);">제작완료(10)</a></li>
+                    <li class="_tab active"><a  href="javascript:void(0);">출력완료(3)</a></li>
+                    <!--   [S] 기간 검색    -->
+                    <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
+                    <!--   [E] 기간 검색    -->
+                </ul>
+            </nav>
+        </div>
+        <!-- [E] header_box/nav 분리 -->
 
         <article class="mypt_wrap">
             <div class="card_wrap single">
@@ -278,8 +288,8 @@
                       수정 내용 : 기간이 만료되었을 경우, badge-grey 클래스 추가
                     -->
                     <div class="badge badge-grey">
-                        <p class="dday">만료</p>
-                        <p class="txt">출력가능일</p>
+                        <p class="dday">출력기간</p>
+                        <p class="txt">만료</p>
                     </div>
                 </a>
             </div>
