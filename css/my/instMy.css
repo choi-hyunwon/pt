@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* [S] Variables */
 :root{
     --tomato:#f24c42;
@@ -81,31 +82,34 @@
 
 /* [E] popup */
 
+/*.my_phototicket_list {position: relative; width: 100%; height: 90px;}*/
+/*.my_phototicket_list::after {content: ''; position: absolute; width: 100%; border-bottom: 1px solid #e4e4e4; bottom: 0; left: 0;}*/
+/*.my_phototicket_list li {float: left; height: 90px;}*/
+/*.my_phototicket_list li:nth-child(1) {width: 20%; text-align: center; padding-top: 17px;}*/
+/*.my_phototicket_list li:nth-child(1) .date { font-size: 12px; line-height: 15px; color: #4b4f56;}*/
+/*.my_phototicket_list li:nth-child(2) {width:53%; padding-top: 16px;}*/
+/*.my_phototicket_list li:nth-child(2) span {display: block;}*/
+/*.my_phototicket_list li:nth-child(2) .title {font-size: 14px; line-height: 17px; letter-spacing: -.5px; padding-bottom: 4px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}*/
+/*.my_phototicket_list li:nth-child(2) .amount {position: relative; font-size: 12px; line-height: 15px; color: #4b4f56; padding-bottom: 7px;}*/
+/*.my_phototicket_list li:nth-child(2) .amount i {color: #6a707a; font-style: normal;}*/
+/*.my_phototicket_list li:nth-child(2) .cancel-btn a {font-size: 12px; line-height: 15px; color: #4a90e2;}*/
+/*.my_phototicket_list li:nth-child(2) .cancel-btn.cancel a {font-size: 12px; line-height: 15px; color: var(--colorBalck222222);}*/
+/*.my_phototicket_list li:nth-child(3) {width: 27%; text-align: center; padding-top: 16px;}*/
+/*.my_phototicket_list li:nth-child(3) .value { font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }*/
+/*.my_phototicket_list li:nth-child(3) .value.cancel {color: var(--watermelon); }*/
+/* [E] 온라인 예약/결제내역 */
+
+
 /* [S] 온라인 예약/결제내역 */
-.my_phototicket_list {position: relative; width: 100%; height: 90px;}
-.my_phototicket_list::after {content: ''; position: absolute; width: 100%; border-bottom: 1px solid #e4e4e4; bottom: 0; left: 0;}
-.my_phototicket_list li {float: left; height: 90px;}
-.my_phototicket_list li:nth-child(1) {width: 20%; text-align: center; padding-top: 17px;}
-.my_phototicket_list li:nth-child(1) .date { font-size: 12px; line-height: 15px; color: #4b4f56;}
-.my_phototicket_list li:nth-child(2) {width:53%; padding-top: 16px;}
-.my_phototicket_list li:nth-child(2) span {display: block;}
-.my_phototicket_list li:nth-child(2) .title {font-size: 14px; line-height: 17px; letter-spacing: -.5px; padding-bottom: 4px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
-.my_phototicket_list li:nth-child(2) .amount {position: relative; font-size: 12px; line-height: 15px; color: #4b4f56; padding-bottom: 7px;}
-.my_phototicket_list li:nth-child(2) .amount i {color: #6a707a; font-style: normal;}
-.my_phototicket_list li:nth-child(2) .cancel-btn a {font-size: 12px; line-height: 15px; color: #4a90e2;}
-.my_phototicket_list li:nth-child(2) .cancel-btn.cancel a {font-size: 12px; line-height: 15px; color: var(--colorBalck222222);}
-.my_phototicket_list li:nth-child(3) {width: 27%; text-align: center; padding-top: 16px;}
-.my_phototicket_list li:nth-child(3) .value { font-size: 14px; line-height: 17px; color: #000000; letter-spacing: -.5px; }
-.my_phototicket_list li:nth-child(3) .value.cancel {color: var(--watermelon); }
+.cPHistoryList li a .movieBookingDetailPeriod {width: 15%;}
+.cPHistoryList li a .photoTicketValue {position: relative;float: left;max-width: 80%;padding-top: 7px;font-size: 12px;padding-right: 8px; color: var(--coolGrey);}
+.cPHistoryList li a .photoTicketValue::after {content: ''; position: absolute; width: 1px;height: 11px;right: 3px;top: 7px;border-right: 1px solid var(--coolGrey);}
+.cPHistoryList li a .movieBookingDetail .movieBookingDetailValue {font-weight: bold;}
+.cPHistoryList li a .movieBookingDetail {width: 85%;}
 /* [E] 온라인 예약/결제내역 */
 
 /* [S] 결제내역 상세화면  */
-.cPHistoryList li a { padding: 16px 0; }
-.cPHistoryList li a .photoTicketValue { position: relative; float: left; max-width: 80%;padding-top: 7px;font-size: 12px; }
-.cPHistoryList li a .movieBookingDetailState { clear: both; padding-left: 20%;}
-
 .payment-history article + article { margin-top: 7px;}
-
 .my_productCode_wrap {position: relative; background: #ffffff; height: 60px; line-height: 60px; }
 .my_productCode_wrap .info {float: left; display: inline-block; line-height: 60px; padding-left: 20px;}
 .my_productCode_wrap .info span { font-size: 14px; color: #6a707a; }

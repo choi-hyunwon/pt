@@ -231,13 +231,10 @@ var front = (function () {
                 speed: 400,
                 width: '260',
                 autoPlay: true,
-                autoHeight: false,
                 direction: 'horizontal',
                 loop: false,
                 slidesPerView: 1,
                 centeredSlides: true,
-                breakpointsInverse: false,
-                roundLengths: false,
                 spaceBetween: 30,
                 breakpoints: {
                     320: {
@@ -246,10 +243,6 @@ var front = (function () {
                     360: {
                         spaceBetween: 30
                     }
-                },
-                on: {
-                    init: function () {
-                    },
                 }
             });
         }
