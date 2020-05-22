@@ -637,7 +637,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 .myPhtoticketFlip .title_area .tip {display: block;color: var(--watermelon);font-size: 12px;line-height: 15px;text-align: center;margin-bottom: 0;letter-spacing: -1.5px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 415px;transform: translateY(-25px); -webkit-transform: translateY(-25px); -ms-transform: translateY(-25px); -o-transform:translateY(-25px); overflow: visible; padding-top: 39px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 415px;transform: translateY(-25px); -webkit-transform: translateY(-25px); -ms-transform: translateY(-25px); -o-transform:translateY(-25px); overflow: visible; padding-top: 42px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:-webkit-flex;display:-ms-flexbox;display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000px;}
