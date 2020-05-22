@@ -105,6 +105,12 @@ var front = (function () {
 
         /* [E] 조건검색레이어 팝업 */
 
+        /* [S] 포토티켓 패스카드 등록 안내 팝업 */
+        jQuery('._alertPassCardInfo').on('click', function () {
+            jQuery('#popPassCard').addClass('active');
+        })
+        /* [E] 포토티켓 패스카드 등록 안내 팝업 */
+
         // alert
         window.alertMessage = alertMessage;
         function alertMessage() {

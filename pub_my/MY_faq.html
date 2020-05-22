@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CGV</title>
+    <style type="text/css">
+        .allview_wrap
+        {
+            display: none;
+        }
+
+        #vid_vplayer:-webkit-full-screen
+        {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        #vid_vplayer:-webkit-full-screen video
+        {
+            width: 100%;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <!-- chart js / egg CSS  경로 추가 : mwpark-->
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2020052217">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v6/preegg.css?2020052217">
+    <link rel="stylesheet" href="http://img.cgv.co.kr/WebApp/css/v6/swiper.min.css">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+
+        /* S [U 20200401] Footer 기능변경으로 인한 수정 */
+        var fnFooter = function( _target ){
+            var target = jQuery(_target).parent('dt');
+            if(!target.hasClass('active')){
+                target.siblings().slideDown(function(){
+                    target.addClass('active');
+                });
+            }else{
+                target.siblings().slideUp(function(){
+                    target.removeClass('active');
+                });
+            }
+        }
+        /* E [U 20200401] Footer 기능변경으로 인한 수정 */
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/evenotiV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/owl.carousel.css">
+    <style type="text/css">
+        .cls_headertitle_box {border:0 !important;}
+    </style>
+    <script type="text/javascript">
+        var goOutLink = function (url) {
+            if (IsWebView_Master) {
+                CGVHAAppInterface.OutLink(encodeURIComponent(url));
+            }
+            else {
+                window.open(url);
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div class="wrap">
+
+    <div id="header_box">
+
+        <script type="text/javascript">
+            function AppDownload() {
+
+                var app = "";
+
+                fnSendGALog('1', '', 'MW_홈', '앱다운유도 버튼_다운받기', app);
+
+                if (app == "and") {
+                    cgv.common.AppDeepLink.LaunchApp('CGV','');
+                }
+                else if (app == "ios") {
+                    cgv.common.AppDeepLink.MoveAppStore('CGV');
+                }
+                else {
+                    alert("모바일 환경에서 이용 해 주세요.");
+                }
+            }
+            function downDisplay() {
+                fnSendGALog('1', '', 'MW_홈', '앱다운유도 버튼_닫기', '');
+
+                document.getElementById("downBanner").style.display = "none";
+                fnSetCookieSubDomain("boolBtnX", "none", 1);
+            }
+            function fnSetCookieSubDomain(cName, cValue, cDay) {
+                var expire = new Date();
+                expire.setDate(expire.getDate() + cDay);
+                cookies = cName + '=' + escape(cValue) + '; path=/ ';
+                if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';domain=.cgv.co.kr;';
+
+                document.cookie = cookies;
+            }
+
+        </script>
+
+        <header id="headerTitle" class="cls_headertitle_box">
+
+            <a href="javascript:siteMap();">
+                <div class="ico_lt">
+                    <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;">
+                </div>
+            </a>
+
+            <div class="title" id="headerTitleArea">
+                <a href="faq.aspx">고객센터</a>
+            </div>
+            <a href="javascript:movePage()"><div class="ico_rt2"><img src="http://img.cgv.co.kr/WebApp/images/common/btn_call.png" alt="전화걸기"></div></a>
+        </header>
+        <section class="allview_wrap" id="siteMap">
+            <div id="fogbg" onclick="javascript:close_sitemap();"></div>
+            <article class="allview_box_wrap">
+                <div class="allview_box_in">
+                    <h2 class="hidden">전체메뉴</h2>
+
+                    <div class="allview_header">
+                        <a href="/" class="cgv_logo">CGV 홈</a>
+                    </div>
+                    <div class="area">
+                        <ul class="group_wrap">
+
+                            <li><a href="#" title="My CGV" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'My CGV', 'http://m.cgv.co.kr/WebApp/MyCgvV4/Default.aspx'); return false;"><b>My CGV</b></a><span class="countnum">0</span></li>
+
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '빠른예매', 'http://m.cgv.co.kr/WebApp/Reservation/QuickSearch.aspx'); return false;"><b>빠른예매</b></a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '상영시간표', 'http://m.cgv.co.kr/WebApp/Reservation/Schedule.aspx'); return false;"><b>상영시간표</b></a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV안내', 'http://m.cgv.co.kr/WebApp/TheaterV4/'); return false;" title="CGV안내">CGV안내</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '패스트오더', 'http://m.cgv.co.kr/WebApp/MobileOrder/Gateway.aspx?cType=normal&amp;gwType=M&amp;mOrderReturnUrl=%2Fmordermain'); return false;" title="패스트오더">패스트오더</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스토어', 'http://m.cgv.co.kr/WebApp/GiftV5/storeMain.aspx'); return false;" title="기프트샵">기프트샵</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '아트하우스', 'http://m.cgv.co.kr/WebApp/Collage/'); return false;" title="아트하우스">아트하우스</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV할인정보', 'http://m.cgv.co.kr/WebApp/SaleCardV4/'); return false;" title="CGV할인정보">CGV할인정보</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '이벤트', 'http://m.cgv.co.kr/WebApp/EventNotiV4/EventList.aspx'); return false;" title="이벤트">이벤트</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '매거진', 'http://m.cgv.co.kr/WebApp/MagazineV4/'); return false;" title="매거진">매거진</a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'IMAX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=1'); return false;" title="IMAX">IMAX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=2'); return false;" title="4DX">4DX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네드쉐프', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=4'); return false;" title="Cine de CHEF">CINE de CHEF</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '골드클래스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=9'); return false;" title="GOLD CLASS">GOLD CLASS</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스타리움', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=6'); return false;" title="STARIUM">STARIUM</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '더프라이빗씨네마', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=12'); return false;" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스윗박스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=7'); return false;" title="SWEETBOX">SWEETBOX</a></li>
+
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'ScreenX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=18'); return false;" title="Screen X">Screen X</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SoundX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=19'); return false;" title="Sound X">Sound X</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤포레', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=25'); return false;" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네키즈', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=21'); return false;" title="CINE KIDS">CINE KIDS</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SphereX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=23'); return false;" title="SphereX">Sphere X</a></li>
+
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SKYBOX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=26'); return false;" title="SKYBOX">SKYBOX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤리빙룸', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=27'); return false;" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DXSCREEN', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=28'); return false;" title="4DXSCREEN">4DXSCREEN</a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '고객센터', 'http://m.cgv.co.kr/WebApp/Support/faq.aspx'); return false;" title="고객센터">고객센터</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'Club서비스', 'http://m.cgv.co.kr/WebApp/SpecialV4/ClubTown_List.aspx'); return false;" title="Club서비스">Club서비스</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn_close" onclick="javascript:close_sitemap();">창 닫기</button>
+                </div>
+            </article>
+        </section>
+
+
+    </div>
+
+
+
+    <div id="header_box" style="display:none;"></div>
+
+    <!-- 텍스트 메뉴 타입은 nav_type 클래스가 추가 됩니다. -->
+    <div class="fadebox nav_type customer_navre bhidden">
+        <div class="owl-carousel owl-theme owl-loaded">
+
+
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="width: 626.668px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item active" style="width: 156.667px; margin-right: 0px;"><div class="item cls_multiple_items_in firtype on">
+                <a href="javascript:fnPageGroupMove('faq.aspx')">자주찾는질문</a>
+            </div></div><div class="owl-item active" style="width: 156.667px; margin-right: 0px;"><div class="item cls_multiple_items_in">
+                <a href="javascript:fnPageGroupMove('noti.aspx')">공지사항</a>
+            </div></div><div class="owl-item active" style="width: 156.667px; margin-right: 0px;"><div class="item cls_multiple_items_in">
+                <a href="javascript:fnPageGroupMove('rental.aspx')">단체/대관</a>
+            </div></div><div class="owl-item" style="width: 156.667px; margin-right: 0px;"><div class="item cls_multiple_items_in">
+                <a href="javascript:fnPageGroupMove('b2b.aspx')">B2B관람권</a>
+            </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style="display: none;"></div></div></div>
+    </div>
+    <div id="ContainerView">
+        <section class="content_wrap">
+
+            <div class="cust_contbox" id="faq">
+
+                <div class="sorting_menure">
+                    <ul class="sort_option">
+                        <li><input type="radio" id="mSort1" name="mSort" class="checked" checked="checked"><label for="mSort1">예매</label></li>
+                        <li><input type="radio" id="mSort2" name="mSort"><label for="mSort2">회원</label></li>
+                        <li><input type="radio" id="mSort3" name="mSort"><label for="mSort3">극장이용</label></li>
+                        <li><input type="radio" id="mSort4" name="mSort"><label for="mSort4">기프트콘</label></li>
+                        <li><input type="radio" id="mSort5" name="mSort"><label for="mSort5">기타</label></li><li><input type="radio" id="mSort5" name="mSort"><label for="mSort5">포토티켓
+                    </label></li>
+                    </ul>
+                </div>
+                <div class="cust_board" id="reserve" style="display: block;">
+                    <ul class="cb_accordion">
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">포토티켓 취소 및 환불 규정은 어떻게 되나요 ?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    <u>01. 취소</u><br>
+                                    <br>
+                                    ※ CGV포토티켓은 티켓으로 효력을 가지는 상품으로 영화 예매 취소 시 포토티켓은 함께 취소 처리 됩니다.<br>
+                                    <br>
+                                    홈페이지/모바일 앱 취소는 포토티켓을 출력하지 않은 경우 결제 후&nbsp;30일 이내에 취소 가능합니다. 기간 내 출력하지 않은 티켓은 환불되지 않습니다.<br>
+                                    부분 취소는 불가합니다. (ex. 2장을 한번에 구매한 경우 2장 모두 취소만 가능)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                    &nbsp;<br>
+                                    미성년자 권리보호 안내<br>
+                                    미성년자인 고객께서 계약을 체결하시는 경우 법정대리인이 그 계약에 동의하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있습니다<br>
+                                    <br>
+                                    <u>02. </u><u>환불규정</u><br>
+                                    <br>
+                                    <u>1) </u><u>신용카드</u><br>
+                                    <u>결제 후 3일 이내 취소 시 승인 취소되며, 3일 이후 매입 취소시 영업일 기준 3~5일 소요됩니다.</u><br>
+                                    2) 체크카드<br>
+                                    결제 후 3일 이내 취소 시 당일 카드사에서 환불처리되며, 3일 이후 매입 취소 시 카드사에 따라 3~10일 소요됩니다.<br>
+                                    3) 휴대폰 결제<br>
+                                    결제 일자 기준 당월(1일~말일)취소만 가능하며, 익월 취소 관련 문의는 CGV고객센터(1544-1122)를 통해 확인 후&nbsp;&nbsp; 3~10일 이내 환불됩니다.<br>
+                                    ※ 당일 취소가 원칙이나 현장(매표소)에서 취소할 경우 익일 환불처리 될 수 있습니다.<br>
+                                    &nbsp;<br>
+                                    <u>03. 분쟁해결</u><br>
+                                    <br>
+                                    1) 회사는 이용자가 제기하는 정당한 의견이나 불만을 반영하고 그 피해의 보상 등에 관한 처리를 위하여 CGV고객센터(1544-1122)를 설치·운영하고 있습니다.<br>
+                                    2) 회사는 고객센터를 통하여 이용자로부터 제출되는 불만사항 및 의견을 처리합니다.&nbsp; 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보합니다.<br>
+                                    3) 전자상거래 분쟁(청약철회등)과 관련한 이용자의 피해구제는 이용약관 및 전자상거래법 등 관련 법령에 따릅니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">CGV영화관람권(무비머니)은 어떻게 구매하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    - CGV영화 관람권&nbsp;: 전국 CGV 일반 영화관에서 상영하는 영화 중 1편을 선택하여 관람가능<br>
+                                    - 세트구성 :&nbsp;<u>영화관람권10매 + 보너스 1매 + 콤보500원할인권 5매 = 100,000원 (관람기한 2년)</u><br>
+                                    - 구매방법 : 1매 단위로 구매 가능 (10,000원/매)&nbsp;&nbsp;단, 최소 10매 이상 구매 가능<br>
+                                    - 구매장소 : 전국 CGV 매표소에서 구매하실 수 있습니다. (일부 사이트 제외)
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">할인되는 카드는 어떤게 있나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    ■ 신용카드 및 체크카드 할인<br>
+                                    &nbsp; - 400여종 이상의 다양한 할인 카드가 준비되어 있습니다.<br>
+                                    &nbsp; &nbsp; 자세한 안내는 홈페이지 내 '알뜰한 영화관람법' 에서 확인 가능합니다. <a href="http://www.cgv.co.kr/discount/card-list.aspx?view=all">알뜰한 영화관람법 (할인카드 확인하러 가기) &gt;&gt;</a>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">어린이 할인은 어떻게 받을 수 있나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    어린이(만 48개월 이상)&nbsp;관람의 경우, 청소년과 동일한 요금이 적용됩니다.<br>
+                                    <br>
+                                    <strong>※ 기존 '키즈패밀리클럽' 일부 혜택이었던 어린이 요금은&nbsp;<br>
+                                        &nbsp;&nbsp; '키즈패밀리클럽'을 신규 혜택 제공과 함께 2019년 7월 1일자로 혜택 종료 되었습니다.</strong><br>
+                                    &nbsp;
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">소방공무원할인은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    ■ 소방 할인<br>
+                                    &nbsp; - 소방 공무원, 의무소방 본인 및 동반 2인 일반 영화(2D) 7천 원 / 입체영화(3D) 8천 원 관람 가능<br>
+                                    &nbsp; - 매점 모든 콤보 2천 원 할인 구매 가능 (매점 할인 제외지점 有)<br>
+                                    <br>
+                                    ※ 현장 매표소에서 소방 공무원증 제시시(의무소방의 경우 외출, 휴가증) 할인 가능하오며,<br>
+                                    &nbsp;&nbsp; 소방 복지포털 접속가능 대상자의 경우 해당 홈페이지에서 온라인 할인쿠폰 다운로드 가능<br>
+                                    ※ 상기 할인 혜택은 2020.01.01~2020.12.31 기간에 한하여 적용됩니다.<br>
+                                    ※ 매표 할인 제외 지점<br>
+                                    &nbsp; : 청담씨네시티<br>
+                                    ※ 매점 할인 제외 지점<br>
+                                    &nbsp; : 청담씨네시티, 광명철산, 부평, 안동, 용인, 이천, 정읍, 청주성안길, 오산중앙<br>
+                                    ※ 자세한 내용은 소방복지포털 홈페이지(firebokji.ezwel.com) 참고
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">군장병(군인) 할인은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+			                            <span style="font-size:1em"><span style="font-family:맑은 고딕">■ 군장병(군인) 할인<br>
+&nbsp; - 현역장병(직업군인포함), 20년 이상 복무 전역 예비역, 주한미군, 한국전 참전 군인, <span style="font-family:맑은 고딕">사회복무요원,<br>
+&nbsp;&nbsp;&nbsp; <span style="font-size:1em"><span style="font-family:맑은 고딕"><span style="font-family:맑은 고딕">사관생도/사관후보생/부사관 후보생, 상근예비역, 방사청, 군인공제회, 국방기술품질원, 병무청, 방위산업기술센터,<br>
+&nbsp;&nbsp;&nbsp; <span style="font-size:1em"><span style="font-family:맑은 고딕"><span style="font-family:맑은 고딕">국방과학연구소, 한국국방연구원, 병역명문가 병역이행가 및 가족</span>&nbsp;본인 및 동반 3인 일반 영화(2D) 7천 원 / 입체영화(3D) 8천 원 관<span style="font-size:1em"><span style="font-family:맑은 고딕"><span style="font-family:맑은 고딕">람 가능&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(국방부 공무원 , 군무원의 경우&nbsp;온라인 예매만&nbsp;가능하며, 현역 간부 및 병, 상근예비역의 경우 2020.02.06~ 온라인 예매만 가능)</span><br>
+<br>
+<span style="font-family:맑은 고딕">&nbsp; - 매점 오징어 콤보(고소팝콘 大 1개 + 탄산음료 中 2개 + 완제 오징어 1개)&nbsp;</span><span style="font-family:맑은 고딕">6</span><span style="font-family:맑은 고딕">천원 구매 가능</span><br>
+<span style="font-family:맑은 고딕">&nbsp;&nbsp;&nbsp; (팝콘 맛 및 타 스낵으로 변경, 음료 사이즈 업그레이드 가능하나 추가 금액 발생, 일부 지점 메뉴구성 상이)</span><br>
+<br>
+<span style="font-family:맑은 고딕">※ 현장 매표소에서 군인 공무원증, 외출/외박증, 휴가증, 예비역 간부 전역증, 군인연금증, 군인연금카드, 주한미군 신분증, 모바일 인증카드와 신분증 매칭 확인을&nbsp;통해&nbsp;할인 가능</span><br>
+<span style="font-family:맑은 고딕">&nbsp;&nbsp;&nbsp;군인 복지포털 접속가능 대상자의 경우 해당 홈페이지에서 인증 후 로그인 시 6개월 동안 '군인' 권종 선택 가능</span><br>
+<span style="font-family:맑은 고딕">※ 상기 할인 혜택은 2019.10.01~</span><span style="font-family:맑은 고딕">2020</span><span style="font-family:맑은 고딕">.12</span><span style="font-family:맑은 고딕">.31</span><span style="font-family:맑은 고딕"> 기간에 한함</span><br>
+<span style="font-family:맑은 고딕">※ 매표 할인 제외 지점</span><br>
+<span style="font-family:맑은 고딕">&nbsp; : 청담씨네시티</span><br>
+<span style="font-family:맑은 고딕">※ 매점 할인 제외 지점</span><br>
+<span style="font-family:맑은 고딕">&nbsp;&nbsp;: 청담씨네시티, 광명철산, 김포, 남주안, 당진, 부평, 불광, 안동,</span><span style="font-family:맑은 고딕"> </span><span style="font-family:맑은 고딕">이천,</span><span style="font-family:맑은 고딕"> 정읍, 제주, 청주성안길, 화정, </span><span style="font-family:맑은 고딕">평택비전,&nbsp;판교, 여의도</span><br>
+<span style="font-family:맑은 고딕">※ 자세한 내용은 국방복지포털 홈페이지(</span><a href="http://imnd.or.kr"><span style="font-family:맑은 고딕">http://imnd.or.kr</span></a><span style="font-family:맑은 고딕">) 참고</span></span></span></span></span></span></span></span></span></span></span>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">경찰할인은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    ■ 경찰 할인<br>
+                                    &nbsp; - 경찰공무원(경찰청/해양경찰청, 주무관, 전의경) 본인 및 동반 3인 일반 영화(2D) 7천 원 / 입체영화(3D) 8천 원 관람 가능<br>
+                                    &nbsp; - 경찰대학생, 중앙경찰학교 교육생, 경찰교육원 간부 후보생 본인 및 동반 1인 일반 영화(2D) 7천 원 / 입체영화(3D)&nbsp;8천 원 관람 가능<br>
+                                    &nbsp; - 매점 모든 콤보 2천 원 할인 구매 가능&nbsp;<br>
+                                    &nbsp;&nbsp;&nbsp; ※&nbsp;프로모션(이벤트) 콤보 제외<br>
+                                    <br>
+                                    ※ 현장 매표소에서 경찰 공무원증,휴가증,외출/박증,경찰대 및 중앙경찰학교,경찰교육원 학생증 제시시 할인 가능하오며,<br>
+                                    &nbsp;&nbsp; 경찰 복지포털 접속가능 대상자의 경우 해당 홈페이지에서 온라인 할인쿠폰 다운로드 가능<br>
+                                    ※ 상기 할인 혜택은&nbsp;2020.01.01~2020.12.31 기간에 한하여 적용됩니다.<br>
+                                    ※ 특별좌석, 특별관 할인 제외<br>
+                                    ※ 매표 할인 제외 지점<br>
+                                    &nbsp; : 청담씨네시티<br>
+                                    ※ 매점 할인 제외 지점<br>
+                                    &nbsp; : 청담씨네시티, 광명철산, 부평, 안동, 용인, 이천, 정읍, 청주성안길, 오산중앙<br>
+                                    ※ 자세한 내용은 경찰복지포털 홈페이지(polbokji.ezwel.com) 참고
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">경로/장애인/국가유공자 할인은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                </p><p>■ 경로 우대 할인<br>
+                                &nbsp; - 만 65세 이상 고객 (본인 限), 신분증 제시 시 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능<br>
+                                <br>
+                                ■ 장애인 할인<br>
+                                &nbsp; - <strong><span style="color:#ff0000">장애의 정도가 심한 장애인</span></strong> : 복지카드 제시 시, 본인 및 동반 1인 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능<strong>&nbsp;</strong></p>
+
+                                <p><strong>&nbsp;&nbsp;- <span style="color:#ff0000">장애의 정도가 심하지 않은 장애인</span></strong> : 복지카드 제시 시, 본인 限 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능</p>
+
+                                <p><br>
+                                    ■ 국가유공자 할인<br>
+                                    &nbsp; - 국가유공자증, 국가유공자 유족증 소지자(본인 限) 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능</p>
+
+                                <p>&nbsp; - 국가유공상이자 1~3급 : 국가유공상이자증 제시 시, 본인 및 동반 1인 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능</p>
+
+                                <p>&nbsp; - 국가유공상이자 4~7급 : 국가유공상이자증 제시 시, 본인 限 일반 영화(2D) 5천원 / 입체영화(3D) 8천원 관람 가능</p>
+
+                                <p>&nbsp;<br>
+                                    ※ 위 우대 할인 중 '경로 우대'와 '장애인 우대'만 인터넷 예매가 가능하오며, (국가유공자 할인은 현장 할인만 가능/인터넷 예매 불가)<br>
+                                    &nbsp; &nbsp;'경로 우대'와 '장애인 우대' 인터넷 예매시에는 인원 선택란에 할인 적용 대상자 수 만큼 우대 인원을 설정<br>
+                                    &nbsp; &nbsp; ex) <strong><span style="color:#ff0000">장애의 정도가 심한 장애인</span></strong> 할인(본인 및 동반 1인까지)으로 2인 관람시, 우대 2명으로 선택 후 예매 진행</p>
+
+                                <p>※ 우대 적용 예매후 영화관 방문시 확인 가능한 신분증 및 증명서를 반드시 지참 필수<br>
+                                    ※ 특별관의 경우, 4DX 2D/3D 9천 원 ~ 1만 4천 원 관람 가능<br>
+                                    &nbsp; &nbsp;(컨텐츠 및 상영관에 따라 관람 가격 상이)</p>
+                                <p></p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">CGV영화관람권(무비머니)은 어떻게 사용하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    CGV영화관람권(무비머니)은 CGV홈페이지/CGV APP에서 등록하신 후 영화 예매 시 사용 가능합니다.<br>
+                                    <br>
+                                    ■ PC 홈페이지<br>
+                                    &nbsp; - 결제 수단에서 [STEP 2. 관람권/기프트콘] 메뉴 선택 후,&nbsp;<br>
+                                    &nbsp; &nbsp; CGV영화관람권 메뉴에서 등록된 관람권 내역을 조회/사용<br>
+                                    &nbsp; &nbsp; (미등록 상태라면 등록하기 진행 후 사용)<br>
+                                    <br>
+                                    ■ 모바일 APP<br>
+                                    &nbsp; - 결제 수단에서 [관람권/기프티콘] 메뉴 선택 후, CGV영화관람권 메뉴에서 등록된 관람권 내역을 조회/사용<br>
+                                    &nbsp; &nbsp; (미등록 상태라면 등록하기 진행 후 사용)<br>
+                                    <br>
+                                    ※ CGV영화관람권은 유효기간 내에 상영되는 영화에 한해 사용 가능 (관람일 기준/유효기간 내 관람)
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">CGV영화관람권(무비머니)은 어떻게 등록하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    1. 관람권 뒷면 좌측 하단 스크래치를 개봉하세요.<br>
+                                    2. 스크래치 개봉 후 보이는 비밀번호를 입력하세요. (띄어쓰기 없이 입력)<br>
+                                    3. 등록버튼을 누르시면 관람권이 등록됩니다.<br>
+                                    <br>
+                                    ■ PC 홈페이지<br>
+                                    &nbsp;- CGV 홈페이지 로그인 후, MY CGV - 좌측 메뉴바에 있는 [관람권/할인쿠폰관리] → [CGV영화관람권] 에서&nbsp;<br>
+                                    &nbsp; &nbsp;관람권 뒷면의 스크래치 번호 입력<br>
+                                    <br>
+                                    ■ 모바일 APP<br>
+                                    &nbsp;- CGV APP &nbsp;로그인 후, MY CGV - &nbsp;[관람권/카드] → [CGV 영화관람권] 에서 관람권 뒷면의 스크래치 번호 입력<br>
+                                    <br>
+                                    ※ 영화관람권 뒷면 스크래치 개봉한 관람권은 온라인에서만 사용이 가능하며, 극장에서는 사용이 불가합니다.<br>
+                                    ※ 관람권 5회 이상 인증번호 오입력시 24시간 이후 재등록이 가능합니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">관람권은 지정된 컨텐츠만 이용이 가능한가요?  차액 지불 후 다른 컨텐츠 이용 가능한가요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    CGV영화관람권은 컨텐츠 별로 나누어 제작되었으며,<br>
+                                    이에, 정해진 컨텐츠 외 사용은 어렵습니다.&nbsp;<br>
+                                    차액 지불을 통한 사용 또한 어렵사오니 참고 부탁드립니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">일반 영화관람권(무비머니)의 사용 기준은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    일반 영화관람권(무비머니 T권, B권)은 일반 상영관에서 상영하는 영화 관람 시에만 사용이 가능합니다.&nbsp;<br>
+                                    <br>
+                                    ※ 사용불가 상영관: 4DX, IMAX, SCREENX, SPHEREX, SOUNDX, STARIUM, GOLD CLASS, CINE de CHEF, PREMIUM, 씨네앤포레, 씨네앤리빙룸<br>
+                                    ※ 사용불가 좌석: SWEETBOX, VEATBOX, PREMIUM, EGGBOX, SKYBOX, WIDEBOX, 리클라이너석<br>
+                                    ※ 사용불가 극장: CGV청담씨네시티, CGV여의도
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">삼성/LG페이로(실물 핸드폰 단말기 인식 시 자동 결제 시스템) 결제가 가능한가요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    네, 결제 가능합니다.<br>
+                                    매표/매점 결제 시 직원에게 삼성/LG페이를 실행하여 제시하시면 되며,&nbsp;<br>
+                                    티켓판매기 결제 시 카드 결제 단말기에 가까이 가져가시면 결제 됩니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">온라인 예매시 OK캐쉬백 포인트 적립은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    CGV 홈페이지와 모바일 APP 예매시 아래와 같이 적립이 가능합니다.&nbsp;<br>
+                                    <br>
+                                    ■ 홈페이지<br>
+                                    &nbsp; - 결제정보 입력 후, 하단 'OK캐쉬백 적립' 문구 선택 시 OK캐쉬백 적립 팝업 노출<br>
+                                    &nbsp; - 적립 받으실 OK캐쉬백 카드번호를 입력하시면 적립 가능<br>
+                                    &nbsp; - PC 홈페이지 예매 건만 적립이 가능하며,<br>
+                                    &nbsp;&nbsp;&nbsp; 결제 완료 전 OK캐쉬백 카드정보를 입력해 주셔야 적립이 가능 (결제 후 적립 불가)&nbsp;<br>
+                                    <br>
+                                    ■ 모바일<br>
+                                    &nbsp;&nbsp;&nbsp;- 모바일 APP 내 "MY CGV → 제휴포인트 적립 → OK캐쉬백&nbsp;적립" 에서 포인트 적립 가능<br>
+                                    &nbsp;&nbsp;&nbsp;- 모바일 APP 통해 예매한 내역만 적립 가능&nbsp;(단, 예매 당일 23:59 까지 적립 가능)&nbsp;<br>
+                                    <br>
+                                    ※ 일반 신용카드 결제, 휴대폰결제,&nbsp;즉시할인 신용카드(BC카드, KB국민카드, CJ ONE 삼성카드, CJ ONE 신한카드, KEB하나카드, 카카오뱅크,NH농협카드) 결제에 한하여 OK캐시백 적립이 가능합니다.<br>
+                                    ※ OK 캐쉬백의 경우 티켓 예매에 한해 적립되며, 매점 및 씨네샵 구매 시 적립이 불가합니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">1+1쿠폰을 구입했는데 확인이 어려워요. 어디서 확인하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    쿠폰 사용기한 內 에는&nbsp;<br>
+                                    CGV APP 또는 홈페이지 - MY CGV - CGV할인쿠폰 메뉴에서 구입한 쿠폰을 확인하실 수 있으며,<br>
+                                    쿠폰 사용기한이 지난 이후에는 해당 메뉴에서도 확인되지 않습니다.<br>
+                                    <br>
+                                    쿠폰 사용기한 內임에도 해당 메뉴에서 구입한 쿠폰이 확인이 되지 않으실 경우,<br>
+                                    CGV고객센터(1544-1122) 또는 홈페이지 이메일 문의를 통해 남겨주시면 확인 도와 드리겠습니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">티켓을 분실했습니다. 티켓을 다시 받을 수 있나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    현장 매표소에서 &nbsp;<br>
+                                    온라인에서 예매한 티켓은 예매번호,&nbsp;<br>
+                                    현장에서 구매한 티켓은 결제수단(일반적으로 카드) 제시하여&nbsp;<br>
+                                    본인이 예매하였음을 확인 후, 재발권 가능합니다.<br>
+                                    (CJONE 멤버십 적립이 된 상태라면 멤버십정도를 통해서도 예매 경로에 상관없이 확인 가능)<br>
+                                    <br>
+                                    단, 현금 결제의 경우 CJONE 멤버십 적립을 하지 않았다면,&nbsp;<br>
+                                    본인의 예매 내역인지를 확인할 수 없기에 재발권이 불가하오니, 이용에 불편없으시길 바랍니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">예매 취소를 하였는데 환불이 안된것 같아요</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    신용카드사로 전표가 매입처리 된 이후, 취소가 진행이 되면 환불까지 3일 ~10일 소요됩니다.<br>
+                                    취소 전표 처리 이전에는 카드사를 통한 확인이 불가하며, 환불 기간 이후 카드사를 통한 취소내역 확인이 가능합니다.&nbsp;
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">온라인에서 예매할 수 있는 횟수나 매수에 제한이 있나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    1. 홈페이지 및 어플 모두 1회 결제시 최대 8매까지 예매 가능합니다.<br>
+                                    2. 1일 6회 또는 최대 24매까지만 예매 가능합니다. (2가지 조건 중 1개라도 충족시 추가 예매 불가)<br>
+                                    &nbsp; 1) 2매씩 총 6번 예매 시도시 회수 조건 충족으로 추가 예매 불가 (6회)<br>
+                                    &nbsp; 2) 8매씩 총 3번 예매 시도시 최대 매수 조건 충족으로 추가 예매 불가 (24매)<br>
+                                    3. 예매를 취소해도 회수 및 매수 조건은 초기화되지 않습니다.<br>
+                                    &nbsp; 1) 2매씩 총 4번 예매 시도 후 2건(총 4매)을 취소하는 경우 4회 예매로 적용<br>
+                                    &nbsp; 2) 6매씩 총 2번 예매 시도 후 1건(총 6매)을 취소하는 경우 12매 예매로 적용
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">인터넷 예매 후 예매내용 확인은 어떻게 하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    인터넷 예매 후 예매내역 확인을 원하시는 경우 다음과 같이 확인하세요. &nbsp;<br>
+                                    <br>
+                                    ■ 홈페이지에서 확인 시<br>
+                                    &nbsp; - 홈페이지 로그인 → [MY CGV] → [MY 예매내역]&nbsp;<br>
+                                    <br>
+                                    ■ 모바일 APP에서 확인 시<br>
+                                    &nbsp; - 모바일 APP 로그인 → 우측상단 숫자 표시 → 모바일 티켓<br>
+                                    &nbsp; &nbsp; &nbsp;※ 모바일의 경우 상영 시작 시간을 기준으로 12시간 이후에는 확인되지 않으니 이점 유의하여 주시길 바랍니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">예매를 제가 했는데 부모님을 보여 드리고 싶어요. 타인이 발권을 할 수 있나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    본인이 예매한 후 타인이 관람하는 경우,<br>
+                                    사전에 예매하신 영화의 예매번호 혹은 예매자의 생년월일/휴대폰 번호를 소지하시고 극장에 방문해 주시면<br>
+                                    매표소 혹은 무인발권기에서 티켓으로 교환 후 영화 관람이 가능합니다.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">아직 미취학인 자녀가 있는데 아이도 티켓팅을 해야 하나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    ■ 공통 사항<br>
+                                    &nbsp; - 48개월 미만의 어린이는 별도의 관람료를 받지 않고, 보호자의 동반하에 관람 가능 &nbsp;&gt; 보호자의 좌석에&nbsp;함께 착석하여 관람 가능<br>
+                                    &nbsp; - 48개월 이상부터 고등학생까지 동일하게 청소년 요금이 적용<br>
+                                    <br>
+                                    ■ 특이 사항<br>
+                                    &nbsp;- 보호자 1명에 48개월 미만자녀 1명 동반 시, 별도의 관람료 없이 관람가능<br>
+                                    &nbsp;- 보호자 1명에 48개월 미만자녀 2명이상 동반 시,<br>
+                                    &nbsp; &nbsp; 두 자녀 모두 48개월 미만이라 하더라도 청소년 요금으로 1매 티켓팅 필수&nbsp;<br>
+                                    <br>
+                                    ※ 관람 시 어린이의 나이를 확인할 수 있는 의료보험증을 꼭 지참해 주세요! &gt; 어린이 나이를 확인할 수 있는 증빙 서류 (의료보험증, 등본, 여권, 육아수첩 등)
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">예매 취소 및 환불 규정은 어떻게 되나요?</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                </p><p>※ 온라인 예매시 CGV홈페이지/모바일APP/모바일WEB에서 예매 취소가 가능하며 현장에서 티켓 발권시 온라인에서 예매취소가 불가합니다 (현장 매표소에서 취소 가능)<br>
+                                &nbsp;</p>
+
+                                <hr>
+                                <p><strong>01. 예매취소</strong><br>
+                                    <br>
+                                    <strong>1) 현장 취소를 하는 경우</strong><br>
+                                    <span style="color:#b22222">상영시간 이전</span>까지만 가능하며, 상영시간 이후 취소나 환불은 되지 않습니다.<br>
+                                    <br>
+                                    <strong>2) 홈페이지에서 예매 취소할 경우</strong><br>
+                                    부분 취소는 불가합니다. (ex. 4장을 홈페이지로 예매한 경우 4장 모두 취소만 가능)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                    홈페이지 예매 취소는 영화 상영 시작 시간 <span style="color:#b22222">20분전</span>까지 가능합니다.<br>
+                                    <span style="color:#b22222">(단, 씨네&amp;포레관, 씨네&amp;리빙룸은&nbsp;상영시간 30분전까지 취소 가능)</span><br>
+                                    <br>
+                                    <strong>3) 모바일 앱/웹(m.cgv.co.kr)에서 예매 취소할 경우</strong><br>
+                                    부분 취소는 불가합니다.(ex. 4장을 모바일앱/웹으로 예매한 경우 4장 모두 취소만 가능)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                    모바일앱/웹 예매 취소는 영화 상영 시작 시간 <span style="color:#b22222">15분전</span>까지 가능합니다.<br>
+                                    <span style="color:#b22222">(단, 씨네&amp;포레관, 씨네&amp;리빙룸은&nbsp;상영시간 30분전까지 취소 가능)</span><br>
+                                    <br>
+                                    <span style="color:#b22222">※ 단, 일부 행사의 경우 행사 당일 취소, 변경 불가 합니다.<br>
+※ 단, 온라인 예매도 현장에서 티켓을 출력한 경우에는 상영시간 전까지 현장 방문을 통해서만 취소가 가능합니다. </span></p>
+                                4) 미성년자 권리보호 안내<br>
+                                미성년자인 고객께서 계약을 체결하시는 경우 법정대리인이 그 계약에 동의하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있습니다<br>
+                                <br>
+                                <u><strong>02. 환불규정</strong><br>
+                                    <br>
+                                    <strong>1) 신용카드</strong><br>
+                                    결제 후 3일 이내 취소 시 승인 취소되며, 3일 이후 매입 취소시 영업일 기준 3~5일 소요됩니다.</u>
+
+                                <p><strong>2) 체크카드</strong><br>
+                                    결제 후 3일 이내 취소 시 당일 카드사에서 환불처리되며, 3일 이후 매입 취소 시 카드사에 따라 3~10일 소요됩니다.</p>
+
+                                <p><strong>3) 휴대폰 결제</strong><br>
+                                    결제 일자 기준 당월(1일~말일)취소만 가능하며, 익월 취소 관련 문의는 CGV고객센터(1544-1122)를 통해 확인 후&nbsp;&nbsp; 3~10일 이내 환불됩니다.<br>
+                                    ※ 당일 취소가 원칙이나 현장(매표소)에서 취소할 경우 익일 환불처리 될 수 있습니다.</p>
+
+                                <p><strong>4) 카카오페이</strong><br>
+                                    카카오페이머니를 사용하신 경우 각각의 잔액으로 원복되며, 카드 결제를 하신 경우는 카드사 정책에 따라 승인취소가 진행되며 3일 이후 매입 취소시 영업일 기준 3~10일 소요됩니다.</p>
+
+                                <p><strong>5) PAYCO</strong><br>
+                                    PAYCO 쿠폰/포인트를 사용하신 경우 각각의 쿠폰/포인트로 원복되며 쿠폰의 경우 조건에 따라 재사용이 불가 할 수 있습니다. 카드 결제금액은&nbsp;카드사 정책에 따라 승인취소가 진행되며&nbsp;3일 이후 매입 취소시 영업일 기준 3~10일 소요됩니다.</p>
+
+                                <p><strong>6) 계좌이체</strong><br>
+                                    결제일 기준 결제 당일~7일 이내 예매 취소 시 은행 별 기준은 아래와 같습니다.<br>
+                                    ①&nbsp; 예매 취소 후 즉시 환급되는 은행<br>
+                                    &nbsp; : 신한, 우체국, 전북, 경남, 광주, 대구, 새마을, 제주<br>
+                                    ② 예매 취소 후 3~5일 이내 환급되는 은행<br>
+                                    &nbsp; : 농협, 부산, SC제일은행, 우리은행, 그 外 기타 은행 (KEB하나은행/KB국민은행/씨티은행 등)<br>
+                                    ③ 결제일 기준 7일 이후 예매 취소 시<br>
+                                    &nbsp; :&nbsp; 계좌이체로 결제하신 경우 예매 취소일로부터 7일~10일 이내에 환급<br>
+                                    &nbsp; ※ 환불에 대한 문의는 은행사에서 확인 가능<br>
+                                    <br>
+                                    <u><strong>03. 분쟁해결</strong></u><br>
+                                    <br>
+                                    1) 회사는 이용자가 제기하는 정당한 의견이나 불만을 반영하고 그 피해의 보상 등에 관한 처리를 위하여 CGV고객센터(1544-1122)를 설치·운영하고 있습니다.<br>
+                                    2) 회사는 고객센터를 통하여 이용자로부터 제출되는 불만사항 및 의견을 처리합니다.&nbsp; 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보합니다.<br>
+                                    3) 전자상거래 분쟁(청약철회등)과 관련한 이용자의 피해구제는 이용약관 및 전자상거래법 등 관련 법령에 따릅니다.</p>
+                                <p></p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#none">
+                                <div class="cb_titbox">
+                                    <span class="cb_tit">예매하지 않았는데 핸드폰으로 문자 메세지가 발송되어 옵니다.</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </a>
+                            <div class="cb_ac_cont">
+                                <p>
+                                    핸드폰, 이메일로 예매하지 않은 예매 정보가 발송되는 경우,<br>
+                                    고객님의 개인 정보 유출이 아닌, 타 고객이 기존에 사용하던 연락처이거나 잘못된 정보를 입력하여 예매 정보가 잘못 발송된 경우 있을 수 있습니다.<br>
+                                    <br>
+                                    CGV 고객센터(1544-1122)로 연락하시면 확인 후 안내 드리겠습니다.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="cust_board" id="member" style="display: none;">
+                    <ul class="cb_accordion">
+                    </ul>
+                </div>
+
+
+                <div class="cust_board" id="theater" style="display: none;">
+                    <ul class="cb_accordion">
+                    </ul>
+                </div>
+
+                <div class="cust_board" id="giftcon" style="display: none;">
+                    <ul class="cb_accordion">
+                    </ul>
+                </div>
+
+                <div class="cust_board" id="etc" style="display: none;">
+                    <ul class="cb_accordion">
+                    </ul>
+                </div>
+
+                <div class="cust_infobar">
+                    <a href="tel:1544-1122">고객센터 전화 문의 1544-1122<br>(상담가능 시간, 월~금 09:00~18:00)<br>*이 외 시간은 자동 응답 안내 가능</a>
+                </div>
+
+            </div><!-- // faq -->
+        </section>
+    </div>
+
+</div>
+
+<!-- [S] FOOTER -->
+<footer id="div_footer">
+
+    <p class="footerLink">
+        <a href="/WebAPP/Support/noti.aspx">공지사항</a>
+        <a href="/WebApp/Support/faq.aspx">고객센터</a>
+
+        <a title="로그아웃" onclick="fnMovePageWithLog('/신규버전(ver.3.0,201501)/메인/기타/로그아웃', '/WebApp/Member/Logout.aspx');"><span>로그아웃</span></a>
+        <a id="footer_pc" onclick="fnMovePageWithLog('/신규버전(ver.3.0,201501)/메인/기타/PC버전', 'http://www.cgv.co.kr/default.aspx?IsMobile=Y');" title="PC버전"><span>PC버전</span></a>
+    </p>
+
+    <section class="footerContents">
+        <dl class="companyInfo">
+            <!-- S [U 20200403 펼쳐지는 버튼 아이콘 main.css -> master.css 로 변경 및 공지사항 | 고객센터 | 로그인 | PC버전 디자인 변경] -->
+            <dt class=""><a href="javascript:void(0);" class="btn_footerInfo" onclick="javascript:fnFooter(this)"><em>CJ CGV (주)</em></a></dt>
+
+            <dt class=""><a href="javascript:void(0);" class="spriteAfter btn_footerInfo" onclick="javascript:fnFooter(this)"><em>CJ CGV (주)</em></a></dt>
+            <!-- E [U 20200403 펼쳐지는 버튼 아이콘 main.css -> master.css 로 변경 및 공지사항 | 고객센터 | 로그인 | PC버전 디자인 변경] -->
+            <dt class="clearBoth">대표이사</dt>
+            <dd>최병환</dd>
+            <dd class="clearBoth"><address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address></dd>
+            <dt class="clearBoth">통신판매업신고번호</dt>
+            <dd><span class="ls0">2017-</span>서울용산<span class="ls0">-0662</span> <a href="javascript:openNewWebView('http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1048145690')" title="사업자정보확인"><strong>사업자정보확인</strong></a></dd>
+            <dt class="clearBoth">사업자등록번호</dt>
+            <dd class="ls0">104-81-45690</dd>
+            <dt class="clearBoth">개인정보보호 책임자</dt>
+            <dd>정종민</dd>
+            <dt class="division">호스팅사업자</dt>
+            <dd>CJ 올리브네트웍스</dd>
+            <dt class="clearBoth">대표이메일</dt>
+            <dd class="ls0">cjcgvmaster@cj.net</dd>
+            <dt class="division">고객센터</dt>
+            <dd class="ls0">1544-1122</dd>
+        </dl>
+        <div class="footerContentsLink">
+            <a href="javascript:openNewWebView('/Agreement/Agreement_Provision.aspx?type=10')" title="이용약관">이용약관</a>
+            <a href="javascript:openNewWebView('/Agreement/Agreement_Provision.aspx?type=11')" title="개인정보 처리방침"><strong>개인정보 처리방침</strong></a>
+            <a href="javascript:openNewWebView('/Agreement/Agreement_disclaimer.aspx')" title="법적고지">법적고지</a>
+        </div>
+    </section>
+</footer>
+<!-- [E] FOOTER -->
+</body>
+</html>
