@@ -5,11 +5,19 @@ var front = (function () {
 
     var event = {};
 
-    // 이벤트
-    event.btnHeartClick = function () {
-        jQuery('._btnHeart').on('click', function () {
-            jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
-        });
+    event._popPassCardDetail = function(popupId, _btn) {
+        jQuery(_btn).on('click', function () {  // 포토티켓 패스카드 클릭시 팝업 활성화
+            jQuery(popupId).addClass('active');
+            jQuery("body").addClass("scrlOff").removeClass('scrlOn');
+        })
+        jQuery('._closePopup').on('click', function () { // x 아이콘 클릭시 화면 닫히는 기능
+            jQuery(popupId).removeClass('active');
+            jQuery("body").addClass("scrlOn").removeClass('scrlOff');
+        })
+        jQuery('.popup_dim').on('click', function () { //dim화면 클릭시 화면 닫히는 기능
+            jQuery(popupId).removeClass('active');
+            jQuery("body").addClass("scrlOn").removeClass('scrlOff');
+        })
     }
 
     event._commonHandlers = function () {
@@ -127,6 +135,7 @@ var front = (function () {
                 jQuery('#fogbg').show();
             }
         }
+
     }
     /* [S] 팝업 */
     jQuery(function($){

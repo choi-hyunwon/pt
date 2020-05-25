@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
 
     <!-- [S] my css -->
-    <link rel="stylesheet" type="text/css" href="./../css/my/instMy.css">
+    <link rel="stylesheet" type="text/css" href="./../css/instMy.css">
     <!-- [E] my css -->
 
     <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
@@ -50,9 +50,10 @@
     <!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>-->
 
     <!-- [S] my js -->
-    <script type="text/javascript" src="./../js/my/instMy.js"></script>
+    <script type="text/javascript" src="./../js/instMy.js"></script>
     <script type="text/javascript" src="https://img.cgv.co.kr/WebApp/js/v5/contents/lib/moment.min.js"></script>
     <!-- [S] my js -->
+
     <script type="text/javascript">
         //Global Variable
         var IsWebView_Master = false;
@@ -216,21 +217,21 @@
                         <span class="passCardDetailTitle">포토티켓 패스카드</span>
                         <span class="passCardPeriod">2020.04.10</span>
                     </p>
-                    <span class="passCardValue">결제 10매</span>
+                    <a class="passCardLink _pop01" href="javascript:void(0);"><span class="passCardValue">결제 10매</span></a>
                 </li>
                 <li>
                     <p class="passCardDetail">
                         <span class="passCardDetailTitle">포토티켓 패스카드</span>
                         <span class="passCardPeriod">2020.04.10</span>
                     </p>
-                    <span class="passCardValue">결제 5매</span>
+                    <a class="passCardLink" href="javascript:void(0);"><span class="passCardValue">결제 5매</span></a>
                 </li>
                 <li>
                     <p class="passCardDetail">
                         <span class="passCardDetailTitle">포토티켓 패스카드</span>
                         <span class="passCardPeriod">2020.04.10</span>
                     </p>
-                    <span class="passCardValue">결제 3매</span>
+                    <a class="passCardLink" href="javascript:void(0);"><span class="passCardValue">결제 3매</span></a>
                 </li>
             </ul>
             <!--
@@ -262,8 +263,8 @@
         </div>
         <!-- [E] 상태 구분 팝업 -->
 
-        <!-- [S] 포토티켓 패스카드 등록 안내 팝업 -->
-        <div id="popPassCard" class="popup_dim popPassCardDetail active">   <!-- 팝업 활성화 addClass('active') -->
+        <!-- [S] 포토티켓 패스카드 상세화면 팝업 -->
+        <div id="popPassCardDetail01" class="popup_dim popPassCardDetail">   <!-- 팝업 활성화 addClass('active') -->
             <div class="popup">
                 <div class="popup_header">
                     <p>2020.04.02・15:30</p>
@@ -281,8 +282,16 @@
                 </div>
             </div>
         </div>
-        <!-- [E] 포토티켓 패스카드 등록 안내 팝업 -->
-
+        <!-- [E] 포토티켓 패스카드 상세화면 팝업 -->
+        <script type="text/javascript">
+            /*
+            작성일 : 2020.05.25
+            작성자 : 이주연
+            내용 : front.event._popPassCardDetail(popupId,_btn) 함수 생성
+            참고 : instMy.js (L:8~21)
+            * */
+            front.event._popPassCardDetail('#popPassCardDetail01','._pop01');
+        </script>
     </section>
 
 </div>
