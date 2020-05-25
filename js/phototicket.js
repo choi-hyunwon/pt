@@ -243,7 +243,8 @@ var front = (function () {
                     }
                 },
                 //test
-                threshold: 100
+                threshold: 1000,
+                longSwipesMs: 200
             });
         }
     }
