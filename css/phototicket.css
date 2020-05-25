@@ -498,7 +498,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster_info .info .theater::after {content: ''; position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #ffffff; right: -2px; top: 6px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse {position: absolute; background: rgba(255,255,255,0.9); padding: 0 9px; height: 24px; color: rgb(251,67,57); line-height: 24px; border-radius: 11px; font-weight: 500; font-size: 12px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse .txt {position: relative; padding-right: 5px;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse .txt::after {position: absolute; content: '|'; top: 2px; right: 0;}
+.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster_info .badge_ellipse .txt::after {position: absolute;content: '';top: 2px;right: 1px;width: 1px;height: 11px;border-right: 1px solid rgb(251,67,57);}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle {position: absolute; display: block; width: 80px; height: 80px; border-radius: 40px; color: #ffffff; background: linear-gradient(124deg, #fb4357 14%, #ef642f 86%); background: -webkit-linear-gradient(124deg, #fb4357 14%, #ef642f 86%);  box-shadow: 0 4px 10px 0 rgba(251, 67, 87, 0.4); bottom: -11px; right: -18px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .txt {font-size: 16px; font-weight: bold; padding-top: 27px; margin-bottom: 5px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
@@ -593,7 +593,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .ptboast_wrap .row::after { content: ''; clear: both; display: block;}
 .photo_ticket .ptboast_wrap .col { position: relative; float: left; width: calc(50% - 8px); height: auto; margin-right: 16px; margin-bottom: 25px; }
 .photo_ticket .ptboast_wrap .col:nth-child(2n) { margin-right: 0 }
-.photo_ticket .imgcard_wrap .card { position: relative; display: block; border-radius: 10px; box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.08); background-color: #ffffff; padding: 10px; cursor: pointer}
+.photo_ticket .imgcard_wrap .card { position: relative; display: block; border-radius: 10px; box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.08); background-color: #ffffff; padding: 10px;}
 .photo_ticket .imgcard_wrap .card .img {position: relative; display: block; height: calc((50vw - 42px) * 1.6); border-radius: 10px;overflow: hidden; margin-bottom: 8px}
 .photo_ticket .imgcard_wrap .card .img img { border-radius: 10px 10px 0 0; width: 115%; transform: translate(-6%,-5%);}
 .photo_ticket .imgcard_wrap .card .info { display: block; font-size: 13px; font-weight: 500;}

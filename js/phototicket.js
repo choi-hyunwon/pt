@@ -218,12 +218,6 @@ var front = (function () {
         front.event.resizeWindow();
     }
 
-    if(jQuery('btn-toggle').hasClass('active')) {
-        var a = jQuery('btn-toggle').children();
-        console.log(a)
-
-    }
-
     // 메인 슬라이더
     slider.photoSlider = function () {
         if (jQuery('.slider_wrap .swiper-container').length > 0) {
@@ -243,8 +237,8 @@ var front = (function () {
                     }
                 },
                 //test
-                // threshold: 1000,
-                // longSwipesMs: 200
+                // touchStartForcePreventDefault : true,
+                threshold: 10,
             });
         }
     }
@@ -256,7 +250,6 @@ var front = (function () {
                 autoPlay: false,
                 direction: 'horizontal',
                 loop: false,
-                spaceBetween: 40,
                 slidesPerView: 1,
             });
         }
