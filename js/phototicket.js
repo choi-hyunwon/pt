@@ -228,13 +228,11 @@ var front = (function () {
     slider.photoSlider = function () {
         if (jQuery('.slider_wrap .swiper-container').length > 0) {
             slider.photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
-                speed: 400,
                 width: '260',
-                autoPlay: true,
+                autoPlay: false,
                 direction: 'horizontal',
                 loop: false,
                 slidesPerView: 1,
-                centeredSlides: true,
                 spaceBetween: 30,
                 breakpoints: {
                     320: {
@@ -243,7 +241,9 @@ var front = (function () {
                     360: {
                         spaceBetween: 30
                     }
-                }
+                },
+                //test
+                threshold: 100
             });
         }
     }
@@ -252,13 +252,11 @@ var front = (function () {
     slider.eventSlider = function () {
         if (jQuery('.alert_wrap .swiper-container').length > 0) {
             slider.photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
-                speed: 400,
-                autoPlay: true,
+                autoPlay: false,
                 direction: 'horizontal',
                 loop: false,
                 spaceBetween: 40,
                 slidesPerView: 1,
-                centeredSlides: true,
             });
         }
     }

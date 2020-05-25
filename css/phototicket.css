@@ -473,7 +473,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .content_wrap.photo_ticket .slider_wrap .title { padding-left: 30px; font-size: 22px; line-height: 30px; font-weight: 600; padding-top: 15px; margin-bottom: 24px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container { width: 260px; margin: 0 auto; overflow: visible}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide { position: relative; text-align:center; display:-webkit-flex;display:-ms-flexbox;display:flex; align-items:center; justify-content:center; margin-bottom: 30px;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster {transform: scale(1); width: 260px; height: 371px; border-radius: 20px; cursor: pointer;transition: 0.3s}
+.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster {transform: scale(1); width: 260px; height: 371px; border-radius: 20px; transition: 0.3s}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster::after {content:''; position: absolute; width: 100%; height: 360px; border-radius: 20px; top: 0; left: 0; box-shadow: 0 10px 20px rgba(0,0,0,.3); z-index: -1;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster img { width: 100%; height: 100%; border-radius: 20px;}
 
@@ -532,7 +532,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 27px 15px 15px; line-height: 30px;}
 .photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 23px; right: 17px;}
 .photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 24px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
-.photo_ticket .title_wrap .title .badge.active {color: #ffffff; background: var(--watermelon); line-height: 25px; letter-spacing: -1.1px;}
+.photo_ticket .title_wrap .title .badge.active {color: #ffffff; background: var(--watermelon); line-height: 25px;}
 /*  [E] 포토티켓 - 헤더 컴포넌트    */
 
 /*  [S] 내 포토티켓    */

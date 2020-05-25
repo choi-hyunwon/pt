@@ -14,27 +14,27 @@
 
 /* S image */
 .sprite.sprite-icClose {display: block; width: 30px; height: 30px;}
-.inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
+.inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
 .sprite.sprite-icInfo02 {display: inline-block; width: 16px; height: 16px;}
 .sprite.sprite-icClose02 {display: inline-block; width: 11px; height: 11px;}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1){
-    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose.png'); background-size:30px 30px}
-    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
-    .sprite.sprite-icInfo02{ background-image:url('../../images/my/icInfo02.png');width: 16px; height: 16px;background-size: cover;}
-    .sprite.sprite-icClose02{ background-image:url('../../images/my/icClose02.png');width: 11px; height: 11px;background-size: cover; }
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose.png'); background-size:30px 30px}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02.png');width: 16px; height: 16px;background-size: cover;}
+    .sprite.sprite-icClose02{ background-image:url('../images/my/icClose02.png');width: 11px; height: 11px;background-size: cover; }
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2){
-    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose@2x.png');}
-    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal@2x.png);background-repeat: no-repeat;background-size: 56px 30px;}
-    .sprite.sprite-icInfo02{ background-image:url('../../images/my/icInfo02@2x.png');}
-    /*.sprite.sprite-icClose02{ background-image:url('../../images/my/icClose@2x.png');}*/
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose@2x.png');}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal@2x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02@2x.png');}
+    /*.sprite.sprite-icClose02{ background-image:url('../images/my/icClose@2x.png');}*/
 }
 @media only screen and (-webkit-min-device-pixel-ratio:3){
-    .sprite.sprite-icClose{ background-image:url('../../images/my/icClose@3x.png');}
-    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../../images/my/ico-cal@3x.png);background-repeat: no-repeat;background-size: 56px 30px;}
-    .sprite.sprite-icInfo02{ background-image:url('../../images/my/icInfo02@3x.png');}
-    /*.sprite.sprite-icClose02{ background-image:url('../../images/my/icClose@3x.png');}*/
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose@3x.png');}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal@3x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02@3x.png');}
+    /*.sprite.sprite-icClose02{ background-image:url('../images/my/icClose@3x.png');}*/
 }
 /* E image */
 
