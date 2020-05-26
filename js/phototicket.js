@@ -174,25 +174,14 @@ var front = (function () {
 
         // 기간검색 팝업
         popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
-        jQuery('.popFogBg').on({
-            click: function (e) {
-                var jQueryfogBg = jQuery(e.target);
-                var jQuerypopLayer;
-                jQueryfogBg.css({'display': 'none'});
-                popLayerBgShowHide(jQuery('popFogBg'), jQuerypopLayer, true);
-                jQuery('body').off('scroll touchmove mousewheel');
-            }
-        });
 
         // alert
         window.alertMessage = alertMessage;
 
         function alertMessage() {
             jQuery('#pop_alert').show();
-            // jQuery('#pop_alert2').show();
             jQuery('#pop_alert3').show();
             jQuery('#pop_alertCancel').show();
-           // jQuery('#pop_alert4').show();
             dimed();
         }
 
@@ -215,6 +204,7 @@ var front = (function () {
                 jQuery('#fogbg').show();
             }
         }
+
         front.event.resizeWindow();
     }
 
@@ -237,7 +227,6 @@ var front = (function () {
                     }
                 },
                 //test
-                // touchStartForcePreventDefault : true,
                 threshold: 10,
             });
         }
@@ -278,6 +267,31 @@ var front = (function () {
         jQuery(window).on('resize', function () {
             front.fn.photoImage();
         });
+    }
+
+    // 공유하기 팝업 분리
+    
+    //팝업을 보여주는 기능
+    fn.popShareShow = function () {
+        jQuery('.popFogBg').css({'opacity': '.5', 'top': '0', 'display': 'block'});
+        jQuery('.popShare').show().stop().animate({'bottom': '0'}, 200);
+    }
+    //팝업을 닫는 기능
+    fn.popShareHide = function () {
+        jQuery('.popFogBg').css({'display': 'none'});
+        jQuery('.popShare').stop().animate({'bottom': '-100%'}, 200);
+    }
+    //close버튼을 누르면 닫는 기능
+    fn.closePopShareBtn = function () {
+        jQuery('.btnPopClose').on('click',function () {
+            front.fn.popShareHide()
+        })
+    }
+    //dim영역을 누르면 닫는 기능
+    fn.closePopShareFog = function () {
+        jQuery('.popFogBg').on('click',function () {
+            front.fn.popShareHide()
+        })
     }
 
     /**
