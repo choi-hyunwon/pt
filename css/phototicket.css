@@ -462,11 +462,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
 /* [E] 포토티켓 메인 - app */
 
-/* [S] 포토티켓 메인 - web */
-.content_wrap.photo_ticket .slider_wrap .swiper-container { width: 100%; overflow: auto; padding: 0 30px;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide { width: 260px; margin-right: 40px;}
-/* [E] 포토티켓 메인 - web */
-
 /* [S] 이벤트 슬라이더    */
 .content_wrap.photo_ticket .alert_wrap {padding: 0 27px;}
 .content_wrap.photo_ticket .alert_wrap::before {content: none;}

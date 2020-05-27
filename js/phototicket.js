@@ -213,7 +213,8 @@ var front = (function () {
         if (jQuery('.slider_wrap .swiper-container').length > 0) {
             slider.photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
                 width: '260',
-                autoPlay: false,
+                autoPlay: true,
+                autoHeight: false,
                 direction: 'horizontal',
                 loop: false,
                 slidesPerView: 1,
@@ -227,7 +228,7 @@ var front = (function () {
                     }
                 },
                 //test
-                threshold: 10,
+                // threshold: 10,
             });
         }
     }

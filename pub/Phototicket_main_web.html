@@ -58,7 +58,7 @@
        내용 : screenId 추가  <script> var screenId = "PT001";</script> 제거
     -->
     <!-- [S] 2020.04.29 위치 변경 -->
-<!--    <script type="text/javascript" src="../js/swiper.min.js"></script>-->
+    <!--    <script type="text/javascript" src="../js/swiper.min.js"></script>-->
     <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/swiper.min.js "></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
     <!-- [E] 2020.04.29 위치 변경 -->
@@ -111,41 +111,95 @@
                     </div>
                     <div class="area">
                         <ul class="group_wrap">
-                            <li><a href="#" title="My CGV" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'My CGV', 'http://m.cgv.co.kr/WebApp/MyCgvV4/Default.aspx'); return false;"><b>My CGV</b></a><span class="countnum">0</span></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '빠른예매', 'http://m.cgv.co.kr/quickReservation/'); return false;"><b>빠른예매</b></a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '상영시간표', 'http://m.cgv.co.kr/Schedule/'); return false;"><b>상영시간표</b></a></li>
+                            <li><a href="#" title="My CGV"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'My CGV', 'http://m.cgv.co.kr/WebApp/MyCgvV4/Default.aspx'); return false;"><b>My
+                                CGV</b></a><span class="countnum">0</span></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '빠른예매', 'http://m.cgv.co.kr/quickReservation/'); return false;"><b>빠른예매</b></a>
+                            </li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '상영시간표', 'http://m.cgv.co.kr/Schedule/'); return false;"><b>상영시간표</b></a>
+                            </li>
                         </ul>
                         <ul class="group_wrap">
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV안내', 'http://m.cgv.co.kr/WebApp/TheaterV4/'); return false;" title="CGV안내">CGV안내</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '패스트오더', 'http://m.cgv.co.kr/WebApp/MobileOrder/Gateway.aspx?cType=normal&amp;gwType=M&amp;mOrderReturnUrl=%2Fmordermain'); return false;" title="패스트오더">패스트오더</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스토어', 'http://m.cgv.co.kr/WebApp/GiftV5/storeMain.aspx'); return false;" title="기프트샵">기프트샵</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '아트하우스', 'http://m.cgv.co.kr/WebApp/Collage/'); return false;" title="아트하우스">아트하우스</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV할인정보', 'http://m.cgv.co.kr/WebApp/SaleCardV4/'); return false;" title="CGV할인정보">CGV할인정보</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '이벤트', 'http://m.cgv.co.kr/WebApp/EventNotiV4/EventList.aspx'); return false;" title="이벤트">이벤트</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '매거진', 'http://m.cgv.co.kr/WebApp/MagazineV4/'); return false;" title="매거진">매거진</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV안내', 'http://m.cgv.co.kr/WebApp/TheaterV4/'); return false;"
+                                   title="CGV안내">CGV안내</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '패스트오더', 'http://m.cgv.co.kr/WebApp/MobileOrder/Gateway.aspx?cType=normal&amp;gwType=M&amp;mOrderReturnUrl=%2Fmordermain'); return false;"
+                                   title="패스트오더">패스트오더</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스토어', 'http://m.cgv.co.kr/WebApp/GiftV5/storeMain.aspx'); return false;"
+                                   title="기프트샵">기프트샵</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '아트하우스', 'http://m.cgv.co.kr/WebApp/Collage/'); return false;"
+                                   title="아트하우스">아트하우스</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV할인정보', 'http://m.cgv.co.kr/WebApp/SaleCardV4/'); return false;"
+                                   title="CGV할인정보">CGV할인정보</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '이벤트', 'http://m.cgv.co.kr/WebApp/EventNotiV4/EventList.aspx'); return false;"
+                                   title="이벤트">이벤트</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '매거진', 'http://m.cgv.co.kr/WebApp/MagazineV4/'); return false;"
+                                   title="매거진">매거진</a></li>
                         </ul>
                         <ul class="group_wrap">
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'IMAX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=1'); return false;" title="IMAX">IMAX</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=2'); return false;" title="4DX">4DX</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네드쉐프', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=4'); return false;" title="Cine de CHEF">CINE de CHEF</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '골드클래스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=9'); return false;" title="GOLD CLASS">GOLD CLASS</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스타리움', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=6'); return false;" title="STARIUM">STARIUM</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '더프라이빗씨네마', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=12'); return false;" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스윗박스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=7'); return false;" title="SWEETBOX">SWEETBOX</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'IMAX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=1'); return false;"
+                                   title="IMAX">IMAX</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=2'); return false;"
+                                   title="4DX">4DX</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네드쉐프', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=4'); return false;"
+                                   title="Cine de CHEF">CINE de CHEF</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '골드클래스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=9'); return false;"
+                                   title="GOLD CLASS">GOLD CLASS</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스타리움', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=6'); return false;"
+                                   title="STARIUM">STARIUM</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '더프라이빗씨네마', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=12'); return false;"
+                                   title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스윗박스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=7'); return false;"
+                                   title="SWEETBOX">SWEETBOX</a></li>
 
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'ScreenX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=18'); return false;" title="Screen X">Screen X</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SoundX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=19'); return false;" title="Sound X">Sound X</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤포레', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=25'); return false;" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네키즈', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=21'); return false;" title="CINE KIDS">CINE KIDS</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SphereX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=23'); return false;" title="SphereX">Sphere X</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'ScreenX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=18'); return false;"
+                                   title="Screen X">Screen X</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SoundX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=19'); return false;"
+                                   title="Sound X">Sound X</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤포레', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=25'); return false;"
+                                   title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네키즈', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=21'); return false;"
+                                   title="CINE KIDS">CINE KIDS</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SphereX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=23'); return false;"
+                                   title="SphereX">Sphere X</a></li>
 
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SKYBOX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=26'); return false;" title="SKYBOX">SKYBOX</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤리빙룸', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=27'); return false;" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DXSCREEN', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=28'); return false;" title="4DXSCREEN">4DXSCREEN</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SKYBOX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=26'); return false;"
+                                   title="SKYBOX">SKYBOX</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤리빙룸', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=27'); return false;"
+                                   title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DXSCREEN', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=28'); return false;"
+                                   title="4DXSCREEN">4DXSCREEN</a></li>
                         </ul>
                         <ul class="group_wrap">
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '고객센터', 'http://m.cgv.co.kr/WebApp/Support/faq.aspx'); return false;" title="고객센터">고객센터</a></li>
-                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'Club서비스', 'http://m.cgv.co.kr/WebApp/SpecialV4/ClubTown_List.aspx'); return false;" title="Club서비스">Club서비스</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '고객센터', 'http://m.cgv.co.kr/WebApp/Support/faq.aspx'); return false;"
+                                   title="고객센터">고객센터</a></li>
+                            <li><a href="#"
+                                   onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'Club서비스', 'http://m.cgv.co.kr/WebApp/SpecialV4/ClubTown_List.aspx'); return false;"
+                                   title="Club서비스">Club서비스</a></li>
                         </ul>
                     </div>
                     <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>
@@ -173,7 +227,7 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="poster" onclick="">
+                            <div class="poster">
                                 <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                      alt="">
                                 <div class="dim"></div>
@@ -203,125 +257,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_600x855.png';" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                        <!-- <p class="count">(<span class="num">10</span>/<span class="sum">15</span>)</p> -->
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_600x855.png';" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_600x855.png';" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                        <!-- <p class="count">(<span class="num">10</span>/<span class="sum">15</span>)</p> -->
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
+                            <div class="poster">
                                 <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                      alt="">
                                 <div class="dim"></div>
@@ -351,7 +287,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="poster" onclick="">
+                            <div class="poster">
                                 <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                      alt="">
                                 <div class="dim"></div>
@@ -381,157 +317,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                        <!-- <p class="count">(<span class="num">10</span>/<span class="sum">15</span>)</p> -->
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
-                                     alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
-                                     alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg" alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                        <!-- <p class="count">(<span class="num">10</span>/<span class="sum">15</span>)</p> -->
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
-                                <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
-                                     alt="">
-                                <div class="dim"></div>
-                                <div class="badge_top">
-                                    <span class="txt">관람전</span>
-                                    <span class="dtitle">제작가능일</span>
-                                    <span class="dday">D-33</span>
-                                </div>
-                                <div class="poster_info">
-                                    <p class="title">날씨의 아이</p>
-                                    <p class="date">2020.03.29(일) 15:00</p>
-                                    <div class="info">
-                                        <span class="theater">CGV명동역 씨네라이브러리</span>
-                                        <span class="count">3명</span>
-                                    </div>
-                                    <div class="badge_ellipse">
-                                        <span class="txt">제작가능수</span>
-                                        <span class="count">15장</span>
-                                    </div>
-                                </div>
-                                <div class="badge_circle">
-                                    <a class="btn-circle" href="javascript:void(0);">
-                                        <p class="txt">만들기</p>
-                                        <p class="count">(10 / 15)</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="poster" onclick="">
+                            <div class="poster">
                                 <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                      alt="">
                                 <div class="dim"></div>
@@ -634,7 +420,9 @@
             <div class="card_wrap">
                 <a class="card onError" href="javascript:void(0);">
                     <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="영화 이미지">
+                        <img src="../images/phototicket/main/movie2@2x.png"
+                             onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                             alt="영화 이미지">
                     </div>
                     <div class="movie_info">
                         <p class="title">작은아씨들</p>
@@ -652,7 +440,9 @@
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="영화 이미지">
+                        <img src="../images/phototicket/main/movie2@2x.png"
+                             onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                             alt="영화 이미지">
                     </div>
                     <div class="movie_info">
                         <p class="title">작은아씨들</p>
@@ -670,7 +460,9 @@
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="영화 이미지">
+                        <img src="../images/phototicket/main/movie3@2x.png"
+                             onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                             alt="영화 이미지">
                         <div class="badge_top">+10</div>
                     </div>
                     <div class="movie_info">
@@ -690,7 +482,9 @@
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="../images/phototicket/main/movie4@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="영화 이미지">
+                        <img src="../images/phototicket/main/movie4@2x.png"
+                             onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                             alt="영화 이미지">
                     </div>
                     <div class="movie_info">
                         <p class="title">어바웃타임(인생영화인생영화)</p>
@@ -708,7 +502,9 @@
                 </a>
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="영화 이미지">
+                        <img src="../images/phototicket/main/movie3@2x.png"
+                             onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                             alt="영화 이미지">
                         <div class="badge_top">+10</div>
                     </div>
                     <div class="movie_info">
@@ -760,7 +556,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie2@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie2@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">good_photo</span>
@@ -782,7 +580,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie3@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie3@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">good_photo</span>
@@ -795,7 +595,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie5@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie5@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">usernickname</span>
@@ -808,7 +610,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie2@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie2@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">usernickname</span>
@@ -821,7 +625,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie4@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie4@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">usernickname</span>
@@ -834,7 +640,9 @@
                 <div class="col">
                     <div class="card" onclick="">
                         <div class="img">
-                            <img src="../images/phototicket/main/movie3@2x.png" onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';" alt="자랑한 이미지">
+                            <img src="../images/phototicket/main/movie3@2x.png"
+                                 onerror="this.onerror=null; this.src='../images/phototicket/common/noimg_176x260.png';"
+                                 alt="자랑한 이미지">
                         </div>
                         <div class="info">
                             <span class="user">usernickname</span>
