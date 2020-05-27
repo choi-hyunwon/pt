@@ -74,7 +74,7 @@
 <body class="bg_white">
 <div class="wrap">
 
-    <!-- [S] Header -->
+    <!-- [S] Header 추가 - 2020.05.27 -->
     <div id="header_box">
         <header id="headerTitle" class="cls_headertitle_box">
             <a href="javascript:siteMapFn();">
@@ -83,8 +83,19 @@
                 </div>
             </a>
             <div class="title" id="headerTitleArea">
-                <a href="javascript:void(0);" id="headerText">포토티켓</a>
+                <a href="javascript:void(0);" id="headerText">내 포토티켓</a>
             </div>
+            <!-- S
+                날짜 : 2020.05.27
+                작성자 : 이주연
+                내용 : badge 영역 제거
+            -->
+            <!--            <div>-->
+            <!--                <p class="badge badge-blue">-->
+            <!--                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>-->
+            <!--                </p>-->
+            <!--            </div>-->
+            <!-- E -->
             <a class=" btn_info icon_share" href="javascript:void(0);">
                 <i class="txt_rt sprite sprite-pt sprite-icShare"></i>
             </a>
@@ -144,17 +155,33 @@
     <!-- [E] Header -->
 
     <!-- [S] 포토티켓 제작 완료 -->
+    <!--
+        날짜 : 2020.05.27
+        작성자 : 이주연
+        내용 :
+         - <section class="content_wrap container photo_ticket" id="ContainerView"> WEB일 경우
+         - <div id="header_box">제거, <section class="content_wrap container photo_ticket verAPP" id="ContainerView"> 모바일일 경우
+         -
+    -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-        <article class="myPhtoticketFlip web">
+        <!--   2020.05.27 // <article class="myPhtoticketFlip web"> web 클래스 제거     -->
+        <article class="myPhtoticketFlip">
+            <!-- S
+                날짜 : 2020.05.27
+                작성자 : 이주연
+                내용 :
+                 -  <p class="badge badge-blue">  section 안으로 badge 분리
+            -->
             <p class="badge badge-blue">
                 <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>
             </p>
+            <!-- E -->
             <div class="title_area">
                 <span class="title">다크워터스(2D)</span>
                 <span class="title-sm">예매번호 : 001-0000-0000-0002</span>
             </div>
             <div class="slider-wrap">
-                <div class="swiper-container ">
+                <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="flip-container">
@@ -433,7 +460,8 @@
                     <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
                         생년월일+휴대폰번호를 입력하여 출력해주세요</p>
                     <div>
-                        <a class="btn-ani btn-boast _btnBoast">자랑하기</a>
+                        <!--   btn-ani 클래스 제거 --- 2020.05.27    -->
+                        <a class="btn-boast _btnBoast">자랑하기</a>
                         <a class="btn-grey" href="javascript:void(0);">결제취소</a>
                     </div>
                 </div>
