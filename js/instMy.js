@@ -22,6 +22,8 @@ var front = (function () {
 
     event._commonHandlers = function () {
 
+        front.event._popPassCardDetail('#popPassCard','._alertPassCardInfo')
+
         /* [S] 사이트맵 */
         window.siteMapFn = siteMapFn;
 
@@ -69,47 +71,47 @@ var front = (function () {
         });
 
         //조회기간 - 초기값
-        var _today        = moment().format('YYYY-MM-DD');
-        var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
-
-        jQuery("#startDt").val(_prevMovieDay);
-        jQuery("#endDt").val(_today);
+        // var _today        = moment().format('YYYY-MM-DD');
+        // var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
+        //
+        // jQuery("#startDt").val(_prevMovieDay);
+        // jQuery("#endDt").val(_today);
 
         //조회기간 - 7일 선택시
-        jQuery("#btn_seven_days").on("click", function() {
-            var _today        = moment().format('YYYY-MM-DD');
-            var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
-
-            jQuery("#startDt").val(_prevMovieDay);
-            jQuery("#endDt").val(_today);
-        });
+        // jQuery("#btn_seven_days").on("click", function() {
+        //     var _today        = moment().format('YYYY-MM-DD');
+        //     var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
+        //
+        //     jQuery("#startDt").val(_prevMovieDay);
+        //     jQuery("#endDt").val(_today);
+        // });
 
         //조회기간 - 1개월 선택시
-        jQuery("#btn_one_month").on("click", function() {
-            var _today        = moment().format('YYYY-MM-DD');
-            var _prevMovieDay = moment().add(-1, 'months').format('YYYY-MM-DD');
-
-            jQuery("#startDt").val(_prevMovieDay);
-            jQuery("#endDt").val(_today);
-        });
+        // jQuery("#btn_one_month").on("click", function() {
+        //     var _today        = moment().format('YYYY-MM-DD');
+        //     var _prevMovieDay = moment().add(-1, 'months').format('YYYY-MM-DD');
+        //
+        //     jQuery("#startDt").val(_prevMovieDay);
+        //     jQuery("#endDt").val(_today);
+        // });
 
         //조회기간 - 3개월 선택시
-        jQuery("#btn_three_month").on("click", function() {
-            var _today        = moment().format('YYYY-MM-DD');
-            var _prevMovieDay = moment().add(-3, 'months').format('YYYY-MM-DD');
-
-            jQuery("#startDt").val(_prevMovieDay);
-            jQuery("#endDt").val(_today);
-        });
+        // jQuery("#btn_three_month").on("click", function() {
+        //     var _today        = moment().format('YYYY-MM-DD');
+        //     var _prevMovieDay = moment().add(-3, 'months').format('YYYY-MM-DD');
+        //
+        //     jQuery("#startDt").val(_prevMovieDay);
+        //     jQuery("#endDt").val(_today);
+        // });
 
         //조회기간 - 6개월 선택시
-        jQuery("#btn_six_month").on("click", function() {
-            var _today        = moment().format('YYYY-MM-DD');
-            var _prevMovieDay = moment().add(-6, 'months').format('YYYY-MM-DD');
-
-            jQuery("#startDt").val(_prevMovieDay);
-            jQuery("#endDt").val(_today);
-        });
+        // jQuery("#btn_six_month").on("click", function() {
+        //     var _today        = moment().format('YYYY-MM-DD');
+        //     var _prevMovieDay = moment().add(-6, 'months').format('YYYY-MM-DD');
+        //
+        //     jQuery("#startDt").val(_prevMovieDay);
+        //     jQuery("#endDt").val(_today);
+        // });
 
         /* [E] 조건검색레이어 팝업 */
 
@@ -140,21 +142,54 @@ var front = (function () {
     /* [S] 팝업 */
     jQuery(function($){
         /* S 팝업
+            Description:
             1. property 'data-popup-direction' 값에 따라 애니메이션 다름
                 - UP	: bottom -> top
                 - DOWN	: top -> bottom
                 - RIGHT : left -> right
-                - DOWN	: right -> left
+                - LEFT	: right -> left
+            2. property 'data-popup-depth' 값에 따라 2중 이상 팝업 처리가능
+
+            3. property 'data-popup-onclick' 값에 따라 onclick 이벤트로 팝업 open 사용가능
+                - data-popup-onclick = false (기본 false 세팅) onclick 삭제처리
+                - data-popup-onclick = ture
+                    onclick 에 jQuery.fn.openPopup(this)에 처리
+
+            4. 수동으로 팝업 열기 처리 $.fn.openPopup( popupID, popupDir, popupDepth );
+                - popupID : 열고 싶은 팝업 아이디
+                - popupDir : 열고 싶은 팝업 방향 'UP', 'DOWN', 'RIGHT', 'LEFT'
+                - popupDepth : 팝업의 Depth (다중팝업일 경우 기존 팝업을 안닫고 열경우 설정)
+
+            5. 수동으로 팝업 닫기 처리 $.fn.closePopup( popupID )
+
          */
         $.setClosePopup = function(_target, _popupDir){
 
+            var _depth = _target.data('popupDepth') || null;
+
+            if(_target.data('popupDepth') != null){
+                _target.css({'z-index': Number(_target.css('zIndex')) - Number(_depth) });
+            }
+
             switch(_popupDir){
                 case 'UP':
-                case 'RIGHT':
-                case 'DOWN':
-                case 'LEFT':
                     _target.children('.popup').animate({
                         bottom:'-100%'
+                    }, 300 );
+                    break;
+                case 'RIGHT':
+                    _target.children('.popup').animate({
+                        left:'-100%'
+                    }, 300 );
+                    break;
+                case 'DOWN':
+                    _target.children('.popup').animate({
+                        top:'-100%'
+                    }, 300 );
+                    break;
+                case 'LEFT':
+                    _target.children('.popup').animate({
+                        right:'-100%'
                     }, 300 );
                     break;
 
@@ -173,45 +208,101 @@ var front = (function () {
             });
         };
         //popup open
-        $('[data-popup]').on('click', function (){
+        $('[data-popup]').on({
+            click:function (e){
+                var isOnclick = $(this).data('popupOnclick') || false;
 
-            var popupTarget = $(this).data('popup') || null;
-            var popupDir = $(this).data('popupDirection') || null;
-            var popupDepth = $(this).data('popupDepth') || null;
+                if(!isOnclick){
+                    var popupTarget = $(this).data('popup') || null;
+                    var popupDir = $(this).attr('data-popup-direction') || null;
+                    var popupDepth = $(this).data('popupDepth') || null;
+
+                    $.fn.openPopup(popupTarget, popupDir, popupDepth);
+                }
+            }
+        });
+
+        // popup close
+        $('.popup_dim').find('.btn_close, .btnPopClose').on('click',function(e){
+            e.stopPropagation();
+
+            var $target = jQuery(this).closest('.popup_dim');
+            var popupDir = $target.attr('data-popup-direction');
+            console.log('btn_close', popupDir);
+            $.setClosePopup($target, popupDir);
+
+            var _type = $(this).data('type') || null;
+
+            switch(_type){ /* D 간편결제 */
+                case 'select':
+                    $('.' + this.id).addClass('active').siblings().removeClass('active');
+                    $('.' + this.id).parents('.select_area').addClass('selected');
+                    break;
+                default: break;
+            }
+        });
 
 
-            // console.log('popup OPEN', popupTarget, popupDir);
+        $('.popup_dim').on('click', function(e){
+            console.log('popup DIM CLOSE');
+
+            if(e.currentTarget === e.target){	// console.log("DIM 영역");
+                var popupDir = $(this).attr('data-popup-direction');
+                console.log('popup_dim', popupDir);
+                $.setClosePopup($(this), popupDir);
+            }else{	//	console.log("DIM 이외 영역");
+            }
+        });
+
+        $.fn.closePopup = function( _targetId ){
+            var $target = $("#" + _targetId);
+            var popupDir = $target.attr('data-popup-direction');
+
+            $.setClosePopup($target, popupDir);
+        };
+
+        $.fn.openPopup = function( _target, _dir, _depth ){
+            console.log('openPopup Click');
+
+            var popupTarget = _target || null;
+            var popupDir = _dir || null;
+            var popupDepth = _depth || null;
+
+            if(popupDepth != null){
+                $('#' + popupTarget).css({'z-index': Number($('#' + popupTarget).css('zIndex')) + Number(_depth) });
+            }
 
             $('#' + popupTarget).css({'top':'0'});
             $('#' + popupTarget).attr('data-popup-direction', popupDir);
 
             switch(popupDir){
                 case 'UP':
-                    $('#' + popupTarget).children('.popup').css({'top':'auto', 'right':'auto', 'bottom':'-100vh', 'left':'auto'});
+                    $('#' + popupTarget).children('.popup').css({'position':'absolute', 'top':'auto', 'right':'0', 'bottom':'-100vh', 'left':'0', 'transform':'none'});
                     $('#' + popupTarget).children('.popup').stop().animate({
                         bottom:'0'
                     }, 300 );
                     break;
                 case 'RIGHT':
-                    $('#' + popupTarget).children('.popup').css({'top':'auto', 'right':'auto', 'bottom':'auto', 'left':'-100vw'});
+                    $('#' + popupTarget).children('.popup').css({'position':'absoulte', 'top':'auto', 'right':'auto', 'bottom':'auto', 'left':'-100vw', 'transform':'none'});
                     $('#' + popupTarget).children('.popup').animate({
                         left:'0'
                     }, 300 );
                     break;
                 case 'DOWN':
-                    $('#' + popupTarget).children('.popup').css({'top':'-100vh', 'right':'auto', 'bottom':'auto', 'left':'auto'});
+                    $('#' + popupTarget).children('.popup').css({'position':'absoulte', 'top':'-100vh', 'right':'0', 'bottom':'auto', 'left':'0', 'transform':'none'});
                     $('#' + popupTarget).children('.popup').animate({
                         top:'0'
                     }, 300 );
                     break;
                 case 'LEFT':
-                    $('#' + popupTarget).children('.popup').css({'top':'auto', 'right':'-100vw', 'bottom':'auto', 'left':'auto'});
+                    $('#' + popupTarget).children('.popup').css({'position':'absoulte', 'top':'auto', 'right':'-100vw', 'bottom':'auto', 'left':'auto', 'transform':'none'});
                     $('#' + popupTarget).children('.popup').animate({
                         right:'0'
                     }, 300 );
                     break;
                 case 'CENTER':
                 default :
+                    $('#' + popupTarget).children('.popup').css({'position:':'relative', 'top':'50vh', 'right':'0', 'bottom':'0', 'left':'0', 'transform':'translate(0, -50%)'});
                     break;
             }
 
@@ -224,53 +315,88 @@ var front = (function () {
             }, 300, function(){
                 $("body").addClass("scrlOff");
             } );
+        };
+        /* E 팝업 */
 
-        });
+        /* S Tab */
+        $('[data-tab]').on('click', function(e){
+            var target = e.target;
 
-        // popup close
-        $('.popup_dim').find('.btn_close, .btnPopClose').on('click',function(e){
-            e.stopPropagation();
+            if(target.tagName == "A"){
+                var $btnTarget = $(target);
+                var tabTarget = $(this).data('tab') || null;
+                var currentIdx = $btnTarget.parent().index();
 
-            var $target = jQuery(this).closest('.popup_dim');
-            var popupDir = $target.attr('data-popup-direction');
+                $btnTarget.parent().addClass('active').siblings().removeClass('active');
 
-            $.setClosePopup($target, popupDir);
-        });
+                $('#' + tabTarget).children('li').eq(currentIdx).addClass('active').siblings().removeClass('active');
+            }else{
 
-
-        $('.popup_dim').on('click', function(e){
-            // console.log("console.log('popup DIM CLOSE');");
-
-            if(e.currentTarget === e.target){	// console.log("DIM 영역");
-                var popupDir = $(this).attr('data-popup-direction');
-                $.setClosePopup($(this), popupDir);
-            }else{	//	console.log("DIM 이외 영역");
             }
         });
-        /* E 팝업 */
+        /* E Tab */
 
         $('.tabSortMenu').on({
             click:function(e){
                 e.stopPropagation();
                 var _target = e.target;
-                var_tagName = _target.tagName;
+                var _tagName = _target.tagName;
 
-                if(var_tagName == 'A'){
+                if(_tagName == 'A'){
                     $(_target).parent().addClass('active').siblings().removeClass('active');
 
                     var _property = $(_target).data('fn') || null;
-                    console.log(_property)
+                    console.log(_property);
 
                     if(_property != null){
                         if(typeof $.fn[_property] == 'function'){
                             $.fn[property]();
                         }else{
-                            // console.log('jQuery.fn.' + _property + ' 함수를 선언하세요');
+                            console.log('jQuery.fn.' + _property + ' 함수를 선언하세요');
                         }
                     }else{
-                        // console.log('data-fn 에 실행할 함수명을 선언하세요');
+                        console.log('data-fn 에 실행할 함수명을 선언하세요');
                     }
                 }
+            }
+        });
+
+
+        $('[data-drop-menu]').on('click', function(e){	/* D 전체약관 동의하기 */
+            var $btnTarget = $(e.target);
+            var dropTarget = $(this).data('dropMenu') || null;
+            var $dropTarget = $('#' + dropTarget);
+            var isHidden = $dropTarget.is(':hidden');
+
+            if(isHidden){
+                $('html').animate({	// 스크롤 하단 처리
+                    'scrollTop': $btnTarget.offset().top - $('#header_box').outerHeight()//$('html').get(0).scrollHeight
+                });
+
+                $dropTarget.slideDown(function(){
+                    $btnTarget.addClass('active');
+
+                });
+            }else{
+                $dropTarget.slideUp(function(){
+                    $btnTarget.removeClass('active');
+                });
+            }
+        });
+
+        $('.wrap_radio_check input[type="radio"]').on({
+            change:function(e){
+                var _activeOptType = $(e.target).data('optType');
+
+                $(e.target).parents('.wrap_radio_check').removeClass('ispp_active norm_active inst_active spay_active nhcu_active');
+                $(e.target).parents('.wrap_radio_check').addClass(_activeOptType + '_active');
+
+                if($(e.target).parents('.wrap_radio_check').next('.wrap_first_desc').children('li').hasClass(_activeOptType)){
+                    $(e.target).parents('.wrap_radio_check').next('.wrap_first_desc').addClass('active');
+                }else{
+                    $(e.target).parents('.wrap_radio_check').next('.wrap_first_desc').removeClass('active');
+                }
+
             }
         });
 

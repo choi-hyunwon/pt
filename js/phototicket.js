@@ -227,8 +227,12 @@ var front = (function () {
                         spaceBetween: 30
                     }
                 },
-                //test
-                // threshold: 10,
+                on: {
+                    init: function () {
+                        jQuery("html,body").animate({ scrollTop: 1 }, "fast");
+                        // jQuery('.content_wrap.photo_ticket.verAPP').css('padding-top','44px');
+                    },
+                }
             });
         }
     }
