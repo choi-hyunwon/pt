@@ -281,7 +281,7 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 .photo_ticket .btn-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 44px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: 600; letter-spacing: -.5px;}
 .photo_ticket .btn-red.disabled { background-color: rgba(251,61,87,.5); border: 0;}
 .photo_ticket .btn-red.btn-lg { width: 165px; height: 50px; line-height: 48px;border-radius: 25px;font-size: 18px}
-.photo_ticket .btn-grey { display: inline-block; width: 135px; height: 44px; line-height: 42px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: 600; letter-spacing: -.5px;border: 1px solid #bebebe}
+.photo_ticket .btn-grey { display: inline-block; width: 135px; height: 40px; line-height: 40px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: 600; letter-spacing: -.5px;border: 1px solid #bebebe}
 .photo_ticket .btn-badge-red { display: inline-block; text-align: center; width: 125px; height: 25px; border-radius:12px; line-height: 25px; font-size: 12px; background-color: #ffffff; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px;}
 .photo_ticket .btn-badge-grey { display: inline-block; text-align: center; width: 125px; height: 25px; border-radius:12px; font-weight: 500; line-height: 25px; font-size: 13px; background-color: #ffffff; border: 1px solid rgb(208,208,208); color: #222222; letter-spacing: -2px;}
 .photo_ticket .btn-badge-grey.active { display: inline-block; width: 125px; height: 25px; border-radius:12px; line-height: 23px; font-size: 12px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -2px;}
@@ -291,8 +291,8 @@ header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; backgr
 .content_wrap.photo_ticket .cancel_area .btn-cancel { display: inline-block; padding-bottom: 2px; font-size: 13px; color: rgb(118,118,118);font-weight: 500; letter-spacing: -2px; border-bottom: 1px solid rgb(202,202,202)}
 .btn-boast:hover {color:#ffffff;}
 .btn-boast:focus {outline: none;}
-.btn-boast {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;background: var(--watermelon);-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
-.btn-boast::before {content: '';position: absolute;top: 0;left: -2px;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
+.btn-boast {width: 135px;height: 40px;line-height: 40px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;background: var(--watermelon);-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
+.btn-boast::before {content: '';position: absolute;top: -1px;left: -2px;width: 135px;height: 40px;line-height: 39px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
 .btn-boast.active {background-color: #fff;color: var(--watermelon);}
 .btn-boast.active.disabled {cursor: pointer; background-color: #ffffff}
 .btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
@@ -603,7 +603,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 .myPhtoticketFlip .title_area .tip {display: block;color: var(--watermelon);font-size: 12px;line-height: 15px;text-align: center;margin-bottom: 0;letter-spacing: -1.5px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; margin: 0 auto; transform: translateY(-25px); -webkit-transform: translateY(-25px); -ms-transform: translateY(-25px); -o-transform:translateY(-25px); padding-top: 46px; width: 100%; height: 435px; overflow: auto; padding-left: 28px;}
+.myPhtoticketFlip .swiper-container { position: relative; margin: 0 auto; transform: translateY(-25px); -webkit-transform: translateY(-25px); -ms-transform: translateY(-25px); -o-transform:translateY(-25px); padding-top: 40px; width: 100%; height: 435px; overflow: auto; padding-left: 28px;}
 .myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide { width: 260px; margin-right: 3px;text-align:center; display:-webkit-flex;display:-ms-flexbox;display:flex; align-items:center; justify-content:center}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 234px; height: 362px; border-radius: 20px;transition: 0.3s;perspective: 1000px;}
@@ -669,13 +669,12 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .flip-container .flipper .back label{top: -53px}
 
 /* 포토티켓 플립 슬라이더 - 버튼 영역 */
-.myPhtoticketFlip .btn_area { position: relative; width: 100%; margin: -25px 0 0; padding: 0 15px 0;}
-.myPhtoticketFlip .btn_area.btn_area_sm { padding-top: 14px;}
-.myPhtoticketFlip .btn_area .btn-red i {position: absolute;left: 56px;top: 11px;}
-.myPhtoticketFlip .btn_area .inner .text-lg { font-weight: bold; font-size: 16px; line-height: 19px; letter-spacing: -1px; margin-bottom: 2px; color: #222222}
-.myPhtoticketFlip .btn_area .inner .text-sm { font-size: 13px; color: #555555; line-height: 16px; letter-spacing: -1px; }
-.myPhtoticketFlip .btn_area .inner > div { padding-top: 18px; padding-bottom: 20px;}
-.myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
+.myPhtoticketFlip .text_area { position: relative; width: 100%; margin: -25px 0 0; padding: 0 15px 0;text-align: center}
+.myPhtoticketFlip .text_area .btn-red i {position: absolute;left: 56px;top: 11px;}
+.myPhtoticketFlip .text_area .inner .text-lg { font-weight: bold; font-size: 16px; line-height: 19px; letter-spacing: -1px; margin-bottom: 2px; color: #222222}
+.myPhtoticketFlip .text_area .inner .text-sm { font-size: 13px; color: #555555; line-height: 16px; letter-spacing: -1px; }
+.myPhtoticketFlip .btn_area {margin: 18px 0 35px;}
+.myPhtoticketFlip .btn_area a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더  */
 .myPhtoticketFlip.single .swiper-container {padding-left: 0;}
@@ -821,7 +820,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 @media only screen and (min-height: 750px) {
 	.myPhtoticketFlip .swiper-container {height: 505px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container { height: 486px;padding-left: 40px; padding-top: 100px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area {padding: 30px 15px 0;}
 	.pop_phototicket .myPhtoticketFlip .badge-area {margin-bottom: 79px;}
 	.pop_phototicket .myPhtoticketFlip.other .front {margin-bottom: 49px;}
 	.pop_phototicket .myPhtoticketFlip.single .front {margin-bottom: 49px}
@@ -837,7 +835,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.myPhtoticketFlip.myPhtoticketFlip-small .front { width: 220px; height: 340px; }
 	.myPhtoticketFlip.myPhtoticketFlip-small .back { width: 220px; height: 340px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner {padding: 30px 20px 20px 20px;}
-	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area { margin-top: -30px; padding: 3px 15px 0; }
+	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area { padding: 3px 15px 0; }
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .title .rating {top: 29px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .info {margin-bottom: 12px;}
 	.myPhtoticketFlip.myPhtoticketFlip-small .back.text .inner .info li.bar span:first-child {max-width: 90px;}
@@ -1149,7 +1147,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* S popup */
 .popup {position: fixed;left: 0;bottom: 0;width: 100%;margin-top: 100px;}
 .popup_header {position: relative;height: 44px;line-height: 44px;background: #fff;}
-.popup_container {position: relative;height: 100%;line-height: 44px;background: #fff; border-radius: 0 0 4px 4px;}
+.popup_container {position: relative;height: 100%;line-height: 44px;background: #fff;}
 .popup_dim.active {display: block;opacity: 1 !important;overflow: auto;top: 0 !important;left: 0;}
 .popup_dim .popup .popup_container .container_footer {width: 100%;padding-top: 20px;}
 .popup_dim .popup .popup_container .container_footer .btnPopConfirm {display: block;width: 100%;height: 50px;font-weight: 400;font-size: 16px;color: #fff;line-height: 50px;text-align: center; background: linear-gradient(to left, var(--dustyOrange), var(--watermelon));}
@@ -1161,7 +1159,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .popPassCardDetail .popup_header p  {text-align: center; font-size: 14px; line-height: 45px; color: var(--colorBalck222222); letter-spacing: -.5px;}
 .popPassCardDetail .popup_header .btn_close { position: absolute; width: 11px;height: 11px; left: auto; right: 13px;top: 16px;}
 .popPassCardDetail .popup_header .btn_close i {width: 11px;height: 11px;}
-.popPassCardDetail .popup_container {position: relative; padding: 20px 17px;}
+.popPassCardDetail .popup_container {position: relative; padding: 20px 17px; border-radius: 0 0 4px 4px}
 .popPassCardDetail .popup_container .movie_info {position: relative; margin-bottom: 20px}
 .popPassCardDetail .popup_container .movie_info::after {content: ''; position: absolute; width: 100%; height: 1px; border-bottom: 1px solid #dcdee3;left: 0;bottom: -10px;}
 .popPassCardDetail .popup_container .movie_info li {text-align: center;}
@@ -1176,11 +1174,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .popPassCard .popup {width:291px !important; border-radius: 4px;}
 .popPassCard .popup_header {border-radius: 4px 4px 0 0}
 .popPassCard .popup_header .btn_close {left: auto; right: 13px;}
-.popPassCard .popup_container {height:461px; overflow: hidden;padding-bottom: 45px;}
-.popPassCard .popup_container .title {text-align:center; font-size: 17px; line-height: 24px; letter-spacing: -.61px; color: var(--colorBalck222222)}
-.popPassCard .popup_container .img {margin: 0 auto; width: 220px; height: 150px; background: pink}
+.popPassCard .popup_container {height:461px; overflow: hidden;padding-bottom: 45px; border-radius: 0 0 4px 4px;}
+.popPassCard .popup_container .title {text-align:center; font-size: 17px; font-weight: 600; line-height: 24px; margin-bottom: 19px; letter-spacing: -.61px; color: var(--colorBalck222222)}
+.popPassCard .popup_container .img {margin: 0 auto; width: 221px; height: 132px; background: pink}
 .popPassCard .popup_container .img img {width: 100%; height: 100%;}
-.popPassCard .popup_container .contents {padding: 15px 22px 0;}
+.popPassCard .popup_container .contents {padding: 23px 22px 0;}
 .popPassCard .popup_container .contents p {position: relative; font-size: 14px; line-height: 17px; letter-spacing: -1.2px; font-weight: 500;}
 .popPassCard .popup_container .contents p span {color: #4e88cf}
 .popPassCard .popup_container .contents p::after {content: ''; position: absolute; width: 100%; height: 1px; border-bottom: 1px solid #dcdee3;left: 0;bottom: -10px;}
@@ -1231,8 +1229,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .popup_my_search .container_content .search .inputBox span:last-child {float: right;}
 .popup_my_search .container_content .search .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px;border: 0;color: #b3b3b3;border-radius: 8px;background: rgba(242,242,242,.8);}
 .popup_my_search .container_content .search .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px;height: 36px;border: 0;color: rgb(102,102,102);border-radius: 8px;background: rgba(242,242,242,.8);}
-.popup_my_search .container_content .search .inputBox span input[type='date']::after {content: '';display: block;position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -33px -6px;z-index: 1;}
-.popup_my_search .container_content .search .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -10px -6px;z-index: 1;}
+/*.popup_my_search .container_content .search .inputBox span input[type='date']::after {content: '';display: block;position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -33px -6px;z-index: 1;}*/
+/*.popup_my_search .container_content .search .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -10px -6px;z-index: 1;}*/
 /* E 조건 검색 레이어 팝업 */
 
 /* E popup */
@@ -1295,6 +1293,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .payment-history .payment-detail-wrap .payment-detail > dt {line-height: 17px;}
 .payment-history .payment-detail-wrap .payment-detail + .total-price-wrap {margin-top: 9px;padding-top: 17px;}
 .payment-history article + article.cPPaymentInfoWrap {margin-top: 0}
+.payment-history article + article.cPPaymentInfoWrap::before {content: none}
 /* E 결제정보 */
 
 /* S 포토티켓 패스카드 */

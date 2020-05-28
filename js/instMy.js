@@ -14,10 +14,10 @@ var front = (function () {
             jQuery(popupId).removeClass('active');
             jQuery("body").addClass("scrlOn").removeClass('scrlOff');
         })
-        jQuery('.popup_dim').on('click', function () { //dim화면 클릭시 화면 닫히는 기능
-            jQuery(popupId).removeClass('active');
-            jQuery("body").addClass("scrlOn").removeClass('scrlOff');
-        })
+        // jQuery('.popup_dim').on('click', function () { //dim화면 클릭시 화면 닫히는 기능
+        //     jQuery(popupId).removeClass('active');
+        //     jQuery("body").addClass("scrlOn").removeClass('scrlOff');
+        // })
     }
 
     event._commonHandlers = function () {
