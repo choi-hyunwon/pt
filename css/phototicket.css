@@ -51,7 +51,7 @@ nav:after{content:''; display:block; position:absolute; left:0; bottom:0; width:
 
 *{box-sizing:border-box; letter-spacing:normal}
 html{height:auto}
-body{height:auto; /*min-height:100%*/}
+body{height:auto; color: #222222; /*min-height:100%*/}
 input[type="text"]{-webkit-appearance: none !important; border-radius: 0 !important}
 .wrap{z-index:6}
 
@@ -430,7 +430,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .content_wrap.photo_ticket { overflow: initial; padding-top: 44px;}
 .content_wrap.photo_ticket > .title {position: relative; height: 100px;}
 .content_wrap.photo_ticket > .title {position: relative; height: 100px;}
-.content_wrap.photo_ticket > .title span {position: absolute; left: 30px; top: 15px; font-size: 25px; line-height: 30px; font-weight: 600;}
+.content_wrap.photo_ticket > .title span {position: absolute; left: 30px; top: 15px; font-size: 25px; line-height: 30px; font-weight: 600; color: var(--colorBalck222222) }
 .content_wrap.photo_ticket .slider_wrap {height: 401px}
 .content_wrap.photo_ticket .slider_wrap .slider-wrap {height: 100%}
 .content_wrap.photo_ticket .slider_wrap .swiper-container { width: 260px; margin: 0 auto; overflow: visible;}

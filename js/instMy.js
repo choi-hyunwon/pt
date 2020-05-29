@@ -14,16 +14,19 @@ var front = (function () {
             jQuery(popupId).removeClass('active');
             jQuery("body").addClass("scrlOn").removeClass('scrlOff');
         })
-        // jQuery('.popup_dim').on('click', function () { //dim화면 클릭시 화면 닫히는 기능
-        //     jQuery(popupId).removeClass('active');
-        //     jQuery("body").addClass("scrlOn").removeClass('scrlOff');
-        // })
+        jQuery('.popup_dim').on('click', function (e) { //dim화면 클릭시 화면 닫히는 기능
+            if(jQuery(popupId).has(e.target).length == 0) {
+                jQuery(popupId).removeClass('active');
+                jQuery("body").addClass("scrlOn").removeClass('scrlOff');
+            }
+        })
     }
 
     event._commonHandlers = function () {
-
+        
+        // 포토티켓 패스카드 상세 팝업
         front.event._popPassCardDetail('#popPassCard','._alertPassCardInfo')
-
+        
         /* [S] 사이트맵 */
         window.siteMapFn = siteMapFn;
 
@@ -48,72 +51,35 @@ var front = (function () {
 
         /* [S] 조건검색레이어 팝업 */
 
-        // 조회기간 클릭 이벤트 다중처리 X
-        jQuery('._dayClick').on('click', function () {
-            if (jQuery(this).hasClass('active')) {
-                jQuery(this).siblings().removeClass('active');
-                jQuery('._inputDate').attr('disabled', true);
-            } else {
-                jQuery(this).addClass('active').siblings().removeClass('active');
-                jQuery('._inputDate').attr('disabled', true);
-            }
-        });
+            // 조회기간 클릭 이벤트 다중처리 X
+            jQuery('._dayClick').on('click', function () {
+                if (jQuery(this).hasClass('active')) {
+                    jQuery(this).siblings().removeClass('active');
+                    jQuery('._inputDate').attr('disabled', true);
+                } else {
+                    jQuery(this).addClass('active').siblings().removeClass('active');
+                    jQuery('._inputDate').attr('disabled', true);
+                }
+            });
 
-        // 조회기간 활성화/비활성화
-        jQuery('._direct').on('click', function () {
-            if (jQuery(this).hasClass('active')) {
-                jQuery(this).siblings().removeClass('active');
-                jQuery('._inputDate').attr('disabled', false);
-            } else {
-                jQuery(this).addClass('active').siblings().removeClass('active');
-                jQuery('._inputDate').attr('disabled', false);
-            }
-        });
-
-        //조회기간 - 초기값
-        // var _today        = moment().format('YYYY-MM-DD');
-        // var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
-        //
-        // jQuery("#startDt").val(_prevMovieDay);
-        // jQuery("#endDt").val(_today);
-
-        //조회기간 - 7일 선택시
-        // jQuery("#btn_seven_days").on("click", function() {
-        //     var _today        = moment().format('YYYY-MM-DD');
-        //     var _prevMovieDay = moment().add(-7, 'days').format('YYYY-MM-DD');
-        //
-        //     jQuery("#startDt").val(_prevMovieDay);
-        //     jQuery("#endDt").val(_today);
-        // });
-
-        //조회기간 - 1개월 선택시
-        // jQuery("#btn_one_month").on("click", function() {
-        //     var _today        = moment().format('YYYY-MM-DD');
-        //     var _prevMovieDay = moment().add(-1, 'months').format('YYYY-MM-DD');
-        //
-        //     jQuery("#startDt").val(_prevMovieDay);
-        //     jQuery("#endDt").val(_today);
-        // });
-
-        //조회기간 - 3개월 선택시
-        // jQuery("#btn_three_month").on("click", function() {
-        //     var _today        = moment().format('YYYY-MM-DD');
-        //     var _prevMovieDay = moment().add(-3, 'months').format('YYYY-MM-DD');
-        //
-        //     jQuery("#startDt").val(_prevMovieDay);
-        //     jQuery("#endDt").val(_today);
-        // });
-
-        //조회기간 - 6개월 선택시
-        // jQuery("#btn_six_month").on("click", function() {
-        //     var _today        = moment().format('YYYY-MM-DD');
-        //     var _prevMovieDay = moment().add(-6, 'months').format('YYYY-MM-DD');
-        //
-        //     jQuery("#startDt").val(_prevMovieDay);
-        //     jQuery("#endDt").val(_today);
-        // });
+            // 조회기간 활성화/비활성화
+            jQuery('._direct').on('click', function () {
+                if (jQuery(this).hasClass('active')) {
+                    jQuery(this).siblings().removeClass('active');
+                    jQuery('._inputDate').attr('disabled', false);
+                } else {
+                    jQuery(this).addClass('active').siblings().removeClass('active');
+                    jQuery('._inputDate').attr('disabled', false);
+                }
+            });
 
         /* [E] 조건검색레이어 팝업 */
+
+        /* [S] 포토티켓 패스카드 등록 --- btn_delete 클릭시 value 초기화 */
+        jQuery('.btn_delete').on('click', function () {
+            jQuery('#focusInTarget').val('');
+        })
+        /* [E] 포토티켓 패스카드 등록 */
 
         /* [S] 포토티켓 패스카드 등록 안내 팝업 */
         jQuery('._alertPassCardInfo').on('click', function () {
@@ -499,7 +465,7 @@ var front = (function () {
 
         if (_btn == "") {
             if (_isInit) {
-                jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                jQueryfogBg.css({'opacity': '.5', 'top': '0'});btn_info
                 popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
             }
 
