@@ -425,14 +425,15 @@ nav.type_pt2 .inner .btn-badge-red.active {line-height: 26px;color: #ffffff; bac
 nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 포토티켓 header */
 
-/**/
+/* [S] 포토티켓 메인  */
 .slider_wrap {width:100%; overflow: hidden;}
-
-/* [S] 포토티켓 메인 - app */
 .content_wrap.photo_ticket { overflow: initial; padding-top: 44px;}
-.content_wrap.photo_ticket .slider_wrap > .title {position: relative; height: 100px;}
-.content_wrap.photo_ticket .slider_wrap > .title span {position: absolute; left: 30px; top: 15px; font-size: 22px; line-height: 30px; font-weight: 600;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container { width: 260px; margin: 0 auto; overflow: visible}
+.content_wrap.photo_ticket > .title {position: relative; height: 100px;}
+.content_wrap.photo_ticket > .title {position: relative; height: 100px;}
+.content_wrap.photo_ticket > .title span {position: absolute; left: 30px; top: 15px; font-size: 25px; line-height: 30px; font-weight: 600;}
+.content_wrap.photo_ticket .slider_wrap {height: 401px}
+.content_wrap.photo_ticket .slider_wrap .slider-wrap {height: 100%}
+.content_wrap.photo_ticket .slider_wrap .swiper-container { width: 260px; margin: 0 auto; overflow: visible;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide { position: relative; text-align:center; display:-webkit-flex;display:-ms-flexbox;display:flex; align-items:center; justify-content:center; margin-bottom: 30px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster {transform: scale(1); width: 260px; height: 371px; border-radius: 20px; transition: 0.3s}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active .poster::after {content:''; position: absolute; width: 100%; height: 360px; border-radius: 20px; top: 0; left: 0; box-shadow: 0 10px 20px rgba(0,0,0,.3); z-index: -1;}
@@ -461,9 +462,9 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle {position: absolute; display: block; width: 80px; height: 80px; border-radius: 40px; color: #ffffff; background: linear-gradient(124deg, #fb4357 14%, #ef642f 86%); background: -webkit-linear-gradient(124deg, #fb4357 14%, #ef642f 86%);  box-shadow: 0 4px 10px 0 rgba(251, 67, 87, 0.4); bottom: -11px; right: -18px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .txt {font-size: 16px; font-weight: bold; padding-top: 27px; margin-bottom: 5px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
-/* [E] 포토티켓 메인 - app */
+/* [E] 포토티켓 메인  */
 
-/* [S] 이벤트 슬라이더    */
+/* [S] 이벤트 슬라이더  */
 .content_wrap.photo_ticket .alert_wrap {padding: 0 27px;}
 .content_wrap.photo_ticket .alert_wrap::before {content: none;}
 .content_wrap.photo_ticket .alert_wrap .swiper-container .swiper-slide {border-top: 1px solid #ededed; border-bottom: 1px solid #ededed; margin-bottom: 14px;}
@@ -724,7 +725,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .inputBox span input[type='date']:focus {outline: none}
  .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color: #b3b3b3; border-radius: 8px; background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
- .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: 0;}
+ .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -87px -152px; z-index: 0;}
 /* [E] 기간검색 팝업 */
 
 /* [S] 공유하기 팝업 */

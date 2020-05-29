@@ -44,6 +44,10 @@ var front = (function () {
 
     event._commonHandlers = function () {
 
+        if(jQuery('.cgvMovieChartWrap').length > 0) {
+            jQuery("html,body").animate({ scrollTop: 1 }, "fast");
+        }
+
         // header 클릭 이벤트
         jQuery('#navMain ._tab').on('click', function () {
             jQuery('._tab').removeClass('active');
